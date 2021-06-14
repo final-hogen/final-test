@@ -1,25 +1,47 @@
 <!DOCTYPE html>
 <html lang="ja">
   <head>
-    <link rel="stylesheet" type="text/css" href="<?= makeFileURL('style.css') ?>" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <!--<link rel="stylesheet" type="text/css" href="style.css" />-->
+    <title>ストーリー選択</title>
+    <link rel="shortcut icon" type="image/png" href="サイトアイコン.PNG">
+    <meta name="viewport" content="width=600, initial-scale=1"/>
+    <link rel="stylesheet" href="style.css" />
+    <script src="finalreader.js"></script>
+    <script src="finalajax.js"></script>
   </head>
   <body>
-    <div id="wrapper" style="background-image:url('<?= makeFileURL('ノーヴァ背景.JPG') ?>');">
+    <div id="wrapper" style="background-image:url('ノーヴァ背景.JPG');">
     <div id="conteiner">
+    <div id="content_area">
       <div id="logo_area">
-        <image class="logo_image" src="<?= makeFileURL('ロゴ_1.png') ?>" width="512" height="209" style="transform: translate(-100%, 0px);opacity: 0;" onloadstyle="transform:translate(0px, 0px);opacity: 1;"/>
+        <img class="logo_image" src="ロゴ_1.png" width="512" height="209" style="transform: translate(-100%, 0px);opacity: 0;" onloadstyle="transform:translate(0px, 0px);opacity: 1;"/>
       <p>これは謎ファイナルギアのストーリーを見るためのツールです。<br/>
       ストーリーを見たいがイベントが終わってしまったとき、ゲームでストーリーを見る時間がない時にご利用ください。<br/>
       ネタバレが嫌な方、ゲーム未プレイの方はご利用をお控えください。
       </p>
       </div>
       <h1>ファイナルギア　再生ストーリー選択</h1>
+        <li><a href="">おはようネクリエス</li></a>
       <ul>
       </ul>
-  <!-- フッター -->
     </div>
+    <!-- フッター -->
+    <br/><br/>
+    <div id="footer">
+      <p>created by ほげん(hogen_feh@twitter.com)</p>
+      <p><a href="https://game.bilibili.co.jp/finalgear/">©ファイナルギア</a>　　<a href="https://game.bilibili.co.jp/">©bilibili</a></p>
     </div>
-  <script>
-  </script>
+    <script>
+      var readerEditor = new StoryAnimation();
+      readerEditor.actionOnLoad(null);
+      readerEditor.actionStyle(null);
+      window.onload = function() {
+      }
+      var content_area = document.getElementById("content_area");
+      var ajaxLoader = new FinalAjax(content_area);
+      ajaxLoader.loadPage('ストーリー選択.html');
+    </script>
+    </div></div>
   </body>
 </html>

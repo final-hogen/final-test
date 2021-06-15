@@ -76,7 +76,7 @@
     var sene_template = document.getElementById("scene_template");
     var narration_template = document.getElementById("narration_template");
     var nexchapter_template = document.getElementById("nexchapter_template");
-    var readerEditor = new StoryMaker(globalFullJsonData,command_area,character_message_template,sene_template,narration_template,nexchapter_template);
+    window.readerEditor = new StoryMaker(globalFullJsonData,command_area,character_message_template,sene_template,narration_template,nexchapter_template);
     readerEditor.setNexchapterPanel(Object.keys(globalFullJsonData.chapters)[0]);
     readerEditor.actionCSS(document.getElementById("logo_area"));
     readerEditor.actionCSS(document.getElementById("command_area"));

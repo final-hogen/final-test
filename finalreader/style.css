@@ -15,6 +15,7 @@ body {
   height: 100%;
   width: 100%;
   -webkit-text-size-adjust: 100%;
+  background-color:rgba(255,255,255,1);
 }
 .animation_image{
   transition: all cubic-bezier(0.075, 0.82, 0.165, 1.0) 1.0s;
@@ -28,18 +29,7 @@ body {
   width:600px;
   background-size:  600px;
   background-repeat: repeat-y;
-  /*background-color:rgba(255,255,255,0.9);*/
-  background-blend-mode:lighten;
   margin: 0px auto;
-}
-#wrapper::before{
-  background-color:rgba(255,255,255,0.9);
-  background-blend-mode:lighten;
-  content: '';
-  display: block;
-  height: 100%;
-  position: absolute;
-  width: 100%;
 }
 #conteiner{
   width:580px;

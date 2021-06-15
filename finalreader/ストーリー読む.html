@@ -1,0 +1,97 @@
+<div id ="content_area">
+<div id="template">
+  <!-- キャラクターがセリフを出す構造 -->
+  <div id="character_message_template" class="character_message">
+    <div class="faceicon">
+    <img name="icon_img" src="" style="transform: translate(0px, 110px)" onloadstyle="transform:translate(0px, 0px)"/>
+    <span name="character_name" class="character_name"></span>
+    </div>
+    <div class="chatting">
+      <div class="says" name="balloon">
+        <div class="saysinner" style="transform: translate(-100%, 0px)" actionstyle="transform:translate(0px, 0px)">
+        <p name="message" style="transform: translate(100%, 0px)" actionstyle="transform:translate(0px, 0px)"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 画像シーン -->
+  <div id="scene_template" class="scene" style="max-height:0px;">
+    <img name="image" class="logo_image" src="" ,max-width="550" min-height="100" onloadstyle="x-path:..;max-height:500px;"/>
+  </div>
+  <!-- ナレーション -->
+  <div id="narration_template" class="narration" style="transform: opacity: 0;" actionstyle="opacity: 1;">
+    <p name="message"></p>
+  </div>
+  <!-- 次の章 -->
+  <div id="nexchapter_template" class="nextchapterview" onclick="event.stopPropagation();startChapter('')">
+    <p><span name="message"></span>へ進む</p>
+  </div>
+</div>
+<div id="logo_area"></div>
+<script>
+  var target = document.getElementById("logo_area");
+  var logoData = globalFullJsonData['logo'];
+  if(logoData.image){
+    var htmlString = '<img class="logo_image" src="';
+    htmlString += globalFullJsonData.images[logoData.image];
+    htmlString += '" ,max-width="550" min-height="200" style="transform: opacity: 0;" onloadstyle="opacity: 1;"/>';
+    target.insertAdjacentHTML('beforeend',htmlString);
+  }
+  if(logoData.string){
+    const htmlString = '<h1>'+logoData.string+'</h1>';
+    target.insertAdjacentHTML('beforeend',htmlString);
+  }
+  if(logoData.summary){
+    const htmlString = '<p>'+logoData.summary+'</p>';
+    target.insertAdjacentHTML('beforeend',htmlString);
+  }
+</script>
+<br/>
+<div id="select_chapters"><form id="select_chapters_form">
+</form></div>
+<script>
+  var target = document.getElementById("select_chapters_form");
+  var chapters = Object.keys(globalFullJsonData.chapters);
+  for(var i=0;i<chapters.length;++i){
+    var chapterName = chapters[i];
+    var htmlString = '<span><input name="select_chapter" onclick="event.stopPropagation();selectChapterClick();" type="radio" value="';
+    htmlString+= chapterName;
+    htmlString += '"><label>';
+    htmlString += chapterName;
+    htmlString += '</label></input></span>';
+    target.insertAdjacentHTML('beforeend',htmlString);
+  }
+</script>
+<div id="chapter_area">
+  <h2 id="chapter_title">　</h2>
+  <p id="chapter_summary"></p>
+</div>
+<div id="command_area" onclick="event.stopPropagation();comanndClick()">
+</div>
+   
+  <p>・<a target="_top" href="">ストーリー選択に戻る</a></p>
+  <script>
+    var command_area = document.getElementById("command_area");
+    var character_message_template = document.getElementById("character_message_template");
+    var sene_template = document.getElementById("scene_template");
+    var narration_template = document.getElementById("narration_template");
+    var nexchapter_template = document.getElementById("nexchapter_template");
+    var readerEditor = new StoryMaker(globalFullJsonData,command_area,character_message_template,sene_template,narration_template,nexchapter_template);
+    readerEditor.setNexchapterPanel('<?= chapters[0] ?>');
+    readerEditor.actionCSS(document.getElementById("logo_area"));
+    readerEditor.actionCSS(document.getElementById("command_area"));
+  window.comanndClick = function(){
+    readerEditor.scrollToID("command_area");
+    readerEditor.jobCommand();
+  }
+  window.startChapter = function(chapterName){
+    readerEditor.scrollToID("command_area");
+    readerEditor.startChapter(chapterName);
+  }
+  window.selectChapterClick = function(){
+    var checkValue = select_chapters_form.elements['select_chapter'].value;
+    readerEditor.startChapter(checkValue);
+    readerEditor.scrollToID("chapter_area");
+  }
+  </script>
+</div>

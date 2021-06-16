@@ -17,6 +17,8 @@
           <br/><br/>
           <button onclick="myreset()">リセット</button>
       </div>
+      <div id="have_voices">
+      </div>
     <!-- フッター -->
     <br/><br/>
     <div id="footer">
@@ -33,6 +35,14 @@
       }
       function myreset(){
         finalvoice.voices = {};
+        var target = document.getElementById("have_voices");
+        var voices = Object.keys(finalvoice.enableVoices);
+        console.log(voices);
+        for(var i=0;i<voices.length;++i){
+          var name = voices[i];
+          var htmlString = '<span>'+name+'</span>';
+          target.insertAdjacentHTML('beforeend',htmlString);
+        }
       }
     </script>
     </div></div>

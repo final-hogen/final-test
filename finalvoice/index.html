@@ -17,7 +17,7 @@
           <br/><br/>
           <button onclick="myreset()">リセット</button>
       </div>
-      <div id="have_voices">
+      <div id="select_chapters">
       </div>
     <!-- フッター -->
     <br/><br/>
@@ -35,12 +35,13 @@
       }
       function myreset(){
         finalvoice.voices = {};
-        var target = document.getElementById("have_voices");
-        var voices = Object.keys(finalvoice.enableVoices);
+        var target = document.getElementById("select_chapters");
+        while( target.firstChild ){target.removeChild( target.firstChild );}
+        var voices = window.speechSynthesis.getVoices();
         console.log(voices);
         for(var i=0;i<voices.length;++i){
-          var name = voices[i];
-          var htmlString = '<span>'+name+'</span>';
+          var voice = voices[i];
+          var htmlString = '<span>'+voice.name+" "+voice.lang+'</span><br/>';
           target.insertAdjacentHTML('beforeend',htmlString);
         }
       }

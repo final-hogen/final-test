@@ -5,6 +5,7 @@ class FinalVoice {
     this.langScope = 'ja-JP';
     this.useOK = !!window.speechSynthesis;
     this.enableVoices = {}
+    this.resetEnableVoices(); //バグ対応
     this.resetEnableVoices();
     var that = this;
     window.speechSynthesis.onvoiceschanged = function(){

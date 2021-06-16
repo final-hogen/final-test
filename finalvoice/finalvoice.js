@@ -2,7 +2,8 @@
 // ajaxしょり
 class FinalVoice {
   constructor() {
-    this.langScope = 'ja-JP|ko-KR';
+    this.langScope = 'ja-JP|ko-KR|es-ES|es-US|zh-CN|zh-TW|zh-HK|de-DE|pl-PL';
+    //this.langScope = 'ja-JP|ko-KR|en-GB|de-DE|es-ES|es-US|pl-PL|zh-CN|pt-BR|fr-FR|nl-NL|zh-TW';
     this.useOK = !!window.speechSynthesis;
     this.enableVoices = {}
     this.resetEnableVoices(); //バグ対応
@@ -36,6 +37,7 @@ class FinalVoice {
     Object.values(this.voices).forEach(voice=>usedKeys.push(voice.voice.name));
     var enableKeys = Object.keys(this.enableVoices);
     var voices = enableKeys.filter(name => !usedKeys.includes(name) );
+    if(voices.length<=0)voices = Object.keys(this.enableVoices);
     var voiceIndex = Math.floor(Math.random() * voices.length);
     var useVoice = this.enableVoices[voices[voiceIndex]];
     var pitch = 1.0+(Math.random()*0.8);

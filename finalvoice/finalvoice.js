@@ -2,7 +2,7 @@
 // ajaxしょり
 class FinalVoice {
   constructor() {
-    this.langScope = 'ja-JP|ko-KR|es-ES|es-US|zh-CN|zh-TW|zh-HK|de-DE|pl-PL';
+    this.langScope = 'ja-JP|ko-KR|es-ES|es-US';
     //this.langScope = 'ja-JP|ko-KR|en-GB|de-DE|es-ES|es-US|pl-PL|zh-CN|pt-BR|fr-FR|nl-NL|zh-TW';
     this.useOK = !!window.speechSynthesis;
     this.enableVoices = {}

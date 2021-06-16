@@ -26,19 +26,20 @@
       <p><a href="https://game.bilibili.co.jp/finalgear/">©ファイナルギア</a>　　<a href="https://game.bilibili.co.jp/">©bilibili</a></p>
     </div>
     <script>
+      var name = 'イブリン';
       var finalvoice = new FinalVoice();
       function myclick(){
         var text = document.querySelector('.text').value;
-        var name = 'イブリン';
         finalvoice.speak(name,text);
-        console.log(finalvoice.voices[name]);
       }
       function myreset(){
         finalvoice.voices = {};
         var target = document.getElementById("select_chapters");
         while( target.firstChild ){target.removeChild( target.firstChild );}
+        var ivurinVoice = finalvoice.getVoice(name).voice;
+        var htmlString = '<span>'+name+" "+ivurinVoice.name+" "+ivurinVoice.lang+'</span><br/>';
         var voices = window.speechSynthesis.getVoices();
-        console.log(voices);
+        target.insertAdjacentHTML('beforeend',htmlString);
         for(var i=0;i<voices.length;++i){
           var voice = voices[i];
           var htmlString = '<span>'+voice.name+" "+voice.lang+'</span><br/>';

@@ -2,7 +2,7 @@
 // ajaxしょり
 class FinalVoice {
   constructor() {
-    this.langScope = 'ja-JP';
+    this.langScope = 'ja-JP|ko-KR';
     this.useOK = !!window.speechSynthesis;
     this.enableVoices = {}
     this.resetEnableVoices(); //バグ対応
@@ -21,7 +21,7 @@ class FinalVoice {
     var voices = window.speechSynthesis.getVoices();
     for(var i = 0; i < voices.length; i++) {
       var voice = voices[i];
-      if(this.langScope && voice.lang!=this.langScope)continue;
+      if(this.langScope && !voice.lang.match(this.langScope))continue;
       this.enableVoices[voice.name] = voice;
     }
   }

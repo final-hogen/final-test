@@ -79,6 +79,10 @@ body {
   display: none;
 }
 
+#use_voice{
+  text-align: right;
+}
+
 .scene{
   width: 100%;
   text-align: center;

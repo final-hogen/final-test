@@ -46,6 +46,16 @@
     target.insertAdjacentHTML('beforeend',htmlString);
   }
 </script>
+<div id="use_voice">
+</div>
+<script>
+  var voiceEnabled = !!window.speechSynthesis;
+  if(voiceEnabled){
+    const target = document.getElementById("use_voice");
+    const htmlString ='<input type="checkbox" onchange="onVoiceSet(event)"/><label>ランダムボイス</label>';
+    target.insertAdjacentHTML('beforeend',htmlString);
+  }
+</script>
 <br/>
 <div id="select_chapters"><form id="select_chapters_form">
 </form></div>
@@ -93,6 +103,10 @@
     var checkValue = select_chapters_form.elements['select_chapter'].value;
     readerEditor.startChapter(checkValue);
     readerEditor.scrollToID("chapter_area");
+  }
+  window.onVoiceSet = function(event){
+    readerEditor.useVoice = event.target.checked;
+    readerEditor.finalVoice.resetVoiceSetting();
   }
   </script>
 </div>

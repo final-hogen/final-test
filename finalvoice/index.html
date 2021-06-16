@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>ファイナルヴォイス</title>
+    <link rel="shortcut icon" type="image/png" href="サイトアイコン.PNG">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="style.css" />
+    <script src="finalvoice.js"></script>
+  </head>
+  <body>
+    <div id="wrapper" style="background-image:url('ノーヴァ背景.JPG');">
+    <div id="conteiner">
+      <div id="content_area">
+          <input class="text" value="<Web></Web> Speech API を使ってみよう！"/>
+          <button onclick="myclick()">speak()</button>
+          <br/><br/>
+          <button onclick="myreset()">リセット</button>
+      </div>
+    <!-- フッター -->
+    <br/><br/>
+    <div id="footer">
+      <p>created by ほげん(hogen_feh@twitter.com)</p>
+      <p><a href="https://game.bilibili.co.jp/finalgear/">©ファイナルギア</a>　　<a href="https://game.bilibili.co.jp/">©bilibili</a></p>
+    </div>
+    <script>
+      var finalvoice = new FinalVoice();
+      function myclick(){
+        var text = document.querySelector('.text').value;
+        var name = 'イブリン';
+        finalvoice.speak(name,text);
+        console.log(finalvoice.voices[name]);
+      }
+      function myreset(){
+        finalvoice.voices = {};
+      }
+    </script>
+    </div></div>
+  </body>
+</html>

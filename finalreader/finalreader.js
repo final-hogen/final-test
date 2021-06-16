@@ -340,7 +340,6 @@ class StoryMaker extends StoryReader{
       sceneTag = this.sceneTemplate.cloneNode(true);
     }
     var iconNodes = this.getElementsByXPath(this.x_image,sceneTag);
-    console.log("setScene " + iconNodes[0]);
     iconNodes[0].src = this.getImagePath(imageName);
     if(!sceneTag.parentNode)this.commandArea.appendChild(sceneTag);
     this.actionCSS(sceneTag);

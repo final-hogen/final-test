@@ -2,7 +2,7 @@
 // ajaxしょり
 class FinalVoice {
   constructor() {
-    this.langScope = 'ja-JP|es-ES|es-US|';
+    this.langScope = 'ja-JP';
     //this.langScope = 'ja-JP|ko-KR|en-GB|de-DE|es-ES|es-US|pl-PL|zh-CN|pt-BR|fr-FR|nl-NL|zh-TW';
     this.useOK = !!window.speechSynthesis;
     this.enableVoices = {}
@@ -31,6 +31,7 @@ class FinalVoice {
       if(this.langScope && !voice.lang.match(this.langScope))continue;
       this.enableVoices[voice.name] = voice;
     }
+    this.enableVoices['unknown']=null;
   }
   makeVoiceData(setVoice,setPitch,setRate){
     return {voice:setVoice,pitch:setPitch,rate:setRate};
@@ -39,13 +40,16 @@ class FinalVoice {
    * ランダムで不使用ボイスを取得
    */
   getRandomVoice(){
-    var usedKeys = [];
-    Object.values(this.voices).forEach(voice=>usedKeys.push(voice.voice.name));
+    var useVoice = null;
     var enableKeys = Object.keys(this.enableVoices);
-    var voices = enableKeys.filter(name => !usedKeys.includes(name) );
-    if(voices.length<=0)voices = Object.keys(this.enableVoices);
-    var voiceIndex = Math.floor(Math.random() * voices.length);
-    var useVoice = this.enableVoices[voices[voiceIndex]];
+    if(enableKeys.length>0){
+      var usedKeys = [];
+      Object.values(this.voices).forEach(voice=>{if(voice.voice){usedKeys.push(voice.voice.name)}});
+      var voices = enableKeys.filter(name => !usedKeys.includes(name) );
+      if(voices.length<=0)voices = Object.keys(this.enableVoices);
+      var voiceIndex = Math.floor(Math.random() * voices.length);
+      var useVoice = this.enableVoices[voices[voiceIndex]];
+    }
     var pitch = 1.0+(Math.random()*0.8);
     var rate = 1.0+(Math.random()*0.2);
     return this.makeVoiceData(useVoice,pitch,rate);
@@ -66,6 +70,7 @@ class FinalVoice {
    * @param {セリフ} text 
    */
   speak(name, text){
+    if(!this.useOK)return;
     text = text.replace(/(<([^>]+)>)/gi, '');
     window.speechSynthesis.cancel();
     var speech = new SpeechSynthesisUtterance(text);

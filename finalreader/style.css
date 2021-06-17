@@ -60,14 +60,7 @@ body {
 }
 
 #select_chapters {
-  overflow-wrap: break-word;
-  word-break:break-all;
   background-color: rgba(0,0,32,0.2);
-}
-
-#select_chapters form {
-  overflow-wrap: break-word;
-  word-break:break-all;
 }
 
 #select_chapters span {

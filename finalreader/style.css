@@ -232,8 +232,12 @@ body {
   100% { transform:translateY(-0.1rem) }
 }
 
-.miniyure{
-  animation: mojiminiyure-y 0.12s ease-in infinite, mojiminiyure-x 0.15s ease-in infinite;
+.miniyure-y{
+  animation: mojiminiyure-y 0.15s ease-in infinite;
+}
+
+.miniyure-x,.miniyure{
+  animation: mojiminiyure-x 0.12s ease-in infinite;
 }
 
 @keyframes mojiminiyure-y {

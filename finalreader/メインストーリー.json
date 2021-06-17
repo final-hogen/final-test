@@ -1,0 +1,339 @@
+{
+ "title": "メインストーリー",
+ "images": {
+  "メインストーリー":"イベント画像/メインストーリー.jpg",
+  "アイタ": "アイタ.jpg",
+  "イブリン": "イブリン.jpg",
+  "ヴェロニカ": "ヴェロニカ.jpg",
+  "レベリカ": "レベリカ.jpg",
+  "エイダ": "エイダ.jpg",
+  "ホイットニー": "ホイットニー.jpg",
+  "クリスティーナ": "クリスティーナ.jpg",
+  "PN26イーレヒース": "PN26イーレヒース.jpg",
+  "山賊": "soundonly.jpg",
+  "アグネス": "アグネス.jpg",
+  "サウンドのみ": "soundonly.jpg",
+  "メイン0-1-1": "イベント画像/メイン0-1-1.jpg",
+  "メイン0-1-2": "イベント画像/メイン0-1-2.jpg",
+  "メイン0-1-3": "イベント画像/ミッションスタート.jpg",
+  "メイン0-1-4": "イベント画像/メイン0-1-4.jpg",
+  "メイン0-1-5": "イベント画像/メイン0-1-5.jpg",
+  "メイン0-1-6": "イベント画像/メイン0-1-6.jpg",
+  "メイン0-1-7": "イベント画像/メイン0-1-7.jpg",
+  "メイン0-1-8": "イベント画像/メイン0-1-8.jpg",
+  "メイン0-1-9": "イベント画像/メイン0-1-9.jpg"
+ },
+ "logo": {
+  "image": "メインストーリー",
+  "summary": "旧暦2110年、メテオインパクト事件が発生し、地表は廃土になり、人類は絶滅の危機に瀕していた。<br/>残りの人類は大陸を再建し、科学技術と文明を復興し始めた。<br/>強力なグループの一つである「ケゲア」は、人数と技術の面で優位に立って、機動装甲武装「<span style='color:orange;'>ファイナルギア</span>」を開発した。<br/>この後、このメカテクノロジーは大陸の各地域に広がり、3つの勢力を形成した：「<span style='color:orange;'>ケゲア</span>」「<span style='color:orange;'>アイレタ</span>」「<span style='color:orange;'>ハイクシアー</span>」"
+ },
+ "chapters": {
+  "０－１意外な出会い": {
+   "summary": "いつものように簡単な任務と考えて気軽に向かったイブリンは、途中で謎の敵と遭遇した。",
+   "commands": [
+    {"command": "scene",
+     "image": "メイン0-1-1",
+     "stop":0}
+    ,{"name": "イブリン",
+     "message": "そろそろついたかな。"}
+    ,{"name": "イブリン",
+     "message": "<span style='color:orange;'>ヴェロニカ</span>、聞こえる？"}
+    ,{"name": "ヴェロニカ",
+     "message": "通信良好、妨害されている形跡なし。"}
+    ,{"name": "イブリン",
+     "message": "ただの<span style='color:orange;'>山賊</span>じゃあ、そんな高度な手段はとれないでしょ？"}
+    ,{"name": "ヴェロニカ",
+     "message": "万全を期すための準備です。"}
+    ,{"name": "ヴェロニカ",
+     "message": "そちらは相手の領地に入ったのですから、くれぐれも気をつけて。"}
+    ,{"name": "イブリン",
+     "message": "うん。"}
+    ,{"name": "イブリン",
+     "message": "<span class='yure'>あ～あ、</span>今回は私一人ぼっち、面倒なことは全部やらなきゃならないのね。"}
+    ,{"name": "ヴェロニカ",
+     "message": "文句言わないで、ただの山賊でしょ。"}
+    ,{"name": "イブリン",
+     "message": "………"}
+    ,{"name": "イブリン",
+     "message": "<span class='miniyure'>わざと</span>だよね、ヴェニ？"}
+    ,{"name": "ヴェロニカ",
+     "message": "もちろん。"}
+    ,{"name": "イブリン",
+     "message": "<span class='yure'>……はあ、</span>面倒くさいな。"}
+    ,{"command": "scene",
+     "image": "",
+     "stop":0}
+    ,{"command": "scene",
+     "image": "メイン0-1-2",
+     "stop":1}
+    ,{"command": "scene",
+     "image": "",
+     "stop":0}
+    ,{"name": "山賊",
+     "message": "<span class='miniyure'>そこ、誰だ？！</span>"}
+    ,{"name": "イブリン",
+     "message": "こちらイブリン、奴らを見つけたわ。"}
+    ,{"name": "ヴェロニカ",
+     "message": "ええ、気をつけて。"}
+    ,{"name": "イブリン",
+     "message": "大丈夫、ただの<span style='color:orange;' class='yure'>雑魚</span>みたい。"}
+    ,{"name": "山賊",
+     "message": "<span class='miniyure'>貴様、何しに来た、ここは我々の許可がないと通れないぞ。</span>"}
+    ,{"name": "イブリン",
+     "message": "ぐだぐだ言ってないで、さっさと終わらせましょう。"}
+    ,{"name": "山賊",
+     "message": "<span class='miniyure'>敵だ、<span class='miniyure' style='color:orange;font-size:1.5rem;'>ボス</span></span>を呼んで来い！"}
+    ,{"name": "イブリン",
+     "message": "<span class='miniyure'>遅い</span>わよ！"}
+    ,{"command": "clear","stop":0}
+    ,{"command": "scene",
+     "image": "メイン0-1-3",
+     "stop":1}
+    ,{"name": "イブリン",
+     "message": "え、もう終わり？"}
+    ,{"command": "scene",
+     "image": "",
+     "stop":0}
+    ,{"name": "イブリン",
+     "message": "さっき倒した奴らの中に<span style='color:orange;'>ボス</span>がいたの？"}
+    ,{"name": "イブリン",
+     "message": "おかしいな……"}
+    ,{"name": "ヴェロニカ",
+     "message": "イブリン、ちょっととんでもない反応がそっちに向かってます！"}
+    ,{"name": "イブリン",
+     "message": "ヤバい？山賊団の<span style='color:orange;'>ボス</span>なの？"}
+    ,{"name": "ヴェロニカ",
+     "message": "いいえ、具体的な画像がないから私にも説明できませんが。"}
+    ,{"name": "ヴェロニカ",
+     "message": "ただ、向こうも同じように速いスピードで山賊たちを倒しています。"}
+    ,{"name": "イブリン",
+     "message": "それじゃあ<span style='color:orange;'>仲間</span>なの？"}
+    ,{"name": "ヴェロニカ",
+     "message": "そうは言いたくありません、なんだか嫌な予感がします。"}
+    ,{"name": "イブリン",
+     "message": "じゃあ私<span class='yure' style='color:orange;'>帰っても</span>いい？"}
+    ,{"name": "ヴェロニカ",
+     "message": "………それは無理です、まず向こうの正体を確認しましょう。"}
+    ,{"name": "イブリン",
+     "message": "はあ<span class='yure'>分かったわ</span>"}
+    ,{"command": "clear","stop":0}
+    ,{"command": "scene",
+     "image": "メイン0-1-4",
+     "stop":0}
+    ,{"name": "PN26イーレヒース",
+     "message": "……………"}
+    ,{"id":"アグネス","name": "？？？","image":"サウンドのみ",
+     "message": "ここでいい。"}
+    ,{"id":"アグネス","name": "？？？","image":"サウンドのみ",
+     "message": "このゴミたちが十分相手をしてくれるわ"}
+    ,{"name": "PN26イーレヒース",
+     "message": "……………"}
+    ,{"id":"アグネス","name": "？？？","image":"サウンドのみ",
+     "message": "大丈夫、緊張しないで。"}
+    ,{"id":"アグネス","name": "？？？","image":"サウンドのみ",
+     "message": "普段通りやればいいの、簡単よ。"}
+    ,{"name": "PN26イーレヒース",
+     "message": "……………"}
+    ,{"id":"アグネス","name": "？？？","image":"サウンドのみ",
+     "message": "それじゃ、活躍を期待しているわ。"}
+    ,{"command": "clear","stop":0}
+    ,{"command": "scene",
+     "image": "メイン0-1-5",
+     "stop":0}
+    ,{"name": "PN26イーレヒース",
+     "message": "……………"}
+    ,{"name": "山賊",
+     "message": "<span class='miniyure'>だ、誰だ？！</span>"}
+    ,{"name": "PN26イーレヒース",
+     "message": "……………"}
+    ,{"name": "山賊",
+     "message": "<span class='miniyure' style='font-size:1.5rem;'>ぐわぁ！</span>"}
+    ,{"name": "山賊",
+     "message": "<span class='miniyure' style='font-size:1.5rem;'>く、来るな！</span>"}
+    ,{"name": "PN26イーレヒース",
+     "message": "……………"}
+    ,{"command": "clear","stop":0}
+    ,{"command": "scene",
+     "image": "メイン0-1-4",
+     "stop":0}
+    ,{"name": "PN26イーレヒース",
+     "message": "……………",
+     "stop":0}
+    ,{"id":"アグネス","name": "？？？","image":"サウンドのみ",
+     "message": "終わったの？"}
+    ,{"name": "PN26イーレヒース",
+     "message": "……………"}
+    ,{"id":"アグネス","name": "？？？","image":"サウンドのみ",
+     "message": "ふーん………"}
+    ,{"id":"アグネス","name": "？？？","image":"サウンドのみ",
+     "message": "思ったより早かったわね、いったい何があったの？"}
+    ,{"id":"アグネス","name": "？？？","image":"サウンドのみ",
+     "message": "それともあなたが思っている<span class='yure'>より</span>優秀なの？"}
+    ,{"id":"アグネス","name": "？？？","image":"サウンドのみ",
+     "message": "うふふ……どう考えても前者でしょう。"}
+    ,{"id":"アグネス","name": "？？？","image":"サウンドのみ",
+     "message": "それじゃ、もう少し前進して、そっちに何があるか見てみましょう。"}
+    ,{"name": "PN26イーレヒース",
+     "message": "……………"}
+    ,{"id":"アグネス","name": "？？？","image":"サウンドのみ",
+     "message": "<span style='font-size:1.5rem;'>ああそうそう。</span>"}
+    ,{"id":"アグネス","name": "？？？","image":"サウンドのみ",
+     "message": "<span style='font-size:1.5rem;'>何があっても直接<span style='color:red;'>殺せば</span>いいわよ。</span>"}
+    ,{"id":"アグネス","name": "？？？","image":"サウンドのみ",
+     "message": "<span style='font-size:1.5rem;'>うふふふ……</span>"}
+    ,{"name": "PN26イーレヒース",
+     "message": "……………"}
+    ,{"command": "clear","stop":0}
+    ,{"command": "scene",
+     "image": "メイン0-1-1",
+     "stop":0}
+    ,{"name": "ヴェロニカ",
+     "message": "怪しいところ、見つけましたか？"}
+    ,{"name": "イブリン",
+     "message": "うん、いろいろと。"}
+    ,{"command": "scene",
+     "image": "",
+     "stop":0}
+    ,{"name": "ヴェロニカ",
+     "message": "例えば？"}
+    ,{"name": "イブリン",
+     "message": "ホームの<span style='color:orange;'>扉</span>が<span style='color:orange;'>自動ドア</span>じゃない。"}
+    ,{"name": "ヴェロニカ",
+     "message": "………"}
+    ,{"name": "イブリン",
+     "message": "しかももここには<span style='color:orange;'>食べ物</span>が<全然ない。"}
+    ,{"name": "イブリン",
+     "message": "ちょっと待て、この<span style='color:orange;'>制服</span>どこかで見たような……"}
+    ,{"name": "ヴェロニカ",
+     "message": "………そんなことじゃなくて。"}
+    ,{"name": "イブリン",
+     "message": "大事なことでしょ？"}
+    ,{"name": "イブリン",
+     "message": "<span style='color:orange;'>自動ドア</span>じゃなければ、手で押さないと開けられないでしょ。面倒だし、体力の無駄よ。"}
+    ,{"name": "ヴェロニカ",
+     "message": "あなたにはドアを押すという動作が必要ないでしょ。"}
+    ,{"name": "イブリン",
+     "message": "ここの人たちへの気遣いよ。"}
+    ,{"name": "ヴェロニカ",
+     "message": "人を倒したあなたが気遣ってどうするんですか。"}
+    ,{"name": "イブリン",
+     "message": "だったら将来ここを引き受けるやつへの気遣いにする。"}
+    ,{"name": "ヴェロニカ",
+     "message": "……もういいです、他に誰かいませんか？"}
+    ,{"name": "ヴェロニカ",
+     "message": "この前察知した<span style='color:orange;'>奇妙な反応</span>、見ませんでしたか？"}
+    ,{"name": "イブリン",
+     "message": "ふん……いいえと言いたいところだけど、もう遅いみたい。"}
+    ,{"command": "clear","stop":0}
+    ,{"command": "scene",
+     "image": "メイン0-1-7",
+     "stop":1}
+    ,{"name": "PN26イーレヒース",
+     "message": "……………"}
+    ,{"name": "イブリン",
+     "message": "どうしよう、ヴェニ、やばいよ、向こうの装甲、何か変……"}
+    ,{"name": "イブリン",
+     "message": "映像見える？"}
+    ,{"command": "scene",
+     "image": "",
+     "stop":0}
+    ,{"name": "ヴェロニカ",
+     "message": "いいえ、そちらの映像情報に異常があるみたいです。"}
+    ,{"name": "イブリン",
+     "message": "それじゃあさらにヤバいんじゃないの？"}
+    ,{"name": "ヴェロニカ",
+     "message": "私たちの目的はもう達成したから、あまり戦いを引き延ばさずに、隙を見てそこを離れましょう。"}
+    ,{"name": "イブリン",
+     "message": "うん。"}
+    ,{"name": "ヴェロニカ",
+     "message": "もちろん、相手から何か情報を引き出せればもっといいですけど。"}
+    ,{"name": "イブリン",
+     "message": "あんたね……"}
+    ,{"name": "ヴェロニカ",
+     "message": "あとはあなたの判断に任せます。"}
+    ,{"name": "イブリン",
+     "message": "はあ、面倒くさいな。"}
+    ,{"command": "clear","stop":0}
+    ,{"command": "scene",
+     "image": "メイン0-1-8",
+     "stop":0}
+    ,{"name": "イブリン",
+     "message": "はぁはぁ……勝った。"}
+    ,{"name": "PN26イーレヒース",
+     "message": "……………"}
+    ,{"name": "イブリン",
+     "message": "相手の動きがすごく鈍く感じたけど、何か故障でもしたの？"}
+    ,{"command": "scene",
+     "image": "",
+     "stop":0}
+    ,{"name": "ヴェロニカ",
+     "message": "どう？なにか気になる情報がありましたか？"}
+    ,{"name": "イブリン",
+     "message": "いえ、あの子一言も喋らなくて、ちょっと怖い。"}
+    ,{"name": "イブリン",
+     "message": "ここを離れたほうがいいと思う。"}
+    ,{"name": "ヴェロニカ",
+     "message": "ならそうしましょう、詳しいことは帰ってからに。"}
+    ,{"name": "イブリン",
+     "message": "うん。"}
+    ,{"command": "clear","stop":0}
+    ,{"command": "scene",
+     "image": "メイン0-1-4",
+     "stop":0}
+    ,{"name": "PN26イーレヒース",
+     "message": "……………"}
+    ,{"id":"アグネス","name": "？？？","image":"サウンドのみ",
+     "message": "気付いてはいるけど、まさか敵のほうが強いとはね。"}
+    ,{"id":"アグネス","name": "？？？","image":"サウンドのみ",
+     "message": "でも大丈夫、修正が必要なところはすでに結論が出たわ。"}
+    ,{"id":"アグネス","name": "？？？","image":"サウンドのみ",
+     "message": "いい、イーレヒース、あなたのやるべきことを続けて。"}
+    ,{"id":"アグネス","name": "？？？","image":"サウンドのみ",
+     "message": "その程度のダメージ、そろそろ自己修復完了するでしょ？"}
+    ,{"id":"アグネス","name": "？？？","image":"サウンドのみ",
+     "message": "うふふ。"}
+    ,{"name": "PN26イーレヒース",
+     "message": "……………"}
+    ,{"id":"アグネス","name": "？？？","image":"サウンドのみ",
+     "message": "それじゃあ、あとはあなた一人に任せるわよ。"}
+    ,{"id":"アグネス","name": "？？？","image":"サウンドのみ",
+     "message": "私はまだ他の用事があるの。あとでね、イーレヒース。"}
+    ,{"name": "PN26イーレヒース",
+     "message": "……………"}
+    ,{"command": "clear","stop":0}
+    ,{"command": "narration",
+     "message": "イーレヒースとの戦闘が終わって二十分後－－"}
+    ,{"command": "narration",
+     "message": "－－ベースカーの中にて"}
+    ,{"command": "clear","stop":0}
+    ,{"command": "scene",
+     "image": "メイン0-1-9",
+     "stop":0}
+    ,{"name": "イブリン",
+     "message": "ただいま。"}
+    ,{"command": "scene",
+     "image": "",
+     "stop":0}
+    ,{"name": "イブリン",
+     "message": "はぁ～、疲れた。"}
+    ,{"name": "イブリン",
+     "message": "山賊退治のはずだったのに、どうしてあんなものと出会っちゃったの？"}
+    ,{"name": "ヴェロニカ",
+     "message": "分かりません。"}
+    ,{"name": "ヴェロニカ",
+     "message": "少し時間をください、調べますから。"}
+    ,{"name": "ヴェロニカ",
+     "message": "あなたは部屋に戻って休んでいてください。"}
+    ,{"name": "イブリン",
+     "message": "うん、じゃあ任せるね、ヴェニ。"}
+    ,{"name": "ヴェロニカ",
+     "message": "はい、ですがその前に手元の仕事を終わらせましょう。"}
+   ]
+  },
+  "２日目": {
+   "summary": "",
+   "commands": [
+   ]
+  }
+ }
+}

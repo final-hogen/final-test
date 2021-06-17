@@ -1,13 +1,14 @@
 <div id="ストーリー選択">
   <div id="logo_area">
     <img class="logo_image" src="ロゴ_1.png" width="512" height="209" style="transform: translate(-100%, 0px);opacity: 0;" onloadstyle="transform:translate(0px, 0px);opacity: 1;"/>
-    <p>これは謎ファイナルギアのストーリーを見るためのツールです。<br/>
+    <p>これはファイナルギアのストーリーを見るためのツールです。<br/>
     ストーリーを見たいがイベントが終わってしまったとき、ゲームでストーリーを見る時間がない時にご利用ください。<br/>
     ネタバレが嫌な方、ゲーム未プレイの方はご利用をお控えください。
     </p>
   </div>
   <h1>ファイナルギア　再生ストーリー選択</h1>
   <ul>
+      <li><a href="javascript:ajaxLoader.loadStoryJson('メインストーリー.json')">メインストーリー</a></li>
     <li><a href="javascript:ajaxLoader.loadStoryJson('おはようネクリエス.json')">おはようネクリエス</a></li>
   </ul>
   <script>

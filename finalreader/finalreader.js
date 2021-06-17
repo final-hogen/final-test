@@ -278,6 +278,9 @@ class StoryMaker extends StoryReader{
       case this.command_message:
         this.setMessage(command.id,command.name,command.image,command.message);
       break;
+      case this.command_narration:
+        this.setNarration(command.message);
+      break;
       case this.command_scene:
         this.setScene(command.image);
       break;
@@ -328,12 +331,32 @@ class StoryMaker extends StoryReader{
     summaryTag.innerText = this.getChapterSummary();
   }
   /**
+   * ナレーション表示
+   * @param {文字*} message 
+   */
+  setNarration(message){
+    var oldNarrationTag = document.getElementById("narration_command");
+    if(!message){
+      if(oldNarrationTag)oldNarrationTag.parentElement.removeChild(oldNarrationTag);
+      return;
+    }
+    var narrationTag = this.narrationTemplate.cloneNode(true);
+    var messageTags = this.getElementsByXPath(this.x_message,narrationTag);
+    messageTags[0].innerHTML = message;
+    if(!oldNarrationTag){
+      if(!narrationTag.parentNode)this.commandArea.appendChild(narrationTag);
+    }else{
+      oldNarrationTag.parentNode.replaceChild(narrationTag,oldNarrationTag);
+    }
+    this.actionCSS(narrationTag);
+  }
+  /**
    * シーン追加または更新
    */
   setScene(imageName){
     var sceneTag = document.getElementById("scene_command");
-    if(sceneTag&&!imageName){
-      sceneTag.parentElement.removeChild(sceneTag);
+    if(!imageName){
+      if(sceneTag)sceneTag.parentElement.removeChild(sceneTag);
       return;
     }
     if(!sceneTag){

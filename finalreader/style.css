@@ -79,6 +79,12 @@ body {
   display: none;
 }
 
+#chapter_area h2{
+  margin-bottom: 0;
+}
+#chapter_area p{
+  margin: 0;
+}
 #use_voice{
   text-align: right;
 }

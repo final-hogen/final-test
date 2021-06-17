@@ -256,14 +256,6 @@ class StoryMaker extends StoryReader{
     this.nexchapter_template = nexchapter_template.cloneNode(true);
     this.nexchapter_template.setAttribute("id","nexchapter");
   }
-  testMessage(){
-    this.jobCommand();
-    this.setCapter();
-    return;
-    var data = this.nextCommand();
-    this.setMessage(data.name,data.name,data.name,data.message);
-    this.setCapter();
-  }
   /**
    * commandを処理する
    */
@@ -326,9 +318,9 @@ class StoryMaker extends StoryReader{
    */
   setCapter(){
     var titleTag = document.getElementById("chapter_title");
-    titleTag.innerText = this.getChapterTitle();
+    titleTag.innerHTML = this.getChapterTitle();
     var summaryTag = document.getElementById("chapter_summary");
-    summaryTag.innerText = this.getChapterSummary();
+    summaryTag.innerHTML = this.getChapterSummary();
   }
   /**
    * ナレーション表示
@@ -372,6 +364,10 @@ class StoryMaker extends StoryReader{
    */
   setMessage(id,name,imageName,message){
     var newMessage = this.makeMessage(id,name,imageName);
+    if(!message){
+      if(newMessage.parentNode)newMessage.parentNode.removeChild(newMessage);
+      return;
+    }
 
     this.updateMessage(newMessage,message);
     if(this.useVoice&&message)this.finalVoice.speak(id,message);

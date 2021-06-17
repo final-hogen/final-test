@@ -60,6 +60,7 @@ body {
 }
 
 #select_chapters {
+  overflow-wrap: break-word;
   background-color: rgba(0,0,32,0.2);
 }
 

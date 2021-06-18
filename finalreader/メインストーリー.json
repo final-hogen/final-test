@@ -14,6 +14,7 @@
   "エスメラルダ": "エスメラルダ.jpg",
   "オイフェ": "オイフェ.jpg",
   "フーラ": "フーラ.jpg",
+  "ベルナデット": "ベルナデット.jpg",
   "ホイットニー": "ホイットニー.jpg",
   "クリスティーナ": "クリスティーナ.jpg",
   "PN26イーレヒース": "PN26イーレヒース.jpg",
@@ -45,7 +46,12 @@
   "メイン4-3-2": "イベント画像/メイン4-3-2.jpg",
   "メイン5-2-1": "イベント画像/メイン5-2-1.jpg",
   "メイン5-2-2": "イベント画像/メイン5-2-2.jpg",
-  "メイン5-3-1": "イベント画像/メイン5-3-1.jpg"
+  "メイン5-3-1": "イベント画像/メイン5-3-1.jpg",
+  "メイン6-1-1": "イベント画像/メイン6-1-1.jpg",
+  "メイン6-2-1": "イベント画像/メイン6-2-1.jpg",
+  "メイン7-1-1": "イベント画像/メイン0-1-8.jpg",
+  "メイン7-2-1": "イベント画像/メイン7-2-1.jpg",
+  "メイン7-2-2": "イベント画像/メイン7-2-2.jpg"
  },
  "logo": {
   "image": "メインストーリー",
@@ -973,7 +979,7 @@
     ,{"name": "クリスティーナ",
      "message": "えへへ、少し話しただけよ。"}
     ,{"name": "レベリカ",
-     "message": "魔女って……あの鋼鉄の魔女？。"}
+     "message": "魔女って……あの鋼鉄の魔女？"}
     ,{"name": "ホイットニー",
      "message": "そう！"}
     ,{"name": "レベリカ",
@@ -1304,21 +1310,278 @@
   "６－１操り人形事件調査": {
    "summary": "機体暴走事件をきっかけに、それに関する調査の依頼を受けたクリスティーナは協力者としてブラックアークを雇った。",
    "commands": [
+    {"name": "クリスティーナ",
+     "message": "目的地到着！"}
+    ,{"name": "イブリン",
+     "message": "ここ？この森なの？"}
+    ,{"name": "クリスティーナ",
+     "message": "そう。もうちょっと先に敵が見えるよ。"}
+    ,{"name": "レベリカ",
+     "message": "クリスがわたしたちを護衛に雇うなんて珍しいね。"}
+    ,{"name": "クリスティーナ",
+     "message": "それは、あなたたちが暇って言うから頼んだのよ。"}
+    ,{"name": "イブリン",
+     "message": "誰が暇って教えたのよ！"}
+    ,{"name": "クリスティーナ",
+     "message": "ヴェロニカ。"}
+    ,{"name": "イブリン",
+     "message": "くっ……これ、ぺらぺらと漏らしていい情報なの……？"}
+    ,{"name": "レベリカ",
+     "message": "はははは、いいじゃない。仕事をしないとお金はもらえないんだから。"}
+    ,{"name": "クリスティーナ",
+     "message": "そうよ。だから、むしろあたしに感謝しないとね。"}
+    ,{"name": "イブリン",
+     "message": "こいつ、なんかムカつく。"}
+    ,{"name": "レベリカ",
+     "message": "ということは、クリス一人でも敵を始末できるの？"}
+    ,{"name": "クリスティーナ",
+     "message": "う……それは分からないかな。理論的には可能だけど、結構時間かかるし。"}
+    ,{"name": "クリスティーナ",
+     "message": "なら、いっそ助っ人に頼んだ方が楽でしょう！"}
+    ,{"name": "ヴェロニカ",
+     "message": "この前の<span style='color:orange;'>メカ暴走</span>事件に興味があるので、受けたんですよ。"}
+    ,{"name": "イブリン",
+     "message": "そうだと思ってたわ……"}
+    ,{"name": "クリスティーナ",
+     "message": "あの事件はまだ結論が出てないんだ。これは一応、手がかりの一つだよ。"}
+    ,{"name": "ヴェロニカ",
+     "message": "私が知る限りでは、これが今<span style='color:orange;'>唯一の手がかり</span>です。"}
+    ,{"name": "イブリン",
+     "message": "なに？じゃあ私たち、とくダネを握ってるってわけ？"}
+    ,{"name": "クリスティーナ",
+     "message": "しーっ！あのパパラッチどもに聞かれちゃうよ！"}
+    ,{"command": "clear","stop":0}
+    ,{"name": "ホイットニー",
+     "message": "聞こえたよー！","stop":0}
+    ,{"command": "scene",
+     "image": "メイン6-1-1",
+     "stop":1}
+    ,{"command": "clear","stop":0}
+    ,{"name": "イブリン",
+     "message": "<span class='miniyure-y'><span class='miniyure-x'>ひっ！？</span></span>"}
+    ,{"name": "レベリカ",
+     "message": "あはははは、そんなにビビらなくても！あははははは！"}
+    ,{"name": "イブリン",
+     "message": "<span class='miniyure-y'><span class='miniyure-x'>笑わないの！</span></span>"}
+    ,{"name": "イブリン",
+     "message": "<span class='miniyure-y'><span class='miniyure-x'>どこ？どこだ！？</span></span>"}
+    ,{"name": "レベリカ",
+     "message": "さあ。"}
+    ,{"name": "ヴェロニカ",
+     "message": "……私に聞かないでください。"}
+    ,{"name": "クリスティーナ",
+     "message": "知ってるけど教えてあげない。"}
+    ,{"name": "イブリン",
+     "message": "…………"}
+    ,{"name": "イブリン",
+     "message": "あの人、いつもこんな風に神出鬼没なの？"}
+    ,{"name": "クリスティーナ",
+     "message": "パパラッチだからね。"}
+    ,{"command":"message","id": "ヴェロニカ","message": "","stop":0}
+    ,{"name": "ホイットニー",
+     "message": "私のことは気にしないでくださーい！"}
+    ,{"name": "イブリン",
+     "message": "<span class='miniyure-y'><span class='miniyure-x'>気にしないわけがないでしょ！</span></span>"}
+    ,{"name": "レベリカ",
+     "message": "あはははは、面白かった。"}
    ]
   },
   "６－２傀儡師": {
-   "summary": "",
+   "summary": "屍と機械の残骸があふれる森の中で、少女たちはとある黒いやつと再会した。",
    "commands": [
+    {"command": "scene",
+     "image": "メイン6-2-1",
+     "stop":0}
+    ,{"name": "イブリン",
+     "message": "な、何なのよ？"}
+    ,{"name": "レベリカ",
+     "message": "黒ちゃんのが移動してる。ちょっと気持ち悪いね。"}
+    ,{"command": "scene",
+     "image": "","stop":0}
+    ,{"name": "クリスティーナ",
+     "message": "これが<span style='color:orange;'>あの事件</span>の原因だ。"}
+    ,{"name": "クリスティーナ",
+     "message": "どうやら<span style='color:orange;'>金属と融合しそれを操ることができる</span>特殊な材質みたい。"}
+    ,{"name": "イブリン",
+     "message": "なによそれ……"}
+    ,{"name": "レベリカ",
+     "message": "アイタさんも話したことあった気がするね。あの隕石が連れてきたのか？"}
+    ,{"name": "クリスティーナ",
+     "message": "詳しいことは知らないよ。"}
+    ,{"name": "クリスティーナ",
+     "message": "こいつらの動く頻度が増えたから、手がかりが見つかったんだ。"}
+    ,{"name": "ヴェロニカ",
+     "message": "……高頻度になったのですか？"}
+    ,{"name": "クリスティーナ",
+     "message": "そう。"}
+    ,{"name": "イブリン",
+     "message": "…………こうなると、大体いいこと起きないよね。"}
+    ,{"name": "クリスティーナ",
+     "message": "そうだね。誰かが何かを完成させて、<span style='color:orange;'>実験段階</span>に入ったのが証明されたし。"}
+    ,{"name": "レベリカ",
+     "message": "クリスは物知りだね……"}
+    ,{"name": "クリスティーナ",
+     "message": "推測だよ、全部推測。"}
+    ,{"name": "イブリン",
+     "message": "このまま調べて、本当にいいの？"}
+    ,{"name": "クリスティーナ",
+     "message": "うん？"}
+    ,{"name": "イブリン",
+     "message": "超面倒くさいことになる気がするから、あまり深入りしたくない……"}
+    ,{"name": "ヴェロニカ",
+     "message": "イブリンらしいですね。"}
+    ,{"name": "レベリカ",
+     "message": "大丈夫、若いうちにたくさん冒険した方が得だから。"}
+    ,{"name": "イブリン",
+     "message": "あなたと比べないでよ。"}
    ]
   },
-  "７－１": {
-   "summary": "",
+  "７－１操り人形の行き先": {
+   "summary": "主人を失ったら混乱するかと思っていたが、操り人形の兵士たちが、ある方向へと一斉に動き出した。これに興味を持ったクリスティーナは、イブリンたちと一緒に追撃を続けることにした。",
    "commands": [
+    {"command": "scene",
+     "image": "メイン7-1-1",
+     "stop":0}
+    ,{"name": "イブリン",
+     "message": "……もう森の外まで来たけど、あの<span style='color:orange;'>傀儡虫</span>は全く止まろうとしないわね。"}
+    ,{"command": "scene",
+     "image": "","stop":0}
+    ,{"name": "クリスティーナ",
+     "message": "足が速いね。こっちは全力で追いかけてるのに。"}
+    ,{"name": "ヴェロニカ",
+     "message": "エネルギーをあまり無駄遣いしな方がいいと思います。"}
+    ,{"name": "レベリカ",
+     "message": "いいんだよ。クリスが修理代を出してくれるって言ったじゃない。"}
+    ,{"name": "イブリン",
+     "message": "あなったって本当に遠慮しないよね。"}
+    ,{"name": "レベリカ",
+     "message": "へへ。"}
+    ,{"name": "イブリン",
+     "message": "褒めてない！"}
+    ,{"name": "クリスティーナ",
+     "message": "しーっ……この先に<span class='yure'>何かある</span>みたい。"}
+    ,{"name": "レベリカ",
+     "message": "<span class='miniyure-y'><span class='miniyure-x'>…………</span></span>"}
+    ,{"name": "ヴェロニカ",
+     "message": "……<span class='miniyure-y'><span class='miniyure-x'>死体と残骸</span></span>ですね。"}
+    ,{"name": "イブリン",
+     "message": "やっぱりね……反応を見ればわかる。彼女はもう沈黙モードがオンになってるもの。"}
+    ,{"name": "クリスティーナ",
+     "message": "あの<span style='color:orange;'>傀儡虫</span>の仕業ね。"}
+    ,{"name": "ヴェロニカ",
+     "message": "逃げる途中だったのでしょうか……"}
+    ,{"name": "ヴェロニカ",
+     "message": "どう見ても、知能のある機械には見えません。きっと<span class='miniyure-y' style='color:orange;'><span class='miniyure-x'>なんらかの事故</span></span>に遭ったのでしょう。"}
+    ,{"name": "イブリン",
+     "message": "でも、あの<span style='color:orange;'>傀儡虫</span>の動きは明らかに普通じゃないわ。"}
+    ,{"name": "ヴェロニカ",
+     "message": "そうですね。まるで<span class='miniyure-y'><span class='miniyure-x'>主を失った獣</span></span>のよう。"}
+    ,{"name": "クリスティーナ",
+     "message": "でも、逃げた方向がびっくりするぐらい一致している。理解できない。"}
+    ,{"name": "レベリカ",
+     "message": "<span style='color:orange;'>次の主</span>を探しに行ったんでしょ？"}
+    ,{"name": "クリスティーナ",
+     "message": "……え？"}
+    ,{"name": "レベリカ",
+     "message": "あ、適当に言っただけだよ。"}
+    ,{"name": "クリスティーナ",
+     "message": "それだ……"}
+    ,{"name": "クリスティーナ",
+     "message": "<span class='miniyure-y'><span class='miniyure-x'>まさしくそれだよ！</span></span>"}
+    ,{"name": "レベリカ",
+     "message": "ど、どういうこと？"}
+    ,{"name": "イブリン",
+     "message": "さあね。"}
+    ,{"name": "ヴェロニカ",
+     "message": "説明は後にして、まずは目の前の敵を倒しましょう。"}
    ]
-  }
-  "７－２": {
-   "summary": "",
+  },
+  "７－２地獄の番人": {
+   "summary": "操り人形の兵士の跡を辿って、イブリン一行が見つけた大量の傀儡虫の死体だった。この死体だらけな森の奥深くで、番人が静かに待っていた。",
    "commands": [
+    {"name": "イブリン",
+     "message": "あなたの話通りなら、新しい主がこの中にいるってこと？"}
+    ,{"name": "クリスティーナ",
+     "message": "あたしたちの推測が間違ってなければ、そうなるね。"}
+    ,{"name": "レベリカ",
+     "message": "どうしよう？中に入る？"}
+    ,{"name": "イブリン",
+     "message": "どうやら<span style='color:orange;'>傀儡虫と傀儡兵士</span>は全部倒されたみたいね。"}
+    ,{"name": "レベリカ",
+     "message": "共倒れか？"}
+    ,{"name": "ヴェロニカ",
+     "message": "いいえ、明らかに<span style='color:orange;'>第三者</span>に始末されたようです。"}
+    ,{"name": "レベリカ",
+     "message": "誰なの？"}
+    ,{"name": "クリスティーナ",
+     "message": "知りたいなら、進むしかないね。"}
+    ,{"name": "イブリン",
+     "message": "まだ進むの、もうへとへとなのに。"}
+    ,{"command": "clear","stop":0}
+    ,{"id": "ベルナデット","name": "？？？","image":"サウンドのみ",
+     "message": "止まってください。"}
+    ,{"name": "イブリン",
+     "message": "あれ？"}
+    ,{"name": "クリスティーナ",
+     "message": "あなたは……"}
+    ,{"name": "クリスティーナ",
+     "message": "ベルナ？ベルナデット？"}
+    ,{"name": "ベルナデット",
+     "message": "……ここで私のことを知っている人と会えるなんて、嬉しいですね。"}
+    ,{"name": "クリスティーナ",
+     "message": "それはもちろん！あなたは――"}
+    ,{"name": "ベルナデット",
+     "message": "迷い込んできたようには見えませんが、帰ってください。"}
+    ,{"name": "クリスティーナ",
+     "message": "えっと……"}
+    ,{"name": "イブリン",
+     "message": "周りの敵を片付けたのはあなた？"}
+    ,{"name": "ベルナデット",
+     "message": "<span class='miniyure-y'><span class='miniyure-x'>なにも申し上げることはありません。</span></span>"}
+    ,{"name": "イブリン",
+     "message": "……"}
+    ,{"command": "clear","stop":0}
+    ,{"command": "scene",
+     "image": "メイン7-2-1",
+     "stop":0}
+    ,{"name": "ベルナデット",
+     "message": "<span class='miniyure-y'><span class='miniyure-x' style='color:red;'>ここは貴方たちが調べるべき所ではありません。</span></span>"}
+    ,{"command": "scene",
+     "image": "メイン7-2-2",
+     "stop":0}
+    ,{"name": "ベルナデット",
+     "message": "<span class='miniyure-y'><span class='miniyure-x' style='color:red;'>帰ってください。</span></span>"}
+    ,{"command": "scene",
+     "image": "","stop":0}
+    ,{"name": "クリスティーナ",
+     "message": "でも……"}
+    ,{"command": "scene",
+     "image": "メイン7-2-1",
+     "stop":0}
+    ,{"name": "ベルナデット",
+     "message": "もう一度言います。<span class='miniyure-y'><span class='miniyure-x' style='color:red;'>帰ってください。</span></span>"}
+    ,{"command": "scene",
+     "image": "","stop":0}
+    ,{"name": "イブリン",
+     "message": "…………"}
+    ,{"name": "クリスティーナ",
+     "message": "…………"}
+    ,{"name": "ベルナデット",
+     "message": "…………"}
+    ,{"name": "イブリン",
+     "message": "どうしよう？"}
+    ,{"name": "クリスティーナ",
+     "message": "どうしようって、あたしは諦めが悪い人だから。"}
+    ,{"name": "レベリカ",
+     "message": "よく言った、協力するよ。"}
+    ,{"name": "クリスティーナ",
+     "message": "というわけだから……たとえ、君でもそこをどいてもらうよ。"}
+    ,{"name": "イブリン",
+     "message": "雇い主がこう言ってるの、残念だわ。"}
+    ,{"name": "ベルナデット",
+     "message": "……そうですか。"}
+    ,{"name": "ベルナデット",
+     "message": "<span class='miniyure-y'><span class='miniyure-x' style='color:red;'>では、まずは私の屍を越えて行ってください。</span></span>"}
    ]
   }
  }

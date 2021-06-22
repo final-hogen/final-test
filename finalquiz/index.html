@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>ファイナルクイズ</title>
+    <link rel="shortcut icon" type="image/png" href="サイトアイコン.PNG">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="style.css" />
+    <script src="finalajax.js"></script>
+    <script>var globalQuizData = null;</script>
+  </head>
+  <body>
+    <div id="wrapper" style="background-image:url('ノーヴァ背景.JPG');">
+    <div id="conteiner">
+      <div id="content_area"></div>
+    <!-- フッター -->
+    <br/><br/>
+    <div id="footer">
+      <p>created by ほげん(hogen_feh@twitter.com)</p>
+      <p><a href="https://game.bilibili.co.jp/finalgear/">©ファイナルギア</a>　　<a href="https://game.bilibili.co.jp/">©bilibili</a></p>
+    </div>
+    <script>
+      var content_area = document.getElementById("content_area");
+      class MyFinalAjax extends FinalAjax{
+        onLoadPage(loadData, params){
+          super.onLoadPage(loadData, params);
+        }
+        loadQuizJson(fileName){
+          this.ajaxLoad(fileName,null,'onLoadQuizJson',null)
+        }
+        onLoadQuizJson(data,param){
+          globalQuizData = data;
+          this.loadPage('ストーリー読む.html');
+        }
+      };
+      var ajaxLoader = new MyFinalAjax(content_area);
+      ajaxLoader.loadPage('ストーリー選択.html');
+    </script>
+    </div></div>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+<div id ="taku4">
+  <div class="quizimage">
+    <div class="resttimearea">
+      <span>残り時間</span><br/>
+      <span id="resttime"> </span>
+    </div>
+    <img id="quizimage" src=""/>
+  </div>
+  <p id="question"></p>
+  <table class="select4icon"><tbody>
+    <tr>
+      <td>
+        <div class="selectButton" onclick="window.finalQuiz.select(event)"><div>
+          <img name="icon" src=""/>
+          <span name="string"></span>
+        </div></div>
+      </td>
+      <td>
+        <div class="selectButton" onclick="window.finalQuiz.select(event)"><div>
+          <img name="icon" src=""/>
+          <span name="string"></span>
+        </div></div>
+      </td>
+      <td>
+        <div class="selectButton" onclick="window.finalQuiz.select(event)"><div>
+          <img name="icon" src=""/>
+          <span name="string"></span>
+        </div></div>
+      </td>
+      <td>
+        <div class="selectButton" onclick="window.finalQuiz.select(event)"><div>
+          <img name="icon" src=""/>
+          <span name="string"></span>
+        </div></div>
+      </td>
+    </tr>
+  </tbody></table>
+  <script>
+    window.finalQuiz = new Taku4QuizIcon(window.myQuiz);
+    finalQuiz.setQuizData();
+  </script>
+</div>

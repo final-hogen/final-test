@@ -6,13 +6,65 @@
     <link rel="shortcut icon" type="image/png" href="サイトアイコン.PNG">
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link rel="stylesheet" href="style.css" />
+    <script src="finalanimation.js"></script>
     <script src="finalajax.js"></script>
+    <script src="finalquiz.js"></script>
     <script>var globalQuizData = null;</script>
   </head>
   <body>
-    <div id="wrapper" style="background-image:url('ノーヴァ背景.JPG');">
+    <div id="wrapper">
     <div id="conteiner">
-      <div id="content_area"></div>
+      <div id="logo_area">
+        <img class="logo_image" src="クイズロゴ.png" width="512" height="209" style="transform: translate(-100%, 0px);opacity: 0;" onloadstyle="transform:translate(0px, 0px);opacity: 1;"/>
+        <p>これはファイナルギアのクイズです。時間制限があり、正解を選択するタイプとドラッグで並べ替える問題があります。</p>
+      </div>
+      <div style="height:40px;"></div>
+      <div id="quizarea">
+        <div id="content_area"></div>
+        <div id="result_panel" result="">
+          <div name="success">
+            <span>✓</span><span>あたり</span>
+          </div>
+          <div name="fail">
+           <span>×</span><span>はずれ</span>
+          </div>
+        </div>
+        <div id="lockimage" class="lockimage" style="animation-name: lockfirst;" onclick="event.stopPropagation();lockImageClick(event);">
+            <img src="読み込みレディ.jpg" style="display:none"/>
+            <img src="読み込みロック.jpg" style="display:none"/>
+        </div>
+        <div id="startimage">
+          <div>
+            <img src="かっこいいイブリン.PNG" style="transform: translate(-300%, 0px);opacity: 0.0;" onloadstyle="animation-name: pyonpyon;
+        "/>
+            <span>タップで開始</span>
+          </div>
+        </div>
+        <div id="timeupimage">
+          <div>
+            <img src="こたつイブリン.PNG"/>
+            <div><span>タイムアップ！</span></div>
+          </div>
+        </div>
+        <div id="allquiz_result" class="nodisplay" onclick="event.stopPropagation();resultClick(event);">
+          <div>
+            <div><span>今回の成績は</span></div>
+            <div id="allquizresult_template" class="result_ivelin" result="">
+              <div name="success">
+                <div><img src="成功イブリン.PNG"/></div>
+                <div><span>✓</span></div>
+              </div>
+              <div name="fail">
+                <div><img src="失敗イブリン.PNG"/></div>
+                <div><span>×</span></div>
+              </div>
+            </div>
+            <div id="ivelin_area"></div>
+            <div class="youare"><span>あなたは・・・</span></div>
+            <div class="trophy_name"><span id="trophy_name"> </span></div>
+          </div>
+        </div>
+      </div>
     <!-- フッター -->
     <br/><br/>
     <div id="footer">
@@ -21,7 +73,7 @@
     </div>
     <script>
       var content_area = document.getElementById("content_area");
-      class MyFinalAjax extends FinalAjax{
+      class MyFinalAjax extends FinalQuizLoader{
         onLoadPage(loadData, params){
           super.onLoadPage(loadData, params);
         }
@@ -29,12 +81,43 @@
           this.ajaxLoad(fileName,null,'onLoadQuizJson',null)
         }
         onLoadQuizJson(data,param){
-          globalQuizData = data;
-          this.loadPage('ストーリー読む.html');
+          myQuiz.setAllQuiz(data);
+          this.loadQuiz();
+        }
+        nextQuiz(){
+          myQuiz.nextQuiz();
+          this.loadQuiz();
+        }
+        loadQuiz(quizData){
+          if(!quizData)quizData = myQuiz.getCurrentQuiz();
+          this.loadPage(quizData.type.trim()+'.html');
         }
       };
+      window.myQuiz = new FinalQuiz();
       var ajaxLoader = new MyFinalAjax(content_area);
-      ajaxLoader.loadPage('ストーリー選択.html');
+      var finalAnimater = new FinalAnimation();
+      var finaResult = new FinalQuizResult(window.myQuiz);
+      ajaxLoader.loadQuizJson('クイズ.json');
+      finalAnimater.actionCSS(null);
+      function lockImageClick(event){
+        if(event.target.style.animationName!='lockwait')return;
+        var startimage = document.getElementById('startimage');
+        if(startimage)startimage.className ='nodisplay';
+        finalAnimater.scrollToID('quizarea');
+        window.finalQuiz.quizLockup();
+      }
+      function nextQuiz(){
+        if(window.myQuiz.isLastQuiz()){
+          finaResult.show();
+          window.myQuiz.resetQuiz();
+          ajaxLoader.loadQuiz();
+        }else{
+          ajaxLoader.nextQuiz()
+        };
+      }
+      function resultClick(event){
+        finaResult.close();
+      }
     </script>
     </div></div>
   </body>

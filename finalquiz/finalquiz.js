@@ -206,6 +206,18 @@ class FinalQuiz{
     return result.padEnd(this.allQuiz.length,'0');
   }
   /**
+   * クイズの制覇率(0～1)
+   */
+  getQuizSuccessRate(){
+    const log = this.getQuizSuccessLog();
+    if(log.length<=0)return 0;
+    var successCount = 0;
+    for(var i=0;i<log.length;++i){
+      if(log.charAt(i)!='0')++successCount;
+    }
+    return successCount/log.length;
+  }
+  /**
    * クイズの正解保存
    * @param {*} number 
    */
@@ -246,7 +258,6 @@ class FinalQuizEditor{
     this.monitorImages = [];
     this.timerID = null;
     this.questionStringTag = document.getElementById("question");
-    this.selectButtonTags = this.getElementsByXPath(".//*[@class='selectButton']");
     this.startMonitorImages(this.contentAreaTag);
   }
   /**
@@ -387,13 +398,21 @@ class FinalQuizEditor{
 
     var answerString = this.getAnswerString(event.target);
     var success = (answerString==this.answerString);
+    this.finish(success,event.target);
+  }
+  /**
+   * 完了処理
+   * @param {成功か} isSuccess 
+   * @param {成功失敗表示場所} displayTarget 
+   */
+  finish(isSuccess,displayTarget){
     this.quizEnded = true;
     this.stopTimer();
-    if(success){
-      this.actionResult('success',event.target);
+    if(isSuccess){
+      this.actionResult('success',displayTarget);
       this.quiz.quizSuccess(this.quiz.getCurrentQuizNumber());
     }else{
-      this.actionResult('fail',event.target);
+      this.actionResult('fail',displayTarget);
       this.quiz.quizFail(this.quiz.getCurrentQuizNumber());
     }
     var that = this;
@@ -470,6 +489,7 @@ class FinalQuizEditor{
    */
   getAnswerString(target){
     var stringTag = this.getElementsByXPath('.//*[@name="string"]',target)[0];
+    if(!stringTag)return null;
     return stringTag.innerHTML;
   }
 }
@@ -479,46 +499,127 @@ class FinalQuizEditor{
 class FinalDragQuiz extends FinalQuizEditor{
   constructor(quizClass) {
     super(quizClass);
+    this.listenerFunctions = {};
     this.dragged = null;
-    this.setDragEvents();
+    this.quizMaxTime = 30.0;
+    this.dragItemTags = this.getElementsByXPath(".//*[@class='dragitem']");
+    this.dropLabelTags = this.getElementsByXPath(".//*[@name='droplabel']");
+    this.dropTargetTags = this.getElementsByXPath(".//*[@name='droptarget']");
+    
+    var that = this;
+    this.listenerFunctions["drag"] = function(event) {};
+    this.listenerFunctions["dragstart"] = function(event) {that.dragStart(event)};
+    this.listenerFunctions["dragend"] = function(event) {that.dragEnd(event)};
+    this.listenerFunctions["dragover"] = function(event) {that.dragOver(event)};
+    this.listenerFunctions["dragenter"] = function(event) {that.dragEnter(event)};
+    this.listenerFunctions["dragleave"] = function(event) {that.dragLeave(event)};
+    this.listenerFunctions["drop"] = function(event) {that.dragDrop(event)};
+    this.setDragEvents(false);
   }
   /**
    * ドラッグイベントのリスナー設定
    */
-  setDragEvents(){
-    var that = this;
-    document.addEventListener("drag", function(event) {}, false);
-    document.addEventListener("dragstart", function(event) {
-      that.dragged = event.target;
-      event.target.style.opacity = .5;
-    }, false);
-    
-    document.addEventListener("dragend", function(event) {
-      event.target.style.opacity = "";
-    }, false);
-    document.addEventListener("dragover", function(event) {
-      event.preventDefault();
-    }, false);
-    document.addEventListener("dragenter", function(event) {
-      if (event.target.className == "dropzone") {
-        event.target.style.background = "purple";
-      }
-    
-    }, false);
-    document.addEventListener("dragleave", function(event) {
-      if (event.target.className == "dropzone") {
-        event.target.style.background = "";
-      }
-    }, false);
-    
-    document.addEventListener("drop", function(event) {
-      event.preventDefault();
-      if (event.target.className == "dropzone") {
-        event.target.style.background = "";
-        dragged.parentNode.removeChild( that.dragged );
-        event.target.appendChild( that.dragged );
-      }
-    }, false);
+  setDragEvents(isRemove){
+    var listener = document.addEventListener;
+    if(isRemove)listener = document.removeEventListener;
+    for (const [key, value] of Object.entries(this.listenerFunctions)) {
+      listener(key,value,false);
+    }
+  }
+  dragStart(event){
+    this.dragged = event.target;
+    event.target.style.opacity = .5;
+  }
+  dragEnd(event){
+    event.target.style.opacity = "";
+  }
+  dragOver(event){
+    event.preventDefault();
+  }
+  /**
+   * 親にさかのぼってドロップターゲットを探す
+   * @param {最初のターゲット} targetTag 
+   */
+  checkDropTarget(targetTag){
+    if(targetTag.getAttribute('name') == "droptarget")return targetTag;
+    if(targetTag.className=='dragitem')return targetTag.parentNode;
+    return null;
+  }
+  dragEnter(event){
+    if(!this.dragged)return;
+    var target = this.checkDropTarget(event.target);
+    if (target) {target.className = 'draghover';}
+  }
+  dragLeave(event){
+    var target = this.checkDropTarget(event.target);
+    if (target) {target.className = "";}
+  }
+  dragDrop(event){
+    event.preventDefault();
+    if(!this.dragged)return;
+    var target = this.checkDropTarget(event.target);
+    if (target) {
+      this.dragLeave(event);
+      this.swapChild(this.dragged.parentNode,target);
+    }
+    this.dragged = null;
+  }
+  swapChild(parent1,parent2){
+    var chiled1 = parent1.firstElementChild;
+    var chiled2 = parent2.firstElementChild;
+    if(chiled1){
+      parent1.removeChild(chiled1);
+      parent2.appendChild(chiled1);
+    }
+    if(chiled2){
+      parent2.removeChild(chiled2);
+      parent1.appendChild(chiled2);
+    }
+  }
+  /**
+   * データセット
+   */
+  setQuizData(){
+    super.setQuizData();
+    const currentQuiz = this.currentQuiz;
+    const dragItemCount = this.dragItemTags.length;
+    var randomNumber = this.quiz.makeRandomNumbers(dragItemCount);
+    for( var i=0;i<dragItemCount; ++i){
+      this.setDragItemData(currentQuiz,i,randomNumber[i]);
+    }
+    const dropItemCount = this.dropLabelTags.length;
+    randomNumber = this.quiz.makeRandomNumbers(dropItemCount);
+    for(i=0;i<dropItemCount;++i){
+      this.setDropLabel(currentQuiz,i,randomNumber[i]);
+    }
+  }
+  /**
+   * 回答ボタンセット
+   * @param {クイズデータ} quiz 
+   * @param {0～3} number 
+   * @param {0～3} targetNumber 
+   */
+  setDragItemData(quiz,number,targetNumber){
+    var tag = this.dragItemTags[targetNumber];
+    const data = quiz.answers[number];
+    this.setAnswerString(tag,data);
+    this.setAnswerIcon(tag,data);
+  }
+  /**
+   * ラベルボタンセット
+   * @param {クイズデータ} quiz 
+   * @param {0～3} number 
+   * @param {0～3} targetNumber 
+   */
+  setDropLabel(quiz,number,targetNumber){
+  }
+  finish(isSuccess,displayTarget){
+    super.finish(isSuccess,displayTarget);
+    this.setDragEvents(true);
+  }
+  quizTimeup(){
+    super.quizTimeup();
+    this.setDragEvents(true);
   }
 }
 /**
@@ -528,6 +629,7 @@ class Taku4Quiz extends FinalQuizEditor{
   constructor(quizClass){
     super(quizClass);
     this.imageTag = document.getElementById("quizimage");
+    this.selectButtonTags = this.getElementsByXPath(".//*[@class='selectButton']");
   }
   /**
    * データセット
@@ -553,7 +655,6 @@ class Taku4Quiz extends FinalQuizEditor{
     this.setAnswerString(tag,data);
   }
 }
-
 /**
  * アイコン付き四択クイズ
  */
@@ -567,5 +668,52 @@ class Taku4QuizIcon extends Taku4Quiz{
   setAnswerButtonData(quiz,number,targetNumber){
     super.setAnswerButtonData(quiz,number,targetNumber);
     this.setAnswerIcon(this.selectButtonTags[targetNumber],quiz.answers[number]);
+  }
+}
+
+/**
+ * 4個並べ替えクイズ
+ */
+class Sort4Quiz extends FinalDragQuiz{
+  constructor(quizClass){
+    super(quizClass);
+  }
+  quizTimeup(){return;}
+  /**
+   * ラベルボタンセット
+   * @param {クイズデータ} quiz 
+   * @param {0～3} number 
+   * @param {0～3} targetNumber 
+   */
+  setDropLabel(quiz,number,targetNumber){
+    var tag = this.dropLabelTags[number];
+    if(!tag)return;
+    const data = quiz.tags[number];
+    tag.innerHTML = data;
+  }
+  checkAnswer(){
+    var checkStrings = [];
+    this.dropTargetTags.forEach(tag => {
+      checkStrings.push(this.getAnswerString(tag));
+    });
+    if(this.currentQuiz.answers.length!=checkStrings,length)return false;
+    for(var i=0;i<checkStrings.length;++i){
+      if(checkStrings[i]!=this.currentQuiz.answers[i].string)return false;
+    }
+    return true;
+  }
+  done(event){
+    if(this.quizEnded)return;
+
+    var success = this.checkAnswer();
+    var displayArea = document.getElementById('sorttarget')
+    this.finish(success,displayArea);
+  }
+  quizTimeup(){
+    if(this.quizEnded)return;
+    var success = this.checkAnswer();
+    if(success)return this.done(null);
+    this.setDragEvents(true);
+    super.quizTimeup();
   }
 }

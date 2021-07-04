@@ -18,7 +18,7 @@
         <img class="logo_image" src="クイズロゴ.png" width="512" height="209" style="transform: translate(-100%, 0px);opacity: 0;" onloadstyle="transform:translate(0px, 0px);opacity: 1;"/>
         <p>これはファイナルギアのクイズです。時間制限があり、正解を選択するタイプとドラッグで並べ替える問題があります。</p>
       </div>
-      <div style="height:40px;"></div>
+      <div style="height:40px;text-align:right;"><div>制覇率<span style="color:red;" id="completerate">  0</span>％</div></div>
       <div id="quizarea">
         <div id="content_area"></div>
         <div id="result_panel" result="">
@@ -89,6 +89,7 @@
           this.loadQuiz();
         }
         loadQuiz(quizData){
+          updateComplete();
           if(!quizData)quizData = myQuiz.getCurrentQuiz();
           this.loadPage(quizData.type.trim()+'.html');
         }
@@ -117,6 +118,13 @@
       }
       function resultClick(event){
         finaResult.close();
+        if(startimage)startimage.className ='';
+      }
+      function updateComplete(){
+        var complete = document.getElementById('completerate');
+        const rate = myQuiz.getQuizSuccessRate();
+        var showString = String(Math.floor(rate*100)).padStart(3,' ');
+        complete.innerText = showString;
       }
     </script>
     </div></div>

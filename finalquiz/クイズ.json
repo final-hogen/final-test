@@ -113,10 +113,10 @@
    "question":"存在しない専用機機体は？",
    "image":"問題画像/専用機図鑑.jpg",
    "answers":[
-     {"string":"飛影蝙蝠","icon":"飛影蝙蝠.jpg"},
-     {"string":"巨頭鯨","icon":"巨頭鯨.jpg"},
-     {"string":"説得者","icon":"説得者.jpg"},
-     {"string":"異端審問","icon":"異端審問.jpg"}
+     {"string":"飛影蝙蝠","icon":"問題画像/飛影蝙蝠.jpg"},
+     {"string":"巨頭鯨","icon":"問題画像/巨頭鯨.jpg"},
+     {"string":"説得者","icon":"問題画像/説得者.jpg"},
+     {"string":"異端審問","icon":"問題画像/異端審問.jpg"}
    ]
  }
  ,{"type":"taku4",
@@ -503,30 +503,30 @@
    "question":"必要ポイントが高い順に並べてください。",
    "tags":["高い","＞","＞","安い"],
    "answers":[
-     {"string":"フレンドサプライズボックス","icon":"フレンドサプライズボックス.jpg"},
-     {"string":"フレンドコイン箱","icon":"フレンドコイン箱.jpg"},
-     {"string":"フレンドパーツ箱","icon":"フレンドパーツ箱.jpg"},
-     {"string":"フレンドベースカー補給箱","icon":"フレンドベースカー補給箱.jpg"}
+     {"string":"フレンドサプライズボックス","icon":"問題画像/フレンドサプライズボックス.jpg"},
+     {"string":"フレンドコイン箱","icon":"問題画像/フレンドコイン箱.jpg"},
+     {"string":"フレンドパーツ箱","icon":"問題画像/フレンドパーツ箱.jpg"},
+     {"string":"フレンドベースカー補給箱","icon":"問題画像/フレンドベースカー補給箱.jpg"}
    ]
  }
  ,{"type":"sort4",
    "question":"称号をランクが高い順に並べてください。",
    "tags":["高い","＞","＞","低い"],
    "answers":[
-     {"string":"奮励の証","icon":"奮励の証.jpg"},
-     {"string":"努力の証","icon":"努力の証.jpg"},
-     {"string":"忍耐の証","icon":"忍耐の証.jpg"},
-     {"string":"参加の証","icon":"参加の証.jpg"}
+     {"string":"奮励の証","icon":"問題画像/称号奮励の証.jpg"},
+     {"string":"努力の証","icon":"問題画像/称号努力の証.jpg"},
+     {"string":"忍耐の証","icon":"問題画像/称号忍耐の証.jpg"},
+     {"string":"参加の証","icon":"問題画像/称号参加の証.jpg"}
    ]
  }
  ,{"type":"sort4",
    "question":"必要試練コインが少ない順に並べてください。(1個の値段)",
    "tags":["少ない","＜","＜","多い"],
    "answers":[
-     {"string":"スーパー擬態合金","icon":"スーパー擬態合金.jpg"},
-     {"string":"NR動力装置","icon":"NR動力装置.jpg"},
-     {"string":"OSUAモジュール","icon":"OSUAモジュール.jpg"},
-     {"string":"特級昇進証","icon":"特級昇進証.jpg"}
+     {"string":"スーパー擬態合金","icon":"問題画像/スーパー擬態合金.jpg"},
+     {"string":"NR動力装置","icon":"問題画像/NR動力装置.jpg"},
+     {"string":"OSUAモジュール","icon":"問題画像/OSUAモジュール.jpg"},
+     {"string":"特級昇進証","icon":"問題画像/特級昇進証.jpg"}
    ]
  }
  ,{"type":"sort4",
@@ -543,10 +543,10 @@
    "question":"イブリンストーリー順に並び変えてください。",
    "tags":["先","→","→","後"],
    "answers":[
-     {"string":"ロスト・ページ","icon":"ロスト・ページ.jpg"},
-     {"string":"超我","icon":"超我.jpg"},
-     {"string":"記憶の本棚","icon":"記憶の本棚.jpg"},
-     {"string":"本我(上)","icon":"本我(上).jpg"}
+     {"string":"ロスト・ページ","icon":"問題画像/イブリンストーリー2.jpg"},
+     {"string":"超我","icon":"問題画像/イブリンストーリー3.jpg"},
+     {"string":"記憶の本棚","icon":"問題画像/イブリンストーリー4.jpg"},
+     {"string":"本我","icon":"問題画像/イブリンストーリー5.jpg"}
    ]
  }
  ,{"type":"sort4",

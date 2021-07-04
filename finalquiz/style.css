@@ -222,6 +222,47 @@ body {
   height: 150px;
 }
 
+.drag4icon{
+  width: 100%;
+  height: 150px;
+  text-align: center;
+  display: inline-table;
+}
+
+.drag4icon td{
+  width: 25%;
+  height: 80px;
+}
+
+.classify2{
+  width: 95%;
+  text-align: center;
+  display: inline-table;
+  border-radius: 20px;
+  border: 2px #cc1313 solid;
+  background-color: #ffffffb4;
+}
+
+.classify2 th, .classify2 td {
+  width: 50%;
+}
+
+.classify2>tbody>tr>th:not(:nth-child(1)), .classify2>tbody>tr>td:not(:nth-child(1)) {
+  border-left: 1px #cc1313 dotted;
+}
+
+.classify2>tbody>tr>td{
+  height: 400px;
+}
+
+.classify2 table{
+  width: 100%;
+}
+
+.classify2 table td{
+  height: 130px;
+}
+
 .dragitem{
   cursor:grab;
   width: 100px;

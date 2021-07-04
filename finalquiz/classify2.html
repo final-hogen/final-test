@@ -1,0 +1,81 @@
+<div class="vcenter">
+  <div style="width:100%;text-align: center;">
+    <div style="text-align: right;">
+      <span>残り時間</span><span id="resttime"> </span>
+    </div>
+    <table id="classify2target" class="classify2"><tbody>
+      <tr>
+        <th><div name="droplabel"></div></th>
+        <th><div name="droplabel"></div></th>
+      </tr>
+      <tr>
+        <td><table><tbody>
+          <tr>
+            <td><div name="droptarget">
+                    <div class="dragitem" draggable="true" ondragstart="event.dataTransfer.setData('text/plain',null)"><div>
+                      <img name="icon" src=""/>
+                      <div><span name="string"></span></div>
+                    </div></div>
+            </div></td>
+            <td><div name="droptarget">
+              <div class="dragitem" draggable="true" ondragstart="event.dataTransfer.setData('text/plain',null)"><div>
+                <img name="icon" src=""/>
+                <div><span name="string"></span></div>
+              </div></div>
+            </div></td>
+          </tr>
+          <tr>
+            <td><div name="droptarget">
+                <div class="dragitem" draggable="true" ondragstart="event.dataTransfer.setData('text/plain',null)"><div>
+                  <img name="icon" src=""/>
+                  <div><span name="string"></span></div>
+                </div></div>
+            </div></td>
+            <td><div name="droptarget"></div></td>
+          </tr>
+          <tr>
+            <td><div name="droptarget"></div></td>
+            <td><div name="droptarget"></div></td>
+          </tr>
+        </tbody></table></td>
+        <td><table><tbody>
+          <tr>
+            <td><div name="droptarget">
+                    <div class="dragitem" draggable="true" ondragstart="event.dataTransfer.setData('text/plain',null)"><div>
+                      <img name="icon" src=""/>
+                      <div><span name="string"></span></div>
+                    </div></div>
+            </div></td>
+            <td><div name="droptarget">
+              <div class="dragitem" draggable="true" ondragstart="event.dataTransfer.setData('text/plain',null)"><div>
+                <img name="icon" src=""/>
+                <div><span name="string"></span></div>
+              </div></div>
+            </div></td>
+          </tr>
+          <tr>
+            <td><div name="droptarget">
+                <div class="dragitem" draggable="true" ondragstart="event.dataTransfer.setData('text/plain',null)"><div>
+                  <img name="icon" src=""/>
+                  <div><span name="string"></span></div>
+                </div></div>
+            </div></td>
+            <td><div name="droptarget"></div></td>
+          </tr>
+          <tr>
+            <td><div name="droptarget"></div></td>
+            <td><div name="droptarget"></div></td>
+          </tr>
+        </tbody></table></td>
+      </tr>
+    </tbody></table>
+  <p id="question"></p>
+  <div style="text-align: right;">
+    <div class="finishbutton" onclick="window.finalQuiz.done(event)"><span>完了</span></div>
+  </div>
+</div>
+  <script>
+    window.finalQuiz = new Classify2Quiz(window.myQuiz);
+    finalQuiz.setQuizData();
+  </script>
+</div>

@@ -247,7 +247,8 @@ class FinalQuizEditor{
     this.quiz = quizClass;
     this.quizMaxTime = 15.0;
     this.currentQuiz = quizClass.getCurrentQuiz();
-    this.answerString = this.currentQuiz.answers[0].string;
+    this.answerString = null;
+    if(Array.isArray(this.currentQuiz.answers))this.answerString = this.currentQuiz.answers[0].string;
     this.quizEnded = false;
     this.resultPanelTag = document.getElementById('result_panel');
     this.contentAreaTag = document.getElementById('content_area');
@@ -678,7 +679,6 @@ class Sort4Quiz extends FinalDragQuiz{
   constructor(quizClass){
     super(quizClass);
   }
-  quizTimeup(){return;}
   /**
    * ラベルボタンセット
    * @param {クイズデータ} quiz 
@@ -707,6 +707,72 @@ class Sort4Quiz extends FinalDragQuiz{
 
     var success = this.checkAnswer();
     var displayArea = document.getElementById('sorttarget')
+    this.finish(success,displayArea);
+  }
+  quizTimeup(){
+    if(this.quizEnded)return;
+    var success = this.checkAnswer();
+    if(success)return this.done(null);
+    this.setDragEvents(true);
+    super.quizTimeup();
+  }
+}
+
+/**
+ * 2個分類クイズ
+ */
+class Classify2Quiz extends FinalDragQuiz{
+  constructor(quizClass){
+    super(quizClass);
+    this.allAnswers = [];
+    for(const key in this.currentQuiz.answers){
+      this.currentQuiz.answers[key].forEach(value=>this.allAnswers.push(value));
+    }
+  }
+  quizTimeup(){return;}
+  setDragItemData(quiz,number,targetNumber){
+    var tag = this.dragItemTags[targetNumber];
+    const data = this.allAnswers[number];
+    this.setAnswerString(tag,data);
+    this.setAnswerIcon(tag,data);
+  }
+  setDropLabel(quiz,number,targetNumber){
+    var tag = this.dropLabelTags[number];
+    if(!tag)return;
+    const labels = Object.keys(quiz.answers);
+    const data = labels[number];
+    tag.innerHTML = data;
+  }
+  checkAnswer(){
+    var checkStrings = {};
+    const classKeys = Object.keys(this.currentQuiz.answers);
+    const classTd = this.getElementsByXPath(".//*[@id='classify2target']/tbody/tr/td",null);
+    for( var i=0;i<classTd.length;++i){
+      const tag = classTd[i];
+      const thName = classKeys[i];
+      const itemTags = this.getElementsByXPath(".//*[@class='dragitem']",tag);
+      var stringList = [];
+      itemTags.forEach(itemTag=>{stringList.push(this.getAnswerString(itemTag));});
+      checkStrings[thName] = stringList;
+    }
+    for (const key of classKeys ){
+      const answers = this.currentQuiz.answers[key];
+      var items = checkStrings[key];
+      if(!items)return false;
+      if(answers.length!=items.length)return false;
+      for(i=0;i<answers.length;++i){
+        const index = items.indexOf(answers[i].string);
+        if(index<0)return false;
+        items.splice(index,1);
+      }
+      if(items.length>0)return false;
+    };
+    return true;
+  }
+  done(event){
+    if(this.quizEnded)return;
+    var success = this.checkAnswer();
+    var displayArea = document.getElementById('classify2target')
     this.finish(success,displayArea);
   }
   quizTimeup(){

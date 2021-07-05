@@ -1,0 +1,65 @@
+<div class="vcenter">
+  <div class="combi3" style="width:100%;">
+    <div style="text-align: right;">
+      <span>残り時間</span><span id="resttime"> </span>
+    </div>
+    <div id="combi3target" style="display: flex;justify-content: space-evenly;">
+        <table class="combibox"><tbody>
+          <tr>
+            <th><div name="droplabel"></div></th>
+          </tr>
+          <tr>
+            <td><div name="droptarget"></div></td>
+          </tr>
+        </tbody></table>
+        <table class="combibox"><tbody>
+          <tr>
+            <th><div name="droplabel"></div></th>
+          </tr>
+          <tr>
+            <td><div name="droptarget"></div></td>
+          </tr>
+        </tbody></table>
+        <table class="combibox"><tbody>
+          <tr>
+            <th><div name="droplabel"></div></th>
+          </tr>
+          <tr>
+            <td><div name="droptarget"></div></td>
+          </tr>
+        </tbody></table>
+    </div>
+  <p id="question"></p>
+  <table class="drag4icon"><tbody>
+    <tr>
+      <td>
+        <div class="dragitem" draggable="true" ondragstart="event.dataTransfer.setData('text/plain',null)"><div>
+          <img name="icon" src=""/>
+          <div><span name="string"></span></div>
+        </div></div>
+      </td>
+      <td>
+        <div class="dragitem" draggable="true" ondragstart="event.dataTransfer.setData('text/plain',null)"><div>
+          <img name="icon" src=""/>
+          <div><span name="string"></span></div>
+        </div></div>
+      </td>
+      <td>
+        <div class="dragitem" draggable="true" ondragstart="event.dataTransfer.setData('text/plain',null)"><div>
+          <img name="icon" src=""/>
+          <div><span name="string"></span></div>
+        </div></div>
+      </td>
+      <td>
+      </td>
+    </tr>
+  </tbody></table>
+  <div style="text-align: right;">
+    <div class="finishbutton" onclick="window.finalQuiz.done(event)"><span>完了</span></div>
+  </div>
+</div>
+  <script>
+    window.finalQuiz = new Combi3Quiz(window.myQuiz);
+    finalQuiz.setQuizData();
+  </script>
+</div>

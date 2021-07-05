@@ -112,7 +112,6 @@ class FinalQuiz{
     if(qString){
       this.quizNumbers = qString.split(',');
     }
-    if(this.quizNumbers.length<=0)this.resetQuiz();
   }
   /**
    * クイズデータ設定
@@ -120,6 +119,7 @@ class FinalQuiz{
    */
   setAllQuiz(allQuiz){
     this.allQuiz = allQuiz;
+    if(this.quizNumbers.length<=0)this.resetQuiz();
   }
   /**
    * ランダム番号配列の作成
@@ -127,9 +127,13 @@ class FinalQuiz{
    */
   makeRandomNumbers(count){
     var allNumbers = new Array(count).fill(null).map((_, i) => i);
-    var j;
-    for(var i=allNumbers.length;allNumbers[j=0|Math.random()*i]=[allNumbers[--i],allNumbers[i]=allNumbers[j]][0],i;);
+    allNumbers = this.shuffleArray(allNumbers);
     return allNumbers;
+  }
+  shuffleArray(array){
+    var j;
+    for(var i=array.length;array[j=0|Math.random()*i]=[array[--i],array[i]=array[j]][0],i;);
+    return array;
   }
   /**
    * クイズ再設定
@@ -148,7 +152,7 @@ class FinalQuiz{
     var notClearNumbers = this.getNotClearQuizNumbers();
     var useQuizNumbers = [];
     const pickNotClear = Math.min(pickQuizCount/2,notClearNumbers.length);
-    for(var i;i<pickNotClear;++i){
+    for(var i=0;i<pickNotClear;++i){
       const QuizNumber = notClearNumbers.splice(Math.random()*notClearNumbers.length,1)[0];
       useQuizNumbers.push(QuizNumber);
       allQuizNumbers.splice(allQuizNumbers.indexOf(QuizNumber),1);
@@ -157,6 +161,7 @@ class FinalQuiz{
       const QuizNumber = allQuizNumbers.splice(Math.random()*allQuizNumbers.length,1)[0];
       useQuizNumbers.push(QuizNumber);
     }
+    useQuizNumbers = this.shuffleArray(useQuizNumbers);
     return useQuizNumbers;
   }
   /**
@@ -166,7 +171,7 @@ class FinalQuiz{
     var clears = this.getQuizSuccessLog().split('');
     var notClearNumbers = [];
     for(var i=0;i<clears.length;++i){
-      if(!clears[i])notClearNumbers.push(i);
+      if(clears[i]=='0')notClearNumbers.push(i);
     }
     return notClearNumbers;
   }
@@ -213,7 +218,7 @@ class FinalQuiz{
     if(log.length<=0)return 0;
     var successCount = 0;
     for(var i=0;i<log.length;++i){
-      if(log.charAt(i)!='0')++successCount;
+      if(log.charAt(i)=='1')++successCount;
     }
     return successCount/log.length;
   }
@@ -618,9 +623,15 @@ class FinalDragQuiz extends FinalQuizEditor{
     super.finish(isSuccess,displayTarget);
     this.setDragEvents(true);
   }
+  checkAnswer(){
+    return false;
+  }
   quizTimeup(){
-    super.quizTimeup();
+    if(this.quizEnded)return;
+    var success = this.checkAnswer();
+    if(success)return this.done(null);
     this.setDragEvents(true);
+    super.quizTimeup();
   }
 }
 /**
@@ -709,13 +720,6 @@ class Sort4Quiz extends FinalDragQuiz{
     var displayArea = document.getElementById('sorttarget')
     this.finish(success,displayArea);
   }
-  quizTimeup(){
-    if(this.quizEnded)return;
-    var success = this.checkAnswer();
-    if(success)return this.done(null);
-    this.setDragEvents(true);
-    super.quizTimeup();
-  }
 }
 
 /**
@@ -729,7 +733,6 @@ class Classify2Quiz extends FinalDragQuiz{
       this.currentQuiz.answers[key].forEach(value=>this.allAnswers.push(value));
     }
   }
-  quizTimeup(){return;}
   setDragItemData(quiz,number,targetNumber){
     var tag = this.dragItemTags[targetNumber];
     const data = this.allAnswers[number];
@@ -775,11 +778,178 @@ class Classify2Quiz extends FinalDragQuiz{
     var displayArea = document.getElementById('classify2target')
     this.finish(success,displayArea);
   }
-  quizTimeup(){
+}
+
+/**
+ * 3個分類クイズ
+ */
+class Combi3Quiz extends FinalDragQuiz{
+  constructor(quizClass){
+    super(quizClass);
+    this.quizMaxTime = 20.0;
+    this.combiTags = this.getElementsByXPath(".//*[@class='combibox']",null);
+    this.answerkeys = Object.keys(this.currentQuiz.answers);
+  }
+  setDragItemData(quiz,number,targetNumber){
+    var tag = this.dragItemTags[targetNumber];
+    const data = quiz.answers[this.answerkeys[number]];
+    this.setAnswerString(tag,data);
+    if(data.icon)this.setAnswerIcon(tag,data);
+  }
+  setDropLabel(quiz,number,targetNumber){
+    var tag = this.dropLabelTags[targetNumber];
+    if(!tag)return;
+    const data = this.answerkeys[number];
+    tag.innerHTML = data;
+  }
+  checkAnswer(){
+    var checkStrings = {};
+    for( var i=0;i<this.combiTags.length;++i){
+      const tag = this.combiTags[i];
+      const thTag = this.getElementsByXPath(".//*[@name='droplabel']",tag)[0];
+      const thName = thTag.innerHTML;
+      const itemTag = this.getElementsByXPath(".//*[@class='dragitem']",tag)[0];
+      if(!itemTag)return false;
+      checkStrings[thName] = this.getAnswerString(itemTag);
+    }
+    const answers = this.currentQuiz.answers;
+    for (const key in answers ){
+      if(answers[key].string!=checkStrings[key])return false;
+    };
+    return true;
+  }
+  done(event){
     if(this.quizEnded)return;
     var success = this.checkAnswer();
-    if(success)return this.done(null);
-    this.setDragEvents(true);
-    super.quizTimeup();
+    var displayArea = document.getElementById('combi3target')
+    this.finish(success,displayArea);
+  }
+}
+
+/**
+ * 場所当てクイズ
+ */
+class PlaceQuiz extends FinalQuizEditor{
+  constructor(quizClass){
+    super(quizClass);
+    this.imageTag = document.getElementById("placeimage");
+    this.pointTags = this.getElementsByXPath(".//*[@class='placepoint']",null);
+    this.answerString = this.makeString(this.currentQuiz.answers[0]);
+  }
+  makeString(answer){
+    return JSON.stringify(answer);
+  }
+  /**
+   * データセット
+   */
+  setQuizData(){
+    super.setQuizData();
+    const currentQuiz = this.currentQuiz;
+    this.imageTag.src = currentQuiz.image;
+    var randomNumber = this.quiz.makeRandomNumbers(currentQuiz.answers.length);
+    for( var i=0;i<currentQuiz.answers.length; ++i){
+      this.setAnswerButtonData(currentQuiz,i,randomNumber[i]);
+    }
+  }
+  /**
+   * 回答ボタンセット
+   * @param {クイズデータ} quiz 
+   * @param {0～3} number 
+   * @param {0～3} targetNumber 
+   */
+  setAnswerButtonData(quiz,number,targetNumber){
+    var tag = this.pointTags[targetNumber];
+    const data = quiz.answers[number];
+    var stringTag = this.getElementsByXPath('.//*[@name="string"]',tag)[0];
+    stringTag.innerHTML = this.makeString(data);
+    this.setPointOnImage(this.imageTag,tag,data.x,data.y);
+  }
+  /**
+   * ポイントを画像上の指定位置にセット
+   * @param {*} imageTag 
+   * @param {*} pointTag 
+   * @param {*} x 
+   * @param {*} y 
+   */
+  setPointOnImage(imageTag,pointTag,x,y){
+    const pointRect = pointTag.getClientRects()[0];
+    var left = x-pointRect.width/2;
+    var top = y-pointRect.height/2;
+    pointTag.style.left = left+"px";
+    pointTag.style.top = top+"px";
+  }
+}
+
+/**
+ * 画像当てクイズ
+ */
+class ImageQuiz extends Taku4QuizIcon{
+  constructor(quizClass){
+    super(quizClass);
+    this.actionClass = new FinalAnimation();
+    const styleString = this.imageTag.getAttribute('style');
+    const newStyle = this.makeRandomString(styleString);
+    if(newStyle)this.imageTag.setAttribute('style',newStyle);
+  }
+  /**
+   * []の範囲でランダム値に置き換え ex: transform: scale(5) translate([-159～160]px, [-160～160]px); 
+   * @param {*} source 
+   */
+  makeRandomString(source){
+    if(!source)return source;
+    const match = /\[([^\]]*)\]/g;
+    var result = [];
+    var m;
+    while ((m = match.exec(source)) != null) {
+      result.push(m[1]);
+    }
+    var newString = source;
+    for(var key of result){
+      var splits = key.split('～');
+      const min = parseFloat(splits[0]);
+      const max = parseFloat(splits[1]);
+      const randValue = min+(max-min)*Math.random();
+      newString = newString.replace('['+key+']',randValue.toFixed(2));
+    }
+    return newString;
+  }
+  quizStart(){
+    super.quizStart();
+    this.actionClass.actionCSS(this.imageTag.parentNode);
+  }
+}
+
+/**
+ * 拡大画像当てクイズ
+ */
+class ImageZoomQuiz extends ImageQuiz{
+}
+/**
+ * フィルタ画像当てクイズ
+ */
+class ImageFilterQuiz extends ImageQuiz{
+}
+/**
+ * 歪み画像当てクイズ
+ */
+class ImageSkewQuiz extends ImageQuiz{
+}
+/**
+ * パネル表示画像当てクイズ
+ */
+class ImagePanelQuiz extends ImageQuiz{
+  constructor(quizClass){
+    super(quizClass);
+    var imageAreaTag = document.getElementById('quizimage').parentNode;
+    this.panelTags = this.getElementsByXPath('.//*[@class="hidepanel"]//td',imageAreaTag);
+  }
+  checkTime(time){
+    super.checkTime(time);
+    var panelCount = Math.floor(this.quizMaxTime-time)+1;
+    while(panelCount>=0&&this.panelTags.length>panelCount){
+      const randNumber = Math.floor(this.panelTags.length*Math.random());
+      var deletePanelTag = this.panelTags.splice(randNumber,1)[0];
+      deletePanelTag.style.backgroundColor = 'initial';
+    }
   }
 }

@@ -757,73 +757,73 @@
  ,{"type":"combi3",
    "question":"砂漠の嵐の型名称と機体を組み合わせてください。",
    "answers":{
-     "水流":{"icon":"問題画像/砂漠の嵐軽.jpg"},
-     "沼沢":{"icon":"問題画像/砂漠の嵐中.jpg"},
-     "嵐":{"icon":"問題画像/砂漠の嵐重.jpg"}
+     "水流":{"string":"砂漠の嵐軽","icon":"問題画像/砂漠の嵐軽.jpg"},
+     "沼沢":{"string":"砂漠の嵐中","icon":"問題画像/砂漠の嵐中.jpg"},
+     "嵐":{"string":"砂漠の嵐重","icon":"問題画像/砂漠の嵐重.jpg"}
    }
  }
  ,{"type":"combi3",
    "question":"蒼鷹の型名称と機体を組み合わせてください。",
    "answers":{
-     "LV4":{"icon":"問題画像/蒼鷹軽.jpg"},
-     "LV3":{"icon":"問題画像/蒼鷹中.jpg"},
-     "LV2":{"icon":"問題画像/蒼鷹重.jpg"}
+     "LV4":{"string":"蒼鷹軽","icon":"問題画像/蒼鷹軽.jpg"},
+     "LV3":{"string":"蒼鷹中","icon":"問題画像/蒼鷹中.jpg"},
+     "LV2":{"string":"蒼鷹重","icon":"問題画像/蒼鷹重.jpg"}
    }
  }
  ,{"type":"combi3",
    "question":"審判者の型名称と機体を組み合わせてください。",
    "answers":{
-     "エリート":{"icon":"問題画像/審判者軽.jpg"},
-     "ナイト":{"icon":"問題画像/審判者中.jpg"},
-     "ビショップ":{"icon":"問題画像/審判者重.jpg"}
+     "エリート":{"string":"/審判者軽","icon":"問題画像/審判者軽.jpg"},
+     "ナイト":{"string":"/審判者中","icon":"問題画像/審判者中.jpg"},
+     "ビショップ":{"string":"/審判者重","icon":"問題画像/審判者重.jpg"}
    }
  }
  ,{"type":"combi3",
    "question":"タイシアのスキルを正しく組み合わせてください。",
    "answers":{
-     "自律":{"icon":"問題画像/タイシア自律.jpg"},
-     "心眼":{"icon":"問題画像/タイシア心眼.jpg"},
-     "一心不乱":{"icon":"問題画像/タイシア一心不乱.jpg"}
+     "自律":{"string":"タイシア自律","icon":"問題画像/タイシア自律.jpg"},
+     "心眼":{"string":"タイシア心眼","icon":"問題画像/タイシア心眼.jpg"},
+     "一心不乱":{"string":"タイシア一心不乱","icon":"問題画像/タイシア一心不乱.jpg"}
    }
  }
  ,{"type":"combi3",
    "question":"ノーヴァのスキルを正しく組み合わせてください。",
    "answers":{
-     "分裂？":{"icon":"問題画像/ノーヴァ分裂？.jpg"},
-     "未知生物？":{"icon":"問題画像/ノーヴァ未知生物？.jpg"},
-     "触り禁止？":{"icon":"問題画像/ノーヴァ触り禁止？.jpg"}
+     "分裂？":{"string":"ノーヴァ分裂？","icon":"問題画像/ノーヴァ分裂？.jpg"},
+     "未知生物？":{"string":"ノーヴァ未知生物？","icon":"問題画像/ノーヴァ未知生物？.jpg"},
+     "触り禁止？":{"string":"ノーヴァ触り禁止？","icon":"問題画像/ノーヴァ触り禁止？.jpg"}
    }
  }
  ,{"type":"combi3",
    "question":"エスメラルダのスキルを正しく組み合わせてください。",
    "answers":{
-     "激励":{"icon":"問題画像/エスメラルダ激励.jpg"},
-     "攻撃強化":{"icon":"問題画像/エスメラルダ攻撃強化.jpg"},
-     "不屈の意思":{"icon":"問題画像/エスメラルダ不屈の意思.jpg"}
+     "激励":{"string":"エスメラルダ激励","icon":"問題画像/エスメラルダ激励.jpg"},
+     "攻撃強化":{"string":"エスメラルダ攻撃強化","icon":"問題画像/エスメラルダ攻撃強化.jpg"},
+     "不屈の意思":{"string":"エスメラルダ不屈の意思","icon":"問題画像/エスメラルダ不屈の意思.jpg"}
    }
  }
  ,{"type":"combi3",
    "question":"マーグレットのスキルを正しく組み合わせてください。",
    "answers":{
-     "自律":{"icon":"問題画像/マーグレット審判の鉄槌.jpg"},
-     "心眼":{"icon":"問題画像/マーグレット永遠なる信仰.jpg"},
-     "一心不乱":{"icon":"問題画像/マーグレット揺るぎなき信仰.jpg"}
+     "審判の鉄槌":{"string":"マーグレット審判の鉄槌","icon":"問題画像/マーグレット審判の鉄槌.jpg"},
+     "永遠なる信仰":{"string":"マーグレット永遠なる信仰","icon":"問題画像/マーグレット永遠なる信仰.jpg"},
+     "揺るぎなき信仰":{"string":"マーグレット揺るぎなき信仰","icon":"問題画像/マーグレット揺るぎなき信仰.jpg"}
    }
  }
  ,{"type":"combi3",
    "question":"メイメイのスキルを正しく組み合わせてください。",
    "answers":{
-     "命中上昇":{"icon":"問題画像/メイメイ命中上昇.jpg"},
-     "衰弱アタック":{"icon":"問題画像/メイメイ衰弱アタック.jpg"},
-     "戦闘強化":{"icon":"問題画像/メイメイ戦闘強化.jpg"}
+     "命中上昇":{"string":"メイメイ命中上昇","icon":"問題画像/メイメイ命中上昇.jpg"},
+     "衰弱アタック":{"string":"メイメイ衰弱アタック","icon":"問題画像/メイメイ衰弱アタック.jpg"},
+     "戦闘強化":{"string":"メイメイ戦闘強化","icon":"問題画像/メイメイ戦闘強化.jpg"}
    }
  }
  ,{"type":"combi3",
    "question":"グレイヴのスキルを正しく組み合わせてください。",
    "answers":{
-     "攻撃強化":{"icon":"問題画像/グレイヴ攻撃強化.jpg"},
-     "速度＋":{"icon":"問題画像/グレイヴ速度＋.jpg"},
-     "会心強化":{"icon":"問題画像/グレイヴ会心強化.jpg"}
+     "攻撃強化":{"string":"グレイヴ攻撃強化","icon":"問題画像/グレイヴ攻撃強化.jpg"},
+     "速度＋":{"string":"グレイヴ速度＋","icon":"問題画像/グレイヴ速度＋.jpg"},
+     "会心強化":{"string":"グレイヴ会心強化","icon":"問題画像/グレイヴ会心強化.jpg"}
    }
  }
  ,{"type":"combi3",
@@ -894,80 +894,73 @@
    "question":"新城はどこ？",
    "image":"問題画像/地形アイレタ.jpg",
    "answers":[
-    {"x":1000,"y":1000},
-    {"x":1000,"y":1000},
-    {"x":1000,"y":1000},
-    {"x":1000,"y":1000},
-    {"x":1000,"y":1000}
+    {"x":436,"y":49},
+    {"x":57,"y":105},
+    {"x":193,"y":313},
+    {"x":441,"y":312}
    ]
  }
  ,{"type":"place",
    "question":"ドリアンはどこ？",
    "image":"問題画像/地形ケゲア.jpg",
    "answers":[
-    {"x":1000,"y":1000},
-    {"x":1000,"y":1000},
-    {"x":1000,"y":1000},
-    {"x":1000,"y":1000},
-    {"x":1000,"y":1000}
+    {"x":186,"y":233},
+    {"x":367,"y":276},
+    {"x":260,"y":388},
+    {"x":122,"y":320}
    ]
  }
  ,{"type":"place",
    "question":"リーズはどこ？",
    "image":"問題画像/地形アイレタ.jpg",
    "answers":[
-    {"x":1000,"y":1000},
-    {"x":1000,"y":1000},
-    {"x":1000,"y":1000},
-    {"x":1000,"y":1000},
-    {"x":1000,"y":1000}
+    {"x":312,"y":222},
+    {"x":60,"y":359},
+    {"x":68,"y":70},
+    {"x":302,"y":380}
    ]
  }
  ,{"type":"place",
    "question":"ヘルシンはどこ？",
    "image":"問題画像/地形ケゲア.jpg",
    "answers":[
-    {"x":1000,"y":1000},
-    {"x":1000,"y":1000},
-    {"x":1000,"y":1000},
-    {"x":1000,"y":1000},
-    {"x":1000,"y":1000}
+    {"x":131,"y":174},
+    {"x":447,"y":187},
+    {"x":63,"y":347},
+    {"x":265,"y":244}
    ]
  }
  ,{"type":"place",
    "question":"アリアックはどこ？",
    "image":"問題画像/地形ハイクシアー.jpg",
    "answers":[
-    {"x":1000,"y":1000},
-    {"x":1000,"y":1000},
-    {"x":1000,"y":1000},
-    {"x":1000,"y":1000},
-    {"x":1000,"y":1000}
+    {"x":305,"y":224},
+    {"x":481,"y":260},
+    {"x":72,"y":227},
+    {"x":293,"y":356}
    ]
  }
  ,{"type":"place",
    "question":"マークティアはどこ？",
    "image":"問題画像/地形ハイクシアー.jpg",
    "answers":[
-    {"x":1000,"y":1000},
-    {"x":1000,"y":1000},
-    {"x":1000,"y":1000},
-    {"x":1000,"y":1000},
-    {"x":1000,"y":1000}
+    {"x":475,"y":396},
+    {"x":124,"y":116},
+    {"x":103,"y":388},
+    {"x":422,"y":107}
    ]
  }
  ,{"type":"place",
    "question":"アルチーノはどこ？",
    "image":"問題画像/地形ケゲア.jpg",
    "answers":[
-    {"x":1000,"y":1000},
-    {"x":1000,"y":1000},
-    {"x":1000,"y":1000},
-    {"x":1000,"y":1000},
-    {"x":1000,"y":1000}
+    {"x":128,"y":346},
+    {"x":70,"y":254},
+    {"x":163,"y":56},
+    {"x":411,"y":396}
    ]
  }
- ,{"type":"taku4",
+ ,{"type":"taku4icon",
    "question":"これは誰の物？",
    "image":"問題画像/【NEW】スノーウィ小物_1.png",
    "answers":[
@@ -977,7 +970,7 @@
      {"string":"リンベル","icon":"顔アイコン/リンベル.jpg"}
    ]
  }
- ,{"type":"taku4",
+ ,{"type":"taku4icon",
    "question":"これは誰の物？",
    "image":"問題画像/【NEW】ドロレス小物_1.png",
    "answers":[
@@ -987,7 +980,7 @@
      {"string":"ヴィヴィネ","icon":"顔アイコン/ヴィヴィネ.jpg"}
    ]
  }
- ,{"type":"taku4",
+ ,{"type":"taku4icon",
    "question":"これは誰の物？",
    "image":"問題画像/【NEW】フラビア小物_1.png",
    "answers":[
@@ -997,7 +990,7 @@
      {"string":"タイシア","icon":"顔アイコン/タイシア.jpg"}
    ]
  }
- ,{"type":"taku4",
+ ,{"type":"taku4icon",
    "question":"これは誰の物？",
    "image":"問題画像/【NEW】華蘭小物_1.png",
    "answers":[
@@ -1007,7 +1000,7 @@
      {"string":"アイタ","icon":"顔アイコン/アイタ.jpg"}
    ]
  }
- ,{"type":"taku4",
+ ,{"type":"taku4icon",
    "question":"これは誰の物？",
    "image":"問題画像/【NEW】凛ちゃん小物_4.png",
    "answers":[
@@ -1015,6 +1008,626 @@
      {"string":"フラビア","icon":"顔アイコン/フラビア.jpg"},
      {"string":"九条綾","icon":"顔アイコン/九条綾.jpg"},
      {"string":"タイシア","icon":"顔アイコン/タイシア.jpg"}
+   ]
+ }
+ ,{"type":"imagepanel",
+   "question":"これは誰？",
+   "image":"キャラ画像/PN26イーレヒース.jpg",
+   "answers":[
+     {"string":"PN26イーレヒース","icon":"顔アイコン/PN26イーレヒース.jpg"},
+     {"string":"PN72夜喰","icon":"顔アイコン/PN72夜喰.jpg"},
+     {"string":"PN99","icon":"顔アイコン/PN99.jpg"},
+     {"string":"ドロレス","icon":"顔アイコン/ドロレス.jpg"}
+   ]
+ }
+ ,{"type":"imagefilter",
+   "question":"これは誰？",
+   "image":"キャラ画像/α-16.jpg",
+   "answers":[
+     {"string":"α-16","icon":"顔アイコン/α-16.jpg"},
+     {"string":"ヴィヴィネ","icon":"顔アイコン/ヴィヴィネ.jpg"},
+     {"string":"イブリン","icon":"顔アイコン/イブリン.jpg"},
+     {"string":"アリエル","icon":"顔アイコン/アリエル.jpg"}
+   ]
+ }
+ ,{"type":"imageskew",
+   "question":"これは誰？",
+   "image":"キャラ画像/アイタ.jpg",
+   "answers":[
+     {"string":"アイタ","icon":"顔アイコン/アイタ.jpg"},
+     {"string":"華蘭","icon":"顔アイコン/華蘭.jpg"},
+     {"string":"ポーラ","icon":"顔アイコン/ポーラ.jpg"},
+     {"string":"チリノ","icon":"顔アイコン/チリノ.jpg"}
+   ]
+ }
+ ,{"type":"imagezoom",
+   "question":"これは誰？",
+   "image":"キャラ画像/アウロラ.jpg",
+   "answers":[
+     {"string":"アウロラ","icon":"顔アイコン/アウロラ.jpg"},
+     {"string":"リー","icon":"顔アイコン/リー.jpg"},
+     {"string":"アリエル","icon":"顔アイコン/アリエル.jpg"},
+     {"string":"リンベル","icon":"顔アイコン/リンベル.jpg"}
+   ]
+ }
+ ,{"type":"imagepanel",
+   "question":"これは誰？",
+   "image":"キャラ画像/アドリエンヌ.jpg",
+   "answers":[
+     {"string":"アドリエンヌ","icon":"顔アイコン/アドリエンヌ.jpg"},
+     {"string":"タイシア","icon":"顔アイコン/タイシア.jpg"},
+     {"string":"神上園凛","icon":"顔アイコン/神上園凛.jpg"},
+     {"string":"フラビア","icon":"顔アイコン/フラビア.jpg"}
+   ]
+ }
+ ,{"type":"imagefilter",
+   "question":"これは誰？",
+   "image":"キャラ画像/アリエル.jpg",
+   "answers":[
+     {"string":"アリエル","icon":"顔アイコン/アリエル.jpg"},
+     {"string":"α-16","icon":"顔アイコン/α-16.jpg"},
+     {"string":"ニッジー","icon":"顔アイコン/ニッジー.jpg"},
+     {"string":"リンベル","icon":"顔アイコン/リンベル.jpg"}
+   ]
+ }
+ ,{"type":"imageskew",
+   "question":"これは誰？",
+   "image":"キャラ画像/アンバー.jpg",
+   "answers":[
+     {"string":"アンバー","icon":"顔アイコン/アンバー.jpg"},
+     {"string":"シャディッティ","icon":"顔アイコン/シャディッティ.jpg"},
+     {"string":"マリー","icon":"顔アイコン/マリー.jpg"},
+     {"string":"ミロア","icon":"顔アイコン/ミロア.jpg"}
+   ]
+ }
+ ,{"type":"imagezoom",
+   "question":"これは誰？",
+   "image":"キャラ画像/イブリン.jpg",
+   "answers":[
+     {"string":"イブリン","icon":"顔アイコン/イブリン.jpg"},
+     {"string":"ヴェロニカ","icon":"顔アイコン/ヴェロニカ.jpg"},
+     {"string":"レベリカ","icon":"顔アイコン/レベリカ.jpg"},
+     {"string":"クリスティーナ","icon":"顔アイコン/クリスティーナ.jpg"}
+   ]
+ }
+ ,{"type":"imagepanel",
+   "question":"これは誰？",
+   "image":"キャラ画像/ヴィヴィネ.jpg",
+   "answers":[
+     {"string":"ヴィヴィネ","icon":"顔アイコン/ヴィヴィネ.jpg"},
+     {"string":"アドリエンヌ","icon":"顔アイコン/アドリエンヌ.jpg"},
+     {"string":"ニッジー","icon":"顔アイコン/ニッジー.jpg"},
+     {"string":"ゾーイ","icon":"顔アイコン/ゾーイ.jpg"}
+   ]
+ }
+ ,{"type":"imagefilter",
+   "question":"これは誰？",
+   "image":"キャラ画像/ヴィオラ.jpg",
+   "answers":[
+     {"string":"ヴィオラ","icon":"顔アイコン/ヴィオラ.jpg"},
+     {"string":"グレイヴ","icon":"顔アイコン/グレイヴ.jpg"},
+     {"string":"紫","icon":"顔アイコン/紫.jpg"},
+     {"string":"ギャレン","icon":"顔アイコン/ギャレン.jpg"}
+   ]
+ }
+ ,{"type":"imageskew",
+   "question":"これは誰？",
+   "image":"キャラ画像/ヴェロニカ.jpg",
+   "answers":[
+     {"string":"ヴェロニカ","icon":"顔アイコン/ヴェロニカ.jpg"},
+     {"string":"シーメ","icon":"顔アイコン/シーメ.jpg"},
+     {"string":"ネプリム","icon":"顔アイコン/ネプリム.jpg"},
+     {"string":"キーラ","icon":"顔アイコン/キーラ.jpg"}
+   ]
+ }
+ ,{"type":"imagezoom",
+   "question":"これは誰？",
+   "image":"キャラ画像/エイダ.jpg",
+   "answers":[
+     {"string":"エイダ","icon":"顔アイコン/エイダ.jpg"},
+     {"string":"リー","icon":"顔アイコン/リー.jpg"},
+     {"string":"アウロラ","icon":"顔アイコン/アウロラ.jpg"},
+     {"string":"ポーラ","icon":"顔アイコン/ポーラ.jpg"}
+   ]
+ }
+ ,{"type":"imagepanel",
+   "question":"これは誰？",
+   "image":"キャラ画像/エスメラルダ.jpg",
+   "answers":[
+     {"string":"エスメラルダ","icon":"顔アイコン/エスメラルダ.jpg"},
+     {"string":"ヴェロニカ","icon":"顔アイコン/ヴェロニカ.jpg"},
+     {"string":"ミロア","icon":"顔アイコン/ミロア.jpg"},
+     {"string":"スウィーティー","icon":"顔アイコン/スウィーティー.jpg"}
+   ]
+ }
+ ,{"type":"imagefilter",
+   "question":"これは誰？",
+   "image":"キャラ画像/エッギーペッギー.jpg",
+   "answers":[
+     {"string":"エッギーペッギー","icon":"顔アイコン/エッギーペッギー.jpg"},
+     {"string":"ゾーイ","icon":"顔アイコン/ゾーイ.jpg"},
+     {"string":"2233","icon":"顔アイコン/2233.jpg"},
+     {"string":"マギー","icon":"顔アイコン/マギー.jpg"}
+   ]
+ }
+ ,{"type":"imageskew",
+   "question":"これは誰？",
+   "image":"キャラ画像/オイフェ.jpg",
+   "answers":[
+     {"string":"オイフェ","icon":"顔アイコン/オイフェ.jpg"},
+     {"string":"アレクサ","icon":"顔アイコン/アレクサ.jpg"},
+     {"string":"チリノ","icon":"顔アイコン/チリノ.jpg"},
+     {"string":"クリスティーナ","icon":"顔アイコン/クリスティーナ.jpg"}
+   ]
+ }
+ ,{"type":"imagezoom",
+   "question":"これは誰？",
+   "image":"キャラ画像/オードリー.jpg",
+   "answers":[
+     {"string":"オードリー","icon":"顔アイコン/オードリー.jpg"},
+     {"string":"バソリー","icon":"顔アイコン/バソリー.jpg"},
+     {"string":"ヘレーナ","icon":"顔アイコン/ヘレーナ.jpg"},
+     {"string":"マルマ","icon":"顔アイコン/マルマ.jpg"}
+   ]
+ }
+ ,{"type":"imagepanel",
+   "question":"これは誰？",
+   "image":"キャラ画像/キーラ.jpg",
+   "answers":[
+     {"string":"キーラ","icon":"顔アイコン/キーラ.jpg"},
+     {"string":"シーメ","icon":"顔アイコン/シーメ.jpg"},
+     {"string":"ポーラ","icon":"顔アイコン/ポーラ.jpg"},
+     {"string":"紫","icon":"顔アイコン/紫.jpg"}
+   ]
+ }
+ ,{"type":"imagefilter",
+   "question":"これは誰？",
+   "image":"キャラ画像/ギャレン.jpg",
+   "answers":[
+     {"string":"ギャレン","icon":"顔アイコン/ギャレン.jpg"},
+     {"string":"グレイヴ","icon":"顔アイコン/グレイヴ.jpg"},
+     {"string":"紫","icon":"顔アイコン/紫.jpg"},
+     {"string":"シンシア","icon":"顔アイコン/シンシア.jpg"}
+   ]
+ }
+ ,{"type":"imageskew",
+   "question":"これは誰？",
+   "image":"キャラ画像/クリスティーナ.jpg",
+   "answers":[
+     {"string":"クリスティーナ","icon":"顔アイコン/クリスティーナ.jpg"},
+     {"string":"オードリー","icon":"顔アイコン/オードリー.jpg"},
+     {"string":"オイフェ","icon":"顔アイコン/オイフェ.jpg"},
+     {"string":"ロクサーヌ","icon":"顔アイコン/ロクサーヌ.jpg"}
+   ]
+ }
+ ,{"type":"imagezoom",
+   "question":"これは誰？",
+   "image":"キャラ画像/グレイヴ.jpg",
+   "answers":[
+     {"string":"グレイヴ","icon":"顔アイコン/グレイヴ.jpg"},
+     {"string":"アイタ","icon":"顔アイコン/アイタ.jpg"},
+     {"string":"ジェシー","icon":"顔アイコン/ジェシー.jpg"},
+     {"string":"ナターシャ","icon":"顔アイコン/ナターシャ.jpg"}
+   ]
+ }
+ ,{"type":"imagepanel",
+   "question":"これは誰？",
+   "image":"キャラ画像/コーレリア.jpg",
+   "answers":[
+     {"string":"コーレリア","icon":"顔アイコン/コーレリア.jpg"},
+     {"string":"マーグレット","icon":"顔アイコン/マーグレット.jpg"},
+     {"string":"アドリエンヌ","icon":"顔アイコン/アドリエンヌ.jpg"},
+     {"string":"フェニックス","icon":"顔アイコン/フェニックス.jpg"}
+   ]
+ }
+ ,{"type":"imagefilter",
+   "question":"これは誰？",
+   "image":"キャラ画像/シーメ.jpg",
+   "answers":[
+     {"string":"シーメ","icon":"顔アイコン/シーメ.jpg"},
+     {"string":"ヴェロニカ","icon":"顔アイコン/ヴェロニカ.jpg"},
+     {"string":"エイダ","icon":"顔アイコン/エイダ.jpg"},
+     {"string":"テア","icon":"顔アイコン/テア.jpg"}
+   ]
+ }
+ ,{"type":"imageskew",
+   "question":"これは誰？",
+   "image":"キャラ画像/シェール.jpg",
+   "answers":[
+     {"string":"シェール","icon":"顔アイコン/シェール.jpg"},
+     {"string":"スウィーティー","icon":"顔アイコン/スウィーティー.jpg"},
+     {"string":"メイメイ","icon":"顔アイコン/メイメイ.jpg"},
+     {"string":"ローラー","icon":"顔アイコン/ローラー.jpg"}
+   ]
+ }
+ ,{"type":"imagezoom",
+   "question":"これは誰？",
+   "image":"キャラ画像/ジェシー.jpg",
+   "answers":[
+     {"string":"ジェシー","icon":"顔アイコン/ジェシー.jpg"},
+     {"string":"リー","icon":"顔アイコン/リー.jpg"},
+     {"string":"レベリカ","icon":"顔アイコン/レベリカ.jpg"},
+     {"string":"ヨランダ","icon":"顔アイコン/ヨランダ.jpg"}
+   ]
+ }
+ ,{"type":"imagepanel",
+   "question":"これは誰？",
+   "image":"キャラ画像/ジャスミン.jpg",
+   "answers":[
+     {"string":"ジャスミン","icon":"顔アイコン/ジャスミン.jpg"},
+     {"string":"マリー","icon":"顔アイコン/マリー.jpg"},
+     {"string":"マギー","icon":"顔アイコン/マギー.jpg"},
+     {"string":"シャディッティ","icon":"顔アイコン/シャディッティ.jpg"}
+   ]
+ }
+ ,{"type":"imagefilter",
+   "question":"これは誰？",
+   "image":"キャラ画像/シャディッティ.jpg",
+   "answers":[
+     {"string":"シャディッティ","icon":"顔アイコン/シャディッティ.jpg"},
+     {"string":"エッギーペッギー","icon":"顔アイコン/エッギーペッギー.jpg"},
+     {"string":"プリシーラ","icon":"顔アイコン/プリシーラ.jpg"},
+     {"string":"ブルターニ","icon":"顔アイコン/ブルターニ.jpg"}
+   ]
+ }
+ ,{"type":"imageskew",
+   "question":"これは誰？",
+   "image":"キャラ画像/シュミリ.jpg",
+   "answers":[
+     {"string":"シュミリ","icon":"顔アイコン/シュミリ.jpg"},
+     {"string":"テア","icon":"顔アイコン/テア.jpg"},
+     {"string":"リンベル","icon":"顔アイコン/リンベル.jpg"},
+     {"string":"セレニティー","icon":"顔アイコン/セレニティー.jpg"}
+   ]
+ }
+ ,{"type":"imagezoom",
+   "question":"これは誰？",
+   "image":"キャラ画像/スウィーティー.jpg",
+   "answers":[
+     {"string":"スウィーティー","icon":"顔アイコン/スウィーティー.jpg"},
+     {"string":"スラ","icon":"顔アイコン/スラ.jpg"},
+     {"string":"チャリス","icon":"顔アイコン/チャリス.jpg"},
+     {"string":"ポーラー","icon":"顔アイコン/ポーラー.jpg"}
+   ]
+ }
+ ,{"type":"imagepanel",
+   "question":"これは誰？",
+   "image":"キャラ画像/スラ.jpg",
+   "answers":[
+     {"string":"スラ","icon":"顔アイコン/スラ.jpg"},
+     {"string":"オードリー","icon":"顔アイコン/オードリー.jpg"},
+     {"string":"オイフェ","icon":"顔アイコン/オイフェ.jpg"},
+     {"string":"シンシア","icon":"顔アイコン/シンシア.jpg"}
+   ]
+ }
+ ,{"type":"imagefilter",
+   "question":"これは誰？",
+   "image":"キャラ画像/ゾーイ.jpg",
+   "answers":[
+     {"string":"ゾーイ","icon":"顔アイコン/ゾーイ.jpg"},
+     {"string":"チャン","icon":"顔アイコン/チャン.jpg"},
+     {"string":"ヨランダ","icon":"顔アイコン/ヨランダ.jpg"},
+     {"string":"レベリカ","icon":"顔アイコン/レベリカ.jpg"}
+   ]
+ }
+ ,{"type":"imageskew",
+   "question":"これは誰？",
+   "image":"キャラ画像/ソルヴェイグ.jpg",
+   "answers":[
+     {"string":"ソルヴェイグ","icon":"顔アイコン/ソルヴェイグ.jpg"},
+     {"string":"パトリシア","icon":"顔アイコン/パトリシア.jpg"},
+     {"string":"スノーウィー","icon":"顔アイコン/スノーウィー.jpg"},
+     {"string":"華蘭","icon":"顔アイコン/華蘭.jpg"}
+   ]
+ }
+ ,{"type":"imagezoom",
+   "question":"これは誰？",
+   "image":"キャラ画像/チャリス.jpg",
+   "answers":[
+     {"string":"チャリス","icon":"顔アイコン/チャリス.jpg"},
+     {"string":"スウィーティー","icon":"顔アイコン/スウィーティー.jpg"},
+     {"string":"ブレイド","icon":"顔アイコン/ブレイド.jpg"},
+     {"string":"ブリーズ・タロー","icon":"顔アイコン/タロー.jpg"}
+   ]
+ }
+ ,{"type":"imagepanel",
+   "question":"これは誰？",
+   "image":"キャラ画像/チャン.jpg",
+   "answers":[
+     {"string":"チャン","icon":"顔アイコン/チャン.jpg"},
+     {"string":"マギー","icon":"顔アイコン/マギー.jpg"},
+     {"string":"マリー","icon":"顔アイコン/マリー.jpg"},
+     {"string":"ホイットニー","icon":"顔アイコン/ホイットニー.jpg"}
+   ]
+ }
+ ,{"type":"imagefilter",
+   "question":"これは誰？",
+   "image":"キャラ画像/チリノ.jpg",
+   "answers":[
+     {"string":"チリノ","icon":"顔アイコン/チリノ.jpg"},
+     {"string":"オードリー","icon":"顔アイコン/オードリー.jpg"},
+     {"string":"バソリー","icon":"顔アイコン/バソリー.jpg"},
+     {"string":"ソラル","icon":"顔アイコン/ソラル.jpg"}
+   ]
+ }
+ ,{"type":"imageskew",
+   "question":"これは誰？",
+   "image":"キャラ画像/テア.jpg",
+   "answers":[
+     {"string":"テア","icon":"顔アイコン/テア.jpg"},
+     {"string":"ノーヴァ","icon":"顔アイコン/ノーヴァ.jpg"},
+     {"string":"ニア","icon":"顔アイコン/ニア.jpg"},
+     {"string":"イヴェット","icon":"顔アイコン/イヴェット.jpg"}
+   ]
+ }
+ ,{"type":"imagezoom",
+   "question":"これは誰？",
+   "image":"キャラ画像/ナターシャ.jpg",
+   "answers":[
+     {"string":"ナターシャ","icon":"顔アイコン/ナターシャ.jpg"},
+     {"string":"リー","icon":"顔アイコン/リー.jpg"},
+     {"string":"鬼影灯","icon":"顔アイコン/鬼影灯.jpg"},
+     {"string":"エイダ","icon":"顔アイコン/エイダ.jpg"}
+   ]
+ }
+ ,{"type":"imagepanel",
+   "question":"これは誰？",
+   "image":"キャラ画像/ニッジー.jpg",
+   "answers":[
+     {"string":"ニッジー","icon":"顔アイコン/ニッジー.jpg"},
+     {"string":"リンベル","icon":"顔アイコン/リンベル.jpg"},
+     {"string":"スウィーティー","icon":"顔アイコン/スウィーティー.jpg"},
+     {"string":"α-16","icon":"顔アイコン/α-16.jpg"}
+   ]
+ }
+ ,{"type":"imagefilter",
+   "question":"これは誰？",
+   "image":"キャラ画像/ネプリム.jpg",
+   "answers":[
+     {"string":"ネプリム","icon":"顔アイコン/ネプリム.jpg"},
+     {"string":"シーメ","icon":"顔アイコン/シーメ.jpg"},
+     {"string":"ヴェロニカ","icon":"顔アイコン/ヴェロニカ.jpg"},
+     {"string":"キーラ","icon":"顔アイコン/キーラ.jpg"}
+   ]
+ }
+ ,{"type":"imageskew",
+   "question":"これは誰？",
+   "image":"キャラ画像/バソリー.jpg",
+   "answers":[
+     {"string":"バソリー","icon":"顔アイコン/バソリー.jpg"},
+     {"string":"マルマ","icon":"顔アイコン/マルマ.jpg"},
+     {"string":"オードリー","icon":"顔アイコン/オードリー.jpg"},
+     {"string":"チリノ","icon":"顔アイコン/チリノ.jpg"}
+   ]
+ }
+ ,{"type":"imagezoom",
+   "question":"これは誰？",
+   "image":"キャラ画像/パトリシア.jpg",
+   "answers":[
+     {"string":"パトリシア","icon":"顔アイコン/パトリシア.jpg"},
+     {"string":"ブルターニ","icon":"顔アイコン/ブルターニ.jpg"},
+     {"string":"ロクサーヌ","icon":"顔アイコン/ロクサーヌ.jpg"},
+     {"string":"イブリン","icon":"顔アイコン/イブリン.jpg"}
+   ]
+ }
+ ,{"type":"imagepanel",
+   "question":"これは誰？",
+   "image":"キャラ画像/フーラ.jpg",
+   "answers":[
+     {"string":"フーラ","icon":"顔アイコン/フーラ.jpg"},
+     {"string":"オードリー","icon":"顔アイコン/オードリー.jpg"},
+     {"string":"PN26イーレヒース","icon":"顔アイコン/PN26イーレヒース.jpg"},
+     {"string":"オイフェ","icon":"顔アイコン/オイフェ.jpg"}
+   ]
+ }
+ ,{"type":"imagefilter",
+   "question":"これは誰？",
+   "image":"キャラ画像/フェニックス.jpg",
+   "answers":[
+     {"string":"フェニックス","icon":"顔アイコン/フェニックス.jpg"},
+     {"string":"小林団子","icon":"顔アイコン/小林団子.jpg"},
+     {"string":"チリノ","icon":"顔アイコン/チリノ.jpg"},
+     {"string":"ブレイド","icon":"顔アイコン/ブレイド.jpg"}
+   ]
+ }
+ ,{"type":"imageskew",
+   "question":"これは誰？",
+   "image":"キャラ画像/ブリーズ・タロー.jpg",
+   "answers":[
+     {"string":"ブリーズ・タロー","icon":"顔アイコン/タロー.jpg"},
+     {"string":"オイフェ","icon":"顔アイコン/オイフェ.jpg"},
+     {"string":"フェニックス","icon":"顔アイコン/フェニックス.jpg"},
+     {"string":"ホイットニー","icon":"顔アイコン/ホイットニー.jpg"}
+   ]
+ }
+ ,{"type":"imagezoom",
+   "question":"これは誰？",
+   "image":"キャラ画像/プリシーラ.jpg",
+   "answers":[
+     {"string":"プリシーラ","icon":"顔アイコン/プリシーラ.jpg"},
+     {"string":"ポーラー","icon":"顔アイコン/ポーラー.jpg"},
+     {"string":"ミリーナ","icon":"顔アイコン/ミリーナ.jpg"},
+     {"string":"グレイヴ","icon":"顔アイコン/グレイヴ.jpg"}
+   ]
+ }
+ ,{"type":"imagepanel",
+   "question":"これは誰？",
+   "image":"キャラ画像/ブルターニ.jpg",
+   "answers":[
+     {"string":"ブルターニ","icon":"顔アイコン/ブルターニ.jpg"},
+     {"string":"ベルナデット","icon":"顔アイコン/ベルナデット.jpg"},
+     {"string":"ニッジー","icon":"顔アイコン/ニッジー.jpg"},
+     {"string":"リンベル","icon":"顔アイコン/リンベル.jpg"}
+   ]
+ }
+ ,{"type":"imagefilter",
+   "question":"これは誰？",
+   "image":"キャラ画像/ブレイド.jpg",
+   "answers":[
+     {"string":"ブレイド","icon":"顔アイコン/ブレイド.jpg"},
+     {"string":"レンゲル","icon":"顔アイコン/レンゲル.jpg"},
+     {"string":"チャリス","icon":"顔アイコン/チャリス.jpg"},
+     {"string":"ギャレン","icon":"顔アイコン/ギャレン.jpg"}
+   ]
+ }
+ ,{"type":"imageskew",
+   "question":"これは誰？",
+   "image":"キャラ画像/ヘレーナ.jpg",
+   "answers":[
+     {"string":"ヘレーナ","icon":"顔アイコン/ヘレーナ.jpg"},
+     {"string":"鬼影灯","icon":"顔アイコン/鬼影灯.jpg"},
+     {"string":"ネプリム","icon":"顔アイコン/ネプリム.jpg"},
+     {"string":"ロサ","icon":"顔アイコン/ロサ.jpg"}
+   ]
+ }
+ ,{"type":"imagezoom",
+   "question":"これは誰？",
+   "image":"キャラ画像/ホイットニー.jpg",
+   "answers":[
+     {"string":"ホイットニー","icon":"顔アイコン/ホイットニー.jpg"},
+     {"string":"レベリカ","icon":"顔アイコン/レベリカ.jpg"},
+     {"string":"鬼影灯","icon":"顔アイコン/鬼影灯.jpg"},
+     {"string":"ヘプニェク","icon":"顔アイコン/ヘプニェク.jpg"}
+   ]
+ }
+ ,{"type":"imagepanel",
+   "question":"これは誰？",
+   "image":"キャラ画像/ポーラ.jpg",
+   "answers":[
+     {"string":"ポーラ","icon":"顔アイコン/ポーラ.jpg"},
+     {"string":"ポーラー","icon":"顔アイコン/ポーラー.jpg"},
+     {"string":"ホイットニー","icon":"顔アイコン/ホイットニー.jpg"},
+     {"string":"ヘレーナ","icon":"顔アイコン/ヘレーナ.jpg"}
+   ]
+ }
+ ,{"type":"imagefilter",
+   "question":"これは誰？",
+   "image":"キャラ画像/マーグレット.jpg",
+   "answers":[
+     {"string":"マーグレット","icon":"顔アイコン/マーグレット.jpg"},
+     {"string":"コーレリア","icon":"顔アイコン/コーレリア.jpg"},
+     {"string":"グレイヴ","icon":"顔アイコン/グレイヴ.jpg"},
+     {"string":"鬼影灯","icon":"顔アイコン/鬼影灯.jpg"}
+   ]
+ }
+ ,{"type":"imageskew",
+   "question":"これは誰？",
+   "image":"キャラ画像/マギー.jpg",
+   "answers":[
+     {"string":"マギー","icon":"顔アイコン/マギー.jpg"},
+     {"string":"マリー","icon":"顔アイコン/マリー.jpg"},
+     {"string":"マルマ","icon":"顔アイコン/マルマ.jpg"},
+     {"string":"マーグレット","icon":"顔アイコン/マーグレット.jpg"}
+   ]
+ }
+ ,{"type":"imagezoom",
+   "question":"これは誰？",
+   "image":"キャラ画像/ミシェリア.jpg",
+   "answers":[
+     {"string":"ミシェリア","icon":"顔アイコン/ミシェリア.jpg"},
+     {"string":"チリノ","icon":"顔アイコン/チリノ.jpg"},
+     {"string":"フェヴィア","icon":"顔アイコン/フェヴィア.jpg"},
+     {"string":"ヴァイオレット","icon":"顔アイコン/ヴァイオレット.jpg"}
+   ]
+ }
+ ,{"type":"imagepanel",
+   "question":"これは誰？",
+   "image":"キャラ画像/ミリーナ.jpg",
+   "answers":[
+     {"string":"ミリーナ","icon":"顔アイコン/ミリーナ.jpg"},
+     {"string":"プリシーラ","icon":"顔アイコン/プリシーラ.jpg"},
+     {"string":"ローラー","icon":"顔アイコン/ローラー.jpg"},
+     {"string":"メガエラ","icon":"顔アイコン/メガエラ.jpg"}
+   ]
+ }
+ ,{"type":"imagefilter",
+   "question":"これは誰？",
+   "image":"キャラ画像/ミロア.jpg",
+   "answers":[
+     {"string":"ミロア","icon":"顔アイコン/ミロア.jpg"},
+     {"string":"ヴェロニカ","icon":"顔アイコン/ヴェロニカ.jpg"},
+     {"string":"鬼影灯","icon":"顔アイコン/鬼影灯.jpg"},
+     {"string":"ミシェリア","icon":"顔アイコン/ミシェリア.jpg"}
+   ]
+ }
+ ,{"type":"imageskew",
+   "question":"これは誰？",
+   "image":"キャラ画像/メイメイ.jpg",
+   "answers":[
+     {"string":"メイメイ","icon":"顔アイコン/メイメイ.jpg"},
+     {"string":"リンベル","icon":"顔アイコン/リンベル.jpg"},
+     {"string":"シェール","icon":"顔アイコン/シェール.jpg"},
+     {"string":"ミシェリア","icon":"顔アイコン/ミシェリア.jpg"}
+   ]
+ }
+ ,{"type":"imagezoom",
+   "question":"これは誰？",
+   "image":"キャラ画像/ヨランダ.jpg",
+   "answers":[
+     {"string":"ヨランダ","icon":"顔アイコン/ヨランダ.jpg"},
+     {"string":"フーラ","icon":"顔アイコン/フーラ.jpg"},
+     {"string":"マギー","icon":"顔アイコン/マギー.jpg"},
+     {"string":"ヴィヴィネ","icon":"顔アイコン/ヴィヴィネ.jpg"}
+   ]
+ }
+ ,{"type":"imagepanel",
+   "question":"これは誰？",
+   "image":"キャラ画像/リー.jpg",
+   "answers":[
+     {"string":"リー","icon":"顔アイコン/リー.jpg"},
+     {"string":"ナターシャ","icon":"顔アイコン/ナターシャ.jpg"},
+     {"string":"レベリカ","icon":"顔アイコン/レベリカ.jpg"},
+     {"string":"ヘレーナ","icon":"顔アイコン/ヘレーナ.jpg"}
+   ]
+ }
+ ,{"type":"imagefilter",
+   "question":"これは誰？",
+   "image":"キャラ画像/リンベル.jpg",
+   "answers":[
+     {"string":"リンベル","icon":"顔アイコン/リンベル.jpg"},
+     {"string":"シーメ","icon":"顔アイコン/シーメ.jpg"},
+     {"string":"キーラ","icon":"顔アイコン/キーラ.jpg"},
+     {"string":"ポーラ","icon":"顔アイコン/ポーラ.jpg"}
+   ]
+ }
+ ,{"type":"imageskew",
+   "question":"これは誰？",
+   "image":"キャラ画像/レベリカ.jpg",
+   "answers":[
+     {"string":"レベリカ","icon":"顔アイコン/レベリカ.jpg"},
+     {"string":"ヨランダ","icon":"顔アイコン/ヨランダ.jpg"},
+     {"string":"マリー","icon":"顔アイコン/マリー.jpg"},
+     {"string":"ポーラー","icon":"顔アイコン/ポーラー.jpg"}
+   ]
+ }
+ ,{"type":"imagezoom",
+   "question":"これは誰？",
+   "image":"キャラ画像/ローラー.jpg",
+   "answers":[
+     {"string":"ローラー","icon":"顔アイコン/ローラー.jpg"},
+     {"string":"アリエル","icon":"顔アイコン/アリエル.jpg"},
+     {"string":"スウィーティー","icon":"顔アイコン/スウィーティー.jpg"},
+     {"string":"α-16","icon":"顔アイコン/α-16.jpg"}
+   ]
+ }
+ ,{"type":"imagepanel",
+   "question":"これは誰？",
+   "image":"キャラ画像/ロクサーヌ.jpg",
+   "answers":[
+     {"string":"ロクサーヌ","icon":"顔アイコン/ロクサーヌ.jpg"},
+     {"string":"ブルターニ","icon":"顔アイコン/ブルターニ.jpg"},
+     {"string":"セレニティー","icon":"顔アイコン/セレニティー.jpg"},
+     {"string":"マーグレット","icon":"顔アイコン/マーグレット.jpg"}
+   ]
+ }
+ ,{"type":"imagezoom",
+   "question":"これは誰？",
+   "image":"キャラ画像/鬼影灯.jpg",
+   "answers":[
+     {"string":"鬼影灯","icon":"顔アイコン/鬼影灯.jpg"},
+     {"string":"ヘレーナ","icon":"顔アイコン/ヘレーナ.jpg"},
+     {"string":"クリスティーナ","icon":"顔アイコン/クリスティーナ.jpg"},
+     {"string":"アンバー","icon":"顔アイコン/アンバー.jpg"}
    ]
  }
 ]

@@ -1,0 +1,44 @@
+<div>
+  <div class="quizimage">
+    <div class="resttimearea">
+      <span>残り時間</span><br/>
+      <span id="resttime"> </span>
+    </div>
+    <div class="imageclip">
+      <img id="quizimage" src="" style="transform: scale(5) translate([-159～160]px, [-160～160]px);" onloadstyle="transform: scale(1) translate(0,0);"/>
+    </div>
+  </div>
+  <p id="question"></p>
+  <table class="select4icon"><tbody>
+    <tr>
+      <td>
+        <div class="selectButton" onclick="window.finalQuiz.select(event)"><div>
+          <img name="icon" src=""/>
+          <div><span name="string"></span></div>
+        </div></div>
+      </td>
+      <td>
+        <div class="selectButton" onclick="window.finalQuiz.select(event)"><div>
+          <img name="icon" src=""/>
+          <div><span name="string"></span></div>
+        </div></div>
+      </td>
+      <td>
+        <div class="selectButton" onclick="window.finalQuiz.select(event)"><div>
+          <img name="icon" src=""/>
+          <div><span name="string"></span></div>
+        </div></div>
+      </td>
+      <td>
+        <div class="selectButton" onclick="window.finalQuiz.select(event)"><div>
+          <img name="icon" src=""/>
+          <div><span name="string"></span></div>
+        </div></div>
+      </td>
+    </tr>
+  </tbody></table>
+  <script>
+    window.finalQuiz = new ImageZoomQuiz(window.myQuiz);
+    finalQuiz.setQuizData();
+  </script>
+</div>

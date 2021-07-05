@@ -1,0 +1,19 @@
+<div class="vcenter">
+  <div class="hcenter">
+    <div style="text-align: right;">
+      <span>残り時間</span><span id="resttime"> </span>
+    </div>
+    <div class="placeimage">
+      <img id="placeimage" src=""/>
+      <div class="placepoint" onclick="window.finalQuiz.select(event)"><span name="string"></span></div>
+      <div class="placepoint" onclick="window.finalQuiz.select(event)"><span name="string"></span></div>
+      <div class="placepoint" onclick="window.finalQuiz.select(event)"><span name="string"></span></div>
+      <div class="placepoint" onclick="window.finalQuiz.select(event)"><span name="string"></span></div>
+    </div>
+    <p id="question"></p>
+    <script>
+      window.finalQuiz = new PlaceQuiz(window.myQuiz);
+      finalQuiz.setQuizData();
+    </script>
+  </div>
+</div>

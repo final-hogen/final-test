@@ -616,6 +616,7 @@ div[name="droptarget"]{
   animation-duration: 0.5s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
+  transform: translateY(50%) translateX(50%) scale(0);
 }
 
 #allquiz_result div[name]{

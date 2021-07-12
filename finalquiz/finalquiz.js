@@ -26,6 +26,7 @@ class FinalCookie{
   }
   setCookie(name,value){
     (this.cookies[name] = value);
+    (this.cookies['max-age'] = (60*60*24*365));
     this.save();
   }
   save(){

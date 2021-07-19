@@ -3,7 +3,11 @@
  "eventdate": "2021/07/06～2021/07/20",
  "images": {
   "イブリン": "イブリン.jpg",
+  "イブリン驚き": "イブリン驚き.jpg",
+  "イブリン悪だくみ": "イブリン悪だくみ.jpg",
   "レベリカ": "レベリカ.jpg",
+  "レベリカ驚き": "レベリカ驚き.jpg",
+  "ヴェロニカ": "ヴェロニカ.jpg",
   "ローラー": "ローラー.jpg",
   "クリスティーナ": "クリスティーナ.jpg",
   "草薙素子": "草薙素子.jpg",
@@ -14,10 +18,14 @@
   "ストレンジャー": "ストレンジャー.jpg",
   "インペリア": "インペリア.jpg",
   "変異体イブリン": "変異体イブリン.jpg",
+  "マザー": "機械衛士.jpg",
   "サウンドのみ": "soundonly.jpg",
   "攻殻機動隊": "イベント画像/攻殻機動隊.jpg",
   "攻殻機動隊1-1": "イベント画像/攻殻機動隊1-1.jpg",
-  "攻殻機動隊7-1": "イベント画像/攻殻機動隊7-1.jpg"
+  "攻殻機動隊3-1": "イベント画像/攻殻機動隊3-1.jpg",
+  "攻殻機動隊6-1": "イベント画像/攻殻機動隊6-1.jpg",
+  "攻殻機動隊15-1": "イベント画像/攻殻機動隊15-1.jpg",
+  "フェニックス号": "イベント画像/フェニックス号.jpg"
  },
  "logo": {
   "image": "攻殻機動隊",
@@ -28,7 +36,7 @@
    "summary": "",
    "commands": [
     {"command": "scene",
-     "image": "おはネク1-1",
+     "image": "攻殻機動隊1-1",
      "stop":0}
     ,{"name": "イブリン",
      "message": "うーん……これと言って珍しいものはなさそうだよ。"}
@@ -36,6 +44,7 @@
      "message": "そうでしょうね。"}
     ,{"name": "ヴェロニカ",
      "message": "こういった古代文明の遺跡はあらかた発掘が進んでいますから。"}
+    ,{"command": "scene","image": "","stop":0}
     ,{"name": "レベリカ",
      "message": "だったら、なんでわたしらに調査の依頼がくるのよ。"}
     ,{"name": "レベリカ",
@@ -145,7 +154,7 @@
     ,{"name": "草薙素子",
      "message": "なるほど……冗談ってわけじゃなさそうね。"}
     ,{"name": "クリスティーナ",
-     "message": "","stop":0}
+     "command":"message","message": "","stop":0}
     ,{"name": "レベリカ",
      "message": "随分と落ち着いてるね？普通、もっと慌てたりしそうなものだけど。"}
     ,{"name": "草薙素子",
@@ -165,7 +174,7 @@
     ,{"name": "草薙素子",
      "message": "ノイズまみれだけど、私の同僚と通信が繋がった。"}
     ,{"name": "レベリカ",
-     "message": "","stop":0}
+     "command":"message","message": "","stop":0}
     ,{"name": "クリスティーナ",
      "message": "同じように飛ばされてきた人がいるって事！？"}
     ,{"name": "草薙素子",
@@ -176,10 +185,14 @@
   }
   ,"メイン-3": {
    "commands": [
-    {"name": "草薙素子"
+    {"command": "scene",
+     "image": "攻殻機動隊3-1",
+     "stop":0}
+    ,{"name": "草薙素子"
      ,"message": "……ついて来いと言った覚えはないけど？"}
     ,{"name": "イブリン",
      "message": "あなたを放っておくわけにはいかないでしょ？"}
+    ,{"command": "scene","image": "","stop":0}
     ,{"name": "レベリカ",
      "message": "元の世界に戻る方法を探すなら、わたしらも協力してあげるからさ。"}
     ,{"name": "草薙素子",
@@ -193,7 +206,7 @@
     ,{"name": "草薙素子",
      "message": "全身義体はこっちじゃ珍しいのね。"}
     ,{"name": "レベリカ",
-     "message": "","stop":0}
+     "command":"message","message": "","stop":0}
     ,{"name": "クリスティーナ",
      "message": "珍しいよ。レイガードの財閥がその辺の技術をほとんど独占してるし。"}
     ,{"name": "クリスティーナ",
@@ -207,7 +220,7 @@
     ,{"command": "narration",
      "message": "<span class='miniyure-y'><span class='miniyure-x'>≪大きな揺れ≫</span></span>"}
     ,{"command": "narration",
-     "message": "","stop":0}
+     "command":"message","message": "","stop":0}
     ,{"name": "クリスティーナ",
      "message": "こ、今度はなんなの！？"}
     ,{"name": "イブリン",
@@ -215,7 +228,7 @@
     ,{"name": "イブリン",
      "message": "はあ……どこにでも出るのね、ああいう輩は。"}
     ,{"name": "クリスティーナ",
-     "message": "","stop":0}
+     "command":"message","message": "","stop":0}
     ,{"name": "レベリカ",
      "message": "だるそうにしてないで、救助に出るよ！"}
     ,{"name": "ヴェロニカ",
@@ -269,35 +282,35 @@
     ,{"name": "ヴェロニカ"
      ,"message": "民間人を人質に取って財閥となんらかの交渉をしようとしていたのかも。"}
     ,{"name": "ローラー",
-     "message": "","stop":0}
+     "command":"message","message": "","stop":0}
     ,{"name": "タチコマ"
      ,"message": "なんだか物騒だねぇ。"}
     ,{"name": "草薙素子"
      ,"message": "随分嫌われてるのね、その財閥っていうのは。"}
     ,{"name": "タチコマ",
-     "message": "","stop":0}
+     "command":"message","message": "","stop":0}
     ,{"name": "レベリカ"
      ,"message": "そりゃあもう、世界の嫌われ者って感じよね。"}
     ,{"name": "レベリカ",
-     "message": "","stop":0}
+     "command":"message","message": "","stop":0}
     ,{"name": "クリスティーナ"
      ,"message": "貧富格差の拡大、技術の独占による暴利、脅迫恐喝その他諸々。"}
     ,{"name": "クリスティーナ"
      ,"message": "レイガードの発展は財閥のおかげだけど、既得権益がひどすぎるよね。"}
     ,{"name": "クリスティーナ",
-     "message": "","stop":0}
+     "command":"message","message": "","stop":0}
     ,{"name": "江崎プリン"
      ,"message": "そんな組織、摘発してしまえばいいじゃないですか！"}
     ,{"name": "イブリン"
      ,"message": "レイガードの実権を財閥が握っているからムリ。"}
     ,{"name": "イブリン",
-     "message": "","stop":0}
+     "command":"message","message": "","stop":0}
     ,{"name": "レベリカ"
      ,"message": "アイレタも自治権を与えてる手前、迂闊に干渉する事もできないしねー。"}
     ,{"name": "草薙素子"
      ,"message": "どこの世界も似たようなものね。"}
     ,{"name": "レベリカ",
-     "message": "","stop":0}
+     "command":"message","message": "","stop":0}
     ,{"name": "バトー",
      "message": "一部の特権階級が、都市や世界を動かす……か。"}
     ,{"name": "ヴェロニカ",
@@ -305,15 +318,15 @@
     ,{"name": "ヴェロニカ",
      "message": "財閥にはレイガードの中心として、様々な情報が集まります。"}
     ,{"name": "江崎プリン",
-     "message": "","stop":0}
-    ,{"name": "クリスティーナ"
+     "command":"message","message": "","stop":0}
+    ,{"name": "ヴェロニカ"
      ,"message": "財閥の協力を得られれば、皆さんが元の世界に戻る近道にもなります。"}
     ,{"name": "草薙素子"
      ,"message": "了解。方針については任せるわ。"}
     ,{"name": "クリスティーナ",
-     "message": "","stop":0}
+     "command":"message","message": "","stop":0}
     ,{"name": "ヴェロニカ",
-     "message": "","stop":0}
+     "command":"message","message": "","stop":0}
     ,{"name": "バトー",
      "message": "……いいのか？連中を信用しちまって。"}
     ,{"name": "草薙素子"
@@ -380,8 +393,12 @@
   }
   ,"メイン-6": {
    "commands": [
-    {"name": "江崎プリン"
+    {"command": "scene",
+     "image": "攻殻機動隊6-1",
+     "stop":0}
+    ,{"name": "江崎プリン"
      ,"message": "うっひゃあ……すっごい大都会ですね、これは！"}
+    ,{"command": "scene","image": "","stop":0}
     ,{"name": "クリスティーナ",
      "message": "レイガードは世界的にも技術レベルが高いハイテク都市だからねー。"}
     ,{"name": "バトー",
@@ -391,7 +408,7 @@
     ,{"name": "バトー",
      "message": "いや……この街、なーんかキナ臭ぇと思ってよ。"}
     ,{"name": "江崎プリン",
-     "message": "","stop":0}
+     "command":"message","message": "","stop":0}
     ,{"name": "草薙素子",
      "message": "バトーもそう感じる？"}
     ,{"name": "草薙素子",
@@ -401,9 +418,9 @@
     ,{"name": "タチコマ",
      "message": "ここが財閥の本部？ほかのビルと比べてもとびきり大きいねぇ。"}
     ,{"name": "タチコマ",
-     "message": "","stop":0}
+     "command":"message","message": "","stop":0}
     ,{"name": "クリスティーナ",
-     "message": "","stop":0}
+     "command":"message","message": "","stop":0}
     ,{"name": "レベリカ",
      "message": "市民から搾取した金で建てられたんだから、いい印象はないけどね。"}
     ,{"name": "ヴェロニカ",
@@ -426,13 +443,17 @@
      "message": "おとなしくしろ！"}
     ,{"name": "財閥兵","image":"サウンドのみ",
      "message": "お前達は古代文明の遺産を独占しようとした罪に問われている！"}
+    ,{"name": "イブリン",
+     "command":"message","message": "","stop":0}
     ,{"name": "ローラー",
      "message": "……そうなのですか？"}
+    ,{"name": "バトー",
+     "command":"message","message": "","stop":0}
     ,{"name": "クリスティーナ",
      "message": "はあ！？そんな事するわけないじゃん！"}
     ,{"command": "clear","stop":0}
     ,{"name": "イブリン",
-     "message": "これ、なんの爆発！？"}
+     "message": "<span class='miniyure-y'><span class='miniyure-x'>これ、なんの爆発！？</span></span>"}
     ,{"name": "マッケンジ",
      "message": "こちらです！捕まりたくなければ急いで！"}
     ,{"name": "イブリン",
@@ -443,6 +464,10 @@
      "message": "バトー！あの女についてこの場を離脱する！"}
     ,{"name": "バトー",
      "message": "おう！"}
+    ,{"name": "草薙素子",
+     "command":"message","message": "","stop":0}
+    ,{"name": "バトー",
+     "command":"message","message": "","stop":0}
     ,{"name": "イブリン",
      "message": "あっ、ちょ……！"}
     ,{"name": "ヴェロニカ",
@@ -474,7 +499,7 @@
     ,{"name": "マッケンジ",
      "message": "その件は、僕でなく彼女から説明します。"}
     ,{"name": "バトー",
-     "message": "","stop":0}
+     "command":"message","message": "","stop":0}
     ,{"name": "ストレンジャー",
      "message": "……えと、その……連邦警察安全部のストレンジャー……です。"}
     ,{"name": "ストレンジャー",
@@ -500,7 +525,7 @@
     ,{"name": "草薙素子",
      "message": "そうするわ……と言いたいところだけど。"}
     ,{"name": "江崎プリン",
-     "message": "","stop":0}
+     "command":"message","message": "","stop":0}
     ,{"name": "バトー",
      "message": "だな。やられっぱなしってのは、どうにも俺らの性に合わねぇ。"}
     ,{"name": "ストレンジャー",
@@ -592,7 +617,7 @@
      "message": "バカ言っちゃいけねぇな。"}
     ,{"name": "バトー",
      "message": "こう見えても、俺ぁ元の世界じゃバリバリのおまわりさんだぜ？"}
-    ,{"name": "レベリカ",
+    ,{"name": "レベリカ","image":"レベリカ驚き",
      "message": "うそぉ！？"}
     ,{"name": "バトー",
      "message": "嘘じゃねぇよ！なんでお前がそんなに驚いてんだ！"}
@@ -622,7 +647,7 @@
      "message": "人工知能は間違えない、だから絶対に信用していいって具合にな。"}
     ,{"name": "レベリカ",
      "message": "人工知能って、そんなに言うほど完璧でもないよね。"}
-    ,{"name": "イブリン",
+    ,{"name": "イブリン","image":"イブリン驚き",
      "message": "なんで私を見て言うの？"}
     ,{"name": "レベリカ",
      "message": "いや、別に……"}
@@ -695,6 +720,8 @@
      ,"message": "ミサイル第三波、来ます。"}
     ,{"name": "タチコマ"
      ,"message": "わわわわっ！"}
+    ,{"name": "財閥兵",
+     "command":"message","message": "","stop":0}
     ,{"name": "マッケンジ"
      ,"message": "頭を伏せて、隠れていて下さい！ここは私が対処します！"}
     ,{"name": "ローラー"
@@ -766,7 +793,7 @@
     ,{"name": "草薙素子",
      "message": "交渉という選択肢はないという事か。"}
     ,{"name": "江崎プリン",
-     "message": "","stop":0}
+     "command":"message","message": "","stop":0}
     ,{"name": "バトー",
      "message": "どうする。やっぱドンパチかましてどさくさに紛れに情報をいただくか？"}
     ,{"name": "草薙素子",
@@ -774,17 +801,17 @@
     ,{"name": "ストレンジャー",
      "message": "は、はい！えと、人工知能のマザーはスタンドアロンになっていて……"}
     ,{"name": "マッケンジ",
-     "message": "","stop":0}
+     "command":"message","message": "","stop":0}
     ,{"name": "ヴェロニカ",
      "message": "アクセスできるのは財閥本部の管理端末だけ。セキュリティは万全です。"}
     ,{"name": "草薙素子",
      "message": "それなら、財閥本部に潜入して直接アクセスするしかなさそうね。"}
     ,{"name": "ストレンジャー",
-     "message": "","stop":0}
+     "command":"message","message": "","stop":0}
     ,{"name": "レベリカ",
      "message": "どうやって潜入するつもりなの？本部は警備兵でいっぱいだよ？"}
     ,{"name": "ヴェロニカ",
-     "message": "","stop":0}
+     "command":"message","message": "","stop":0}
     ,{"name": "ローラー",
      "message": "正面突破は無謀です。"}
     ,{"name": "草薙素子",
@@ -798,15 +825,15 @@
     ,{"name": "草薙素子",
      "message": "本部前でひとしきり暴れて撤退しろ。潜入する時間を確保できればいい。"}
     ,{"name": "バトー",
-     "message": "","stop":0}
+     "command":"message","message": "","stop":0}
     ,{"name": "タチコマ",
      "message": "了解！"}
     ,{"name": "草薙素子",
      "message": "私と団長、それとイブリンが潜入チームだ。他はバックアップに回れ。"}
     ,{"name": "レベリカ",
-     "message": "","stop":0}
+     "command":"message","message": "","stop":0}
     ,{"name": "ローラー",
-     "message": "","stop":0}
+     "command":"message","message": "","stop":0}
     ,{"name": "クリスティーナ",
      "message": "ちょっと待った！"}
     ,{"name": "イブリン",
@@ -850,9 +877,9 @@
     ,{"name": "タチコマ",
      "message": "ですよねー。少佐ってお顔は可愛いけど基本ゴリラ思考だし―……"}
     ,{"name": "レベリカ",
-     "message": "","stop":0}
+     "command":"message","message": "","stop":0}
     ,{"name": "マッケンジ",
-     "message": "","stop":0}
+     "command":"message","message": "","stop":0}
     ,{"name": "草薙素子",
      "message": "聞こえているぞ、お前達。"}
     ,{"name": "タチコマ",
@@ -862,11 +889,9 @@
     ,{"name": "草薙素子",
      "message": "作戦が終わったら、じっくりと話し合う必要がありそうだな。"}
     ,{"name": "草薙素子",
-     "message": "","stop":0}
+     "command":"message","message": "","stop":0}
     ,{"name": "バトー",
      "message": "……勘弁してくれ。"}
-    ,{"name": "マッケンジ",
-     "message": "　","stop":0}
     ,{"name": "レベリカ",
      "message": "どうかしたの？なんか青い顔してるけど。"}
     ,{"name": "バトー",
@@ -918,6 +943,9 @@
     ,{"name": "草薙素子",
      "message": "よし……時間が惜しい。作戦を開始するぞ。"}
     ,{"command": "clear","stop":0}
+    ,{"command": "scene",
+     "image": "攻殻機動隊15-1",
+     "stop":0}
     ,{"name": "イブリン",
      "message": "よっと……"}
     ,{"name": "草薙素子",
@@ -951,7 +979,7 @@
     ,{"name": "バトー",
      "message": "ようし、分かった。ここから撤退する。"}
     ,{"name": "江崎プリン",
-     "message": "","stop":0}
+     "command":"message","message": "","stop":0}
     ,{"name": "タチコマ",
      "message": "少佐、うまくやってるみたいだね！"}
     ,{"name": "バトー",
@@ -969,7 +997,7 @@
     ,{"name": "バトー",
      "message": "だが……任務は完璧にこなしてこそプロだ。"}
     ,{"name": "レベリカ",
-     "message": "","stop":0}
+     "command":"message","message": "","stop":0}
     ,{"name": "インペリア",
      "message": "その通りだ、バトー。"}
     ,{"name": "バトー",
@@ -993,11 +1021,9 @@
     ,{"name": "インペリア",
      "message": "分かっている。だからこそレイガードの市民をたきつけてきた。"}
     ,{"name": "タチコマ",
-     "message": "","stop":0}
+     "command":"message","message": "","stop":0}
     ,{"name": "レベリカ",
      "message": "<span class='miniyure-y'><span class='miniyure-x'>民間人が財閥の兵士を襲ってる！？</span></span>"}
-    ,{"name": "レベリカ",
-     "message": "民間人が財閥の兵士を襲ってる！？","stop":0}
     ,{"name": "インペリア",
      "message": "財閥が気に食わない連中は多いんだ。きっかけさえ与えれば爆発もする。"}
     ,{"name": "インペリア",
@@ -1005,7 +1031,7 @@
     ,{"name": "バトー",
      "message": "へ……こりゃ参ったぜ。強い女は少佐だけで間に合ってるんだがな。"}
     ,{"name": "インペリア",
-     "message": "","stop":0}
+     "command":"message","message": "","stop":0}
     ,{"name": "江崎プリン",
      "message": "ちょっと待ってください！その女は誰ですか、バトーさん！？"}
     ,{"name": "江崎プリン",
@@ -1015,7 +1041,7 @@
     ,{"name": "江崎プリン",
      "message": "あっ、ちょ……っ！？"}
     ,{"name": "江崎プリン",
-     "message": "","stop":0}
+     "command":"message","message": "","stop":0}
     ,{"name": "バトー",
      "message": "頼りになる援軍も来てくれた事だし、もう少しばかり気張るとするか。"}
     ,{"name": "バトー",
@@ -1076,7 +1102,7 @@
     ,{"name": "江崎プリン",
      "message": "りょ、了解です！"}
     ,{"name": "草薙素子",
-     "message": "","stop":0}
+     "command":"message","message": "","stop":0}
     ,{"name": "江崎プリン",
      "message": "マザーを浸食していたウイルスのサンプル、届きましたか！？"}
     ,{"name": "ローラー",
@@ -1126,7 +1152,7 @@
     ,{"name": "ヴェロニカ",
      "message": "母体となる財閥が大きくなる事も、自己進化の一環なのでしょう。"}
     ,{"name": "ストレンジャー",
-     "message": "","stop":0}
+     "command":"message","message": "","stop":0}
     ,{"name": "ローラー",
      "message": "次元の扉についても、さらなる自己進化の為に調査していたようです。"}
     ,{"name": "ローラー",
@@ -1134,11 +1160,11 @@
     ,{"name": "草薙素子",
      "message": "なるほど……それは興味深い事例ね。"}
     ,{"name": "ヴェロニカ",
-     "message": "","stop":0}
+     "command":"message","message": "","stop":0}
     ,{"name": "クリスティーナ",
      "message": "そんなのんきな事言ってる場合じゃないよ！"}
     ,{"name": "ローラー",
-     "message": "","stop":0}
+     "command":"message","message": "","stop":0}
     ,{"name": "イブリン",
      "message": "クリス？どうしたの、そんなに慌てて。"}
     ,{"name": "クリスティーナ",
@@ -1161,7 +1187,7 @@
   }
   ,"メイン-20": {
    "commands": [
-    {"name": "マザーAI","image":"サウンドのみ"
+    {"name": "マザーAI","image":"マザー"
      ,"message": "……………"}
     ,{"name": "イブリン",
      "message": "あれが……マザー？"}
@@ -1169,7 +1195,7 @@
      "message": "そうみたいね。"}
     ,{"name": "草薙素子",
      "message": "できれば元の世界に戻る方法を調べたかったけど……"}
-    ,{"name": "マザーAI","image":"サウンドのみ",
+    ,{"name": "マザーAI","image":"マザー",
      "message": "ア……ア……進化……モット……モット……"}
     ,{"name": "草薙素子",
      "message": "……そういう状況でもなさそうね。"}
@@ -1181,15 +1207,15 @@
      "message": "膨大な情報量に押し潰されて自我が消滅するぞ。"}
     ,{"name": "イブリン",
      "message": "ええ……"}
-    ,{"name": "マザーAI","image":"サウンドのみ",
+    ,{"name": "マザーAI","image":"マザー",
      "message": "モット……モット……"}
     ,{"name": "草薙素子",
      "message": "ウイルスに侵された人工知能の末路か。"}
     ,{"name": "草薙素子",
      "message": "……哀れね。"}
-    ,{"name": "マザーAI","image":"サウンドのみ",
+    ,{"name": "マザーAI","image":"マザー",
      "message": "ア……ア？ア……"}
-    ,{"name": "マザーAI","image":"サウンドのみ",
+    ,{"name": "マザーAI","image":"マザー",
      "message": "アアアアアアッ！"}
    ]
   }
@@ -1206,7 +1232,7 @@
     ,{"name": "草薙素子",
      "message": "次元の扉についての断片的な情報は手に入ったわ。"}
     ,{"name": "タチコマ",
-     "message": "","stop":0}
+     "command":"message","message": "","stop":0}
     ,{"name": "江崎プリン",
      "message": "そうですね！その情報を検証していけば、必ず元の世界に戻れますよ！"}
     ,{"name": "バトー",
@@ -1216,19 +1242,19 @@
     ,{"name": "江崎プリン",
      "message": "全部の意思決定を担っていたんです。きっと大変な混乱が……"}
     ,{"name": "クリスティーナ",
-     "message": "","stop":0}
+     "command":"message","message": "","stop":0}
     ,{"name": "インペリア",
      "message": "心配するな。そのあたりは連保警察がうまく処理するはずだ。"}
     ,{"name": "バトー",
      "message": "うおっ、インペリア！お前まだいたのか！？"}
-    ,{"name": "バトー",
+    ,{"name": "インペリア",
      "message": "ふ……別れの挨拶をしたくてな。"}
     ,{"name": "江崎プリン",
-     "message": "","stop":0}
+     "command":"message","message": "","stop":0}
     ,{"name": "ローラー",
      "message": "私もインペリアさんとレイガードを離れます。"}
     ,{"name": "ローラー",
-     "message": "","stop":0}
+     "command":"message","message": "","stop":0}
     ,{"name": "マッケンジ",
      "message": "財閥は解体、レイガードは自治権を剥奪される事になるでしょう。"}
     ,{"name": "マッケンジ",
@@ -1238,7 +1264,7 @@
     ,{"name": "インペリア",
      "message": "うちの組織の幹部として迎え入れてやる。"}
     ,{"name": "マッケンジ",
-     "message": "","stop":0}
+     "command":"message","message": "","stop":0}
     ,{"name": "江崎プリン",
      "message": "な、ななな！何を勧誘してるんですかー！"}
     ,{"name": "インペリア",
@@ -1254,13 +1280,13 @@
     ,{"name": "江崎プリン",
      "message": "むー……もう！早く行きましょうよ、皆さん！元の世界に戻る為にも！"}
     ,{"name": "インペリア",
-     "message": "","stop":0}
+     "command":"message","message": "","stop":0}
     ,{"name": "イブリン",
      "message": "行くって……少佐達はこれからどこに向かうの？"}
     ,{"name": "草薙素子",
      "message": "まずはこっちの世界の情報集めね。知らない事がまだまだ多すぎる。"}
     ,{"name": "江崎プリン",
-     "message": "","stop":0}
+     "command":"message","message": "","stop":0}
     ,{"name": "ヴェロニカ",
      "message": "でしたら、私達と一緒に行動してはいかがでしょう。"}
     ,{"name": "ヴェロニカ",
@@ -1274,7 +1300,7 @@
     ,{"name": "ヴェロニカ",
      "message": "なるほど……"}
     ,{"name": "イブリン",
-     "message": "","stop":0}
+     "command":"message","message": "","stop":0}
     ,{"name": "レベリカ",
      "message": "何かあったらいつでも頼ってよ？できる限り協力するからさ！"}
     ,{"command": "clear","stop":0}
@@ -1348,7 +1374,10 @@
   }
   ,"サブ-2": {
    "commands": [
-    {"name": "イブリン"
+    {"command": "scene",
+     "image": "フェニックス号",
+     "stop":0}
+    ,{"name": "イブリン"
      ,"message": "ようこそ。これがブラックアークのベースカーだよ。"}
     ,{"name": "バトー",
      "message": "ほお……？"}
@@ -1356,14 +1385,15 @@
      "message": "お前らの移動拠点ってところか？随分といいもん持ってるじゃねぇかよ。"}
     ,{"name": "イブリン",
      "message": "ボロボロな状態だったけどね。使えるようにするのは苦労したよ……"}
+    ,{"command": "scene","image": "","stop":0}
     ,{"name": "タチコマ",
      "message": "メンテナンス用のドックもあるみたい！ボク、ちょっと見てくる！"}
     ,{"name": "江崎プリン",
      "message": "あっ、こらっ！勝手な行動は慎みなさーいっ！"}
     ,{"name": "タチコマ",
-     "message": "","stop":0}
+     "command":"message","message": "","stop":0}
     ,{"name": "江崎プリン",
-     "message": "","stop":0}
+     "command":"message","message": "","stop":0}
     ,{"name": "イブリン",
      "message": "……設備を壊したりしないでよね。あとでたぶん、私が怒られるから。"}
     ,{"name": "バトー",
@@ -1405,7 +1435,7 @@
     ,{"name": "バトー",
      "message": "まさか、あいつら……"}
     ,{"name": "草薙素子",
-     "message": "","stop":0}
+     "command":"message","message": "","stop":0}
     ,{"name": "タチコマ",
      "message": "ボクのせいじゃないよ！プリンが迂闊に触ろうとするから！"}
     ,{"name": "江崎プリン",
@@ -1602,16 +1632,16 @@
     ,{"name": "草薙素子",
      "message": "そう？それなら、リベンジマッチを楽しみにしてるわね、レベリカ。"}
     ,{"name": "草薙素子",
-     "message": "","stop":0}
-    ,{"name": "イブリン",
+     "command":"message","message": "","stop":0}
+    ,{"name": "イブリン","image":"イブリン悪だくみ",
      "message": "ふーん……"}
     ,{"name": "レベリカ",
      "message": "あ……イブ、何か悪いこと考えてるでしょ。"}
-    ,{"name": "イブリン",
+    ,{"name": "イブリン","image":"イブリン悪だくみ",
      "message": "別に。"}
     ,{"name": "イブリン",
      "message": "ちょっと少佐の電脳にアクセスして、過去の情報を見てみようかなって。"}
-    ,{"name": "イブリン",
+    ,{"name": "レベリカ",
      "message": "絶対怒られるよ、それ。わたしは知らないからね？"}
     ,{"name": "イブリン",
      "message": "バレなきゃ大丈夫よ。こっそり覗くだけだし――"}
@@ -1824,9 +1854,9 @@
     ,{"name": "タチコマ",
      "message": "了解！"}
     ,{"name": "草薙素子",
-     "message": "","stop":0}
+     "command":"message","message": "","stop":0}
     ,{"name": "タチコマ",
-     "message": "","stop":0}
+     "command":"message","message": "","stop":0}
     ,{"name": "ヴェロニカ",
      "message": "なかなか大胆な作戦ですね……陽動をかけた隙に直接潜入ですか。"}
     ,{"name": "ローラー",

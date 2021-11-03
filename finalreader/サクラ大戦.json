@@ -2343,9 +2343,9 @@
      "message": "あっ……！"}
     ,{"name": "イブリン",
      "message": "異常空間が消えていく！"}
-    ,{"command": "scene","image": "","stop":0}
     ,{"name": "レベリカ",
      "message": "みんな、ちゃんと元の世界に帰れたかな？"}
+    ,{"command": "scene","image": "","stop":0}
     ,{"name": "クリスティーナ",
      "message": "きっと大丈夫だろう。劇場もすっかり消えてしまったからな。"}
     ,{"name": "ホイットニー",

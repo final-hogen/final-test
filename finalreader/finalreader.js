@@ -386,7 +386,7 @@ class StoryMaker extends StoryReader{
     var characterNameNodes = this.getElementsByXPath(this.x_character_name,messageTag);
     characterNameNodes[0].innerHTML = name;
     var iconNodes = this.getElementsByXPath(this.x_icon_img,messageTag);
-    iconNodes[0].src = this.getImagePath(imageName);
+    if(imageName)iconNodes[0].src = this.getImagePath(imageName);
     return messageTag;
   }
   /**

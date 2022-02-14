@@ -156,6 +156,7 @@ body {
   margin-right: -50px;
   width: 100px;
   line-height:100%;
+  position: relative;
 }
 
 .character_message .faceicon img{
@@ -163,6 +164,9 @@ body {
   height: 100px;
   border-radius: 10%;
   transition: all cubic-bezier(0.075, 0.82, 0.165, 1.0) 1.0s;
+}
+.character_message[tel="1"] .faceicon img{
+  animation: 3s glitch infinite alternate;
 }
 .character_message .chatting {
   width: 100%;
@@ -213,8 +217,23 @@ body {
 .character_name {
   margin: 0;
   padding: 0;
-   font-size: 0.8rem;
-   position: relative;
+  font-size: 0.8rem;
+  position: relative;
+}
+.character_tel {
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: white;
+  font-weight: bolder;
+  text-shadow: 1px 1px black;
+  display: none;
+}
+.character_message[tel="1"] .character_tel{
+  display: initial;
 }
 .saysinner {
   overflow:hidden;
@@ -252,4 +271,13 @@ body {
   0% { transform:translateX(-0.05rem) }
   50% { transform:translateX(0.05rem) }
   100% { transform:translateX(-0.05rem) }
+}
+
+@keyframes glitch {
+  0% { transform: skewX(-15deg)filter:hue-rotate(150deg);; }
+  0.1% { transform: skewX(15deg);filter:hue-rotate(20deg); }
+  1% { transform: skewX(-15deg);filter:hue-rotate(270deg); }
+  1.5% { transform: skewX(15deg);filter:hue-rotate(200deg); }
+  2% { transform: skewX(0deg);filter:hue-rotate(0deg); }
+  100% { transform: skewX(0deg); }  
 }

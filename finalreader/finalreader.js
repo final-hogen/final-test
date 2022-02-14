@@ -268,7 +268,7 @@ class StoryMaker extends StoryReader{
     var command = this.nextCommand();
     switch(command.command){
       case this.command_message:
-        this.setMessage(command.id,command.name,command.image,command.message);
+        this.setMessage(command.id,command.name,command.image,command.message,command.tel);
       break;
       case this.command_narration:
         this.setNarration(command.message);
@@ -362,8 +362,8 @@ class StoryMaker extends StoryReader{
   /**
    * メッセージを追加または更新
    */
-  setMessage(id,name,imageName,message){
-    var newMessage = this.makeMessage(id,name,imageName);
+  setMessage(id,name,imageName,message,tel){
+    var newMessage = this.makeMessage(id,name,imageName,tel);
     if(!message){
       if(newMessage.parentNode)newMessage.parentNode.removeChild(newMessage);
       return;
@@ -377,12 +377,13 @@ class StoryMaker extends StoryReader{
   /**
    * メッセージを作成または元のを更新
    */
-  makeMessage(id,name,imageName){
+  makeMessage(id,name,imageName,tel){
     var messageTag = document.getElementById(id);
     if(!messageTag){
       messageTag = this.messageTemplate.cloneNode(true);
       messageTag.setAttribute("id", id);
     }
+    messageTag.setAttribute("tel", tel);
     var characterNameNodes = this.getElementsByXPath(this.x_character_name,messageTag);
     characterNameNodes[0].innerHTML = name;
     var iconNodes = this.getElementsByXPath(this.x_icon_img,messageTag);

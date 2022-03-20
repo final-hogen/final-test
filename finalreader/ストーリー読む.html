@@ -21,7 +21,10 @@
   </div>
   <!-- ナレーション -->
   <div id="narration_template">
-    <div class="narration" style="opacity:0;" actionstyle="opacity: 1;"><p name="message"></p></div>
+    <div class="narration_area" style="opacity:0;" actionstyle="opacity: 1;">
+        <span name="character_name"></span>
+      <div class="narration"><p name="message"></p></div>
+    </div>
   </div>
   <!-- 次の章 -->
   <div id="nexchapter_template" class="nextchapterview" onclick="event.stopPropagation();startChapter('')">

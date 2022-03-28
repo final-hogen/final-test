@@ -4,11 +4,15 @@
  "images": {
   "ジャスミン": "ジャスミン.jpg",
   "ジャスミンUR": "ジャスミンUR.jpg",
+  "ジャスミン誓約": "ジャスミン誓約.jpg",
   "サウンドのみ": "soundonly.jpg",
   "私": "団長.jpg",
+  "神父": "神父.jpg",
   "デューク": "NPCデューク.jpg",
   "トム": "NPCトム.jpg",
   "イブリン容疑者": "イベント画像/イブリン容疑者.jpg",
+  "結婚式": "イベント画像/結婚式.jpg",
+  "教会内部": "イベント画像/教会内部.jpg",
   "花嫁の呪い": "イベント画像/花嫁の呪い.jpg"
  },
  "logo": {
@@ -341,7 +345,7 @@
     ,{"command": "narration",
      "message": "私の中の枷は外され、そのまま粉々になった。"}
     ,{"command": "narration",
-     "message": "そして、彼女のその悲しい強さも砕かねば。"}
+     "message": "そして、彼女の頑なさも砕かないと。"}
     ,{"name": "私"
      ,"message": "誓約を交わしたいんだ。"}
     ,{"name": "私"
@@ -361,6 +365,76 @@
   }
   ,"XIV": {
    "commands": [
+    {"command": "scene",
+     "image": "結婚式","stop":0}
+    ,{"name": "神父"
+     ,"message": "ジャスミン、あなたはこの方と誓約を結ぶことを誓いますか？"}
+    ,{"name": "神父"
+     ,"message": "病める時も健やかなる時も、永遠に彼に対して命尽きるまで忠実であることを誓いますか？"}
+    ,{"name": "ジャスミン","image":"ジャスミン誓約"
+     ,"message": "誓います。"}
+    ,{"name": "神父"
+     ,"message": "あなたは、彼女と誓約を結ぶことを誓いますか？"}
+    ,{"name": "神父"
+     ,"message": "病める時も健やかなる時も、永遠に彼女に対して命尽きるまで忠実であることを誓いますか？"}
+    ,{"name": "私"
+     ,"message": "誓い……"}
+    ,{"name": "ジャスミン","image":"ジャスミン誓約"
+     ,"message": "待って……"}
+    ,{"name": "私"
+     ,"message": "？"}
+    ,{"name": "ジャスミン","image":"ジャスミン誓約"
+     ,"message": "あなた、本当にちゃんと考えたの？"}
+    ,{"name": "ジャスミン","image":"ジャスミン誓約"
+     ,"message": "私の過去を全て知った上で、それでも私と一緒になりたい？"}
+    ,{"command": "scene","image": "","stop":0}
+    ,{"command": "narration",
+     "message": "何の躊躇いもなく、力を込めて頷いて見せた。"}
+    ,{"command": "narration","message": "","stop":0}
+    ,{"name": "私"
+     ,"message": "もちろん！"}
+    ,{"name": "ジャスミン","image":"ジャスミン誓約"
+     ,"message": "そう……"}
+    ,{"name": "ジャスミン","image":"ジャスミン誓約"
+     ,"message": "私も、あなたこそって思うわ……"}
+    ,{"command": "clear","stop":0}
+    ,{"command": "narration",
+     "message": "視界の中で何かが一閃した。"}
+    ,{"command": "narration",
+     "message": "激しい衝撃を感じた。何が起こったのか全く分からなかった。"}
+    ,{"command": "narration",
+     "message": "けれど、その場で上がった叫び声を耳にし、自分の手があらぬ方向に曲がってしまっているのをみた。"}
+    ,{"command": "narration",
+     "message": "ステンドグラスが割れて床に飛び散った。シャンデリアに使われていたものだ。"}
+    ,{"command": "narration",
+     "message": "胸元がなにか鋭利なもので貫かれていたのだろう、呼吸をすると激しい痛みが走った。"}
+    ,{"command": "narration",
+     "message": "でもなにか予感があった。すぐに痛みはなくなった。"}
+    ,{"command": "narration",
+     "message": "彼女は！彼女は大丈夫なんだろうか？"}
+    ,{"command": "narration",
+     "message": "突然思い出し、視線を回してジャスミンを探した。"}
+    ,{"command": "narration",
+     "message": "鮮やかな赤が視界を浸食し始めた。彼女が驚いて、その場に座り込んでいるのを目にした。"}
+    ,{"command": "clear","stop":0}
+    ,{"command": "scene",
+     "image": "教会内部","stop":0}
+    ,{"name": "ジャスミン","image":"ジャスミン誓約"
+     ,"message": "あなた！！！いやあああああ！！！"}
+    ,{"command": "narration",
+     "message": "彼女が駆け寄って来る。途中でガラスの破片が彼女の瑞々しい膝を切った。"}
+    ,{"name": "ジャスミン","image":"ジャスミン誓約"
+     ,"message": "どうして！！！どうして……エル……"}
+    ,{"command": "narration",
+     "message": "彼女は頬に触れてくれた。まるで壊れやすいガラスの工芸品だとでも思っているかのようだった。"}
+    ,{"command": "narration",
+     "message": "その時、とうとう気付くことになった。さっき目にしたあの閃光は――"}
+    ,{"command": "narration",
+     "message": "彼女の指先に隠されていた糸だった。"}
+    ,{"command": "narration",
+     "message": "ああ、確かに自分はどうしようもなく……"}
+    ,{"command": "narration",
+     "message": "ただの綺麗ごとが好きなだけの、愚か者でしかなかったのだ。"}
    ]
   }
  }

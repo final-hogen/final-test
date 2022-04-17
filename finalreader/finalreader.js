@@ -376,9 +376,9 @@ class StoryMaker extends StoryReader{
     var commandArea = this.commandArea;
     var areaClass = commandArea.className;
     var classes = areaClass.split(" ");
-    classes = classes.filter(word => word==shakeClassName);
+    classes = classes.filter(word =>word!=shakeClassName);
     const oldClassName = classes.join(" ");
-    const newClassName = oldClassName+" "+shakeClassName;
+    const newClassName = (!!oldClassName)?(oldClassName+" "+shakeClassName):(shakeClassName);
     commandArea.className = oldClassName;
     window.requestAnimationFrame(function(time) {
       window.requestAnimationFrame(function(time) {

@@ -146,6 +146,7 @@ class StoryReader extends StoryAnimation{
     this.command_narration = 'narration';
     this.command_scene = 'scene';
     this.command_shake = 'shake';
+    this.command_cache = 'cache';
     this.fullJsonData = jsonData;
     this.images = jsonData.images;
     this.chapters = jsonData.chapters;
@@ -280,6 +281,9 @@ class StoryMaker extends StoryReader{
       case this.command_shake:
         this.setShake();
       break;
+      case this.command_cache:
+        this.setCache(command);
+      break;
       case this.command_clear:
         this.clearCommannds();
       break;
@@ -385,6 +389,20 @@ class StoryMaker extends StoryReader{
         commandArea.className = newClassName;
       });
     });
+  }
+  /**
+   * データをキャッシュする
+   */
+  setCache(commands){
+    for (const [key, value] of Object.entries(commands)) {
+      switch(key){
+        case 'image':
+        var img = new Image();
+        img.src = this.getImagePath(value);
+        // 読み込んで捨て
+        break;
+      }
+    }
   }
   /**
    * メッセージを追加または更新

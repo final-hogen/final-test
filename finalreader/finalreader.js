@@ -252,7 +252,7 @@ class StoryMaker extends StoryReader{
     this.messageTemplate = messageTemplate.cloneNode(true);
     this.messageTemplate.removeAttribute("id");
     this.sceneTemplate = sceneTemplate.cloneNode(true);
-    this.sceneTemplate.setAttribute("id","scene_command");
+    this.sceneTemplate.setAttribute("id","scene");
     this.narrationTemplate = narrationTemplate.cloneNode(true);
     this.narrationTemplate.setAttribute("id","narration_command");
     this.nexchapter_template = nexchapter_template.cloneNode(true);
@@ -359,7 +359,7 @@ class StoryMaker extends StoryReader{
    * シーン追加または更新
    */
   setScene(imageName){
-    var sceneTag = document.getElementById("scene_command");
+    var sceneTag = document.getElementById("scene");
     if(!imageName){
       if(sceneTag)sceneTag.parentElement.removeChild(sceneTag);
       return;

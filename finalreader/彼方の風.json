@@ -436,7 +436,7 @@
      ,"message": "いつかここに咲く花や繁る木々が、汝らに哀悼の歌を唄うだろう。"}
     ,{"command": "shake","stop":0}
     ,{"name": "山賊"
-     ,"message": "お前らは速く、領主様をふもとにお連れしろ！"}
+     ,"message": "お前らは早く、領主様をふもとにお連れしろ！"}
     ,{"name": "山賊"
      ,"message": "ほかの皆は共にかかれ！できるだけ、ヤツを引き止めるんだ！"}
     ,{"name": "ゼロ"
@@ -1363,7 +1363,7 @@
     ,{"name": "リリアン"
      ,"message": "リ……リサ……"}
     ,{"name": "ゼロ"
-     ,"message": "<span class='yure'>リサ……</span>あなたが、帝国の<span class='miniyure-y'><span class='miniyure-x'>姫</span></span>なの！？"}
+     ,"message": "<span class='yure'>リサ……</span>あなたが、帝国の<span style='font-size:1.3rem;'>姫</span>なの！？"}
     ,{"name": "リリアン"
      ,"message": "許せ！許してくれ！本当に何も知らぬのだ！"}
     ,{"name": "リリアン"
@@ -1901,7 +1901,7 @@
     ,{"name": "ゼロ"
      ,"message": "やった、消え――あ。"}
     ,{"name": "ゼロ"
-     ,"message": "でも、どうやって取り出せばいいの？"}
+     ,"message": "これ、どうやって取り出せばいいの？"}
     ,{"command": "scene","image": "","stop":0}
     ,{"command": "narration","message": "","stop":0}
     ,{"id": "ハゲワシ","name": "？？？","image":"サウンドのみ"

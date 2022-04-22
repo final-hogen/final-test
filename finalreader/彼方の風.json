@@ -966,6 +966,7 @@
      ,"message": "中二……"}
     ,{"name": "ハゲワシ"
      ,"message": "まさかあの有名なゼロは、中二病のガキだったのか？"}
+    ,{"command": "shake","stop":0}
     ,{"name": "ゼロ"
      ,"message": "<span style='font-size:1.8rem;' class='yure'>わああ！！</span>"}
     ,{"command": "scene","image": "ミッションスタート","stop":0}

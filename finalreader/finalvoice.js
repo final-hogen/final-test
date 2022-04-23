@@ -71,7 +71,9 @@ class FinalVoice {
    */
   speak(name, text){
     if(!this.useOK)return;
-    text = text.replace(/(<([^>]+)>)/gi, '');
+    text = text.replace(/<ruby(?: .+?)?>.*?<rt>/g, '');     // <ruby>～<rt>
+    text = text.replace(/<\/rt(?: .+?)?>.*?<\/ruby>/g, ''); // </rt>～<ruby>
+    text = text.replace(/(<([^>]+)>)/gi, '');               // その他タグのみ
     window.speechSynthesis.cancel();
     var speech = new SpeechSynthesisUtterance(text);
     var voice = this.getVoice(name);

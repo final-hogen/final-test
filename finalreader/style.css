@@ -216,7 +216,7 @@ body {
   transition: all cubic-bezier(0.075, 0.82, 0.165, 1.0) 1.0s;
 }
 .character_message[tel="1"] .faceicon img{
-  animation: 3s glitch infinite alternate;
+  animation: 2.5s glitch infinite alternate;
 }
 .character_message .chatting {
   width: 100%;
@@ -281,6 +281,18 @@ body {
   font-weight: bolder;
   text-shadow: 1px 1px black;
   display: none;
+  content: 'sssdsda';
+  width: 100px;
+  height: 100px;
+  background-image: linear-gradient(
+    0deg,
+    #a4d3e420 5%,
+    #00000000 5%, #00000000 70%,
+    #a4d3e420 70%, #a4d3e420 75%,
+    #00000000 75%, #00000000 100%
+  );
+  background-size: 100% 50px;
+  animation: stripenoise 2s infinite linear
 }
 .character_message[tel="1"] .character_tel{
   display: initial;
@@ -333,6 +345,11 @@ body {
   1.5% { transform: skewX(15deg);filter:hue-rotate(200deg); }
   2% { transform: skewX(0deg);filter:hue-rotate(0deg); }
   100% { transform: skewX(0deg); }  
+}
+
+@keyframes stripenoise {
+  0% {  background-position-y: 0;  }
+  100% {  background-position-y: -100px;  }
 }
 
 @keyframes quake {

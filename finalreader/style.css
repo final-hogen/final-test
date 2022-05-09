@@ -36,6 +36,9 @@ body {
   margin-right:auto;
   margin-left:auto;
 }
+rt{
+  text-align: center;
+}
 #footer{
   width: 100%;
   text-align: center;

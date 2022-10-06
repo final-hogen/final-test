@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>ファイナル辞書</title>
+    <link rel="shortcut icon" type="image/png" href="サイトアイコン.PNG">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="style.css" />
+    <script src="finalreader.js"></script>
+    <style type="text/css">
+      h1:before{
+        content: '';
+        width: 50px;
+        height: 50px;
+        display: inline-block;
+        background-size: contain;
+        background-repeat: no-repeat;
+        vertical-align: middle;
+      }
+      div[data-open="0"] h3:before{
+        content: '';
+        width: 20px;
+        height: 30px;
+        display: inline-block;
+        background-size: contain;
+        background-repeat: no-repeat;
+        vertical-align: middle;
+      }
+      h1{
+        margin: 10px 10px;
+      }
+      h3{
+        margin: 0px 10px;
+      }
+      .word{
+        padding: 10px 15px;
+        border: solid 1px #80808038;
+        border-color: rgba(0,0,32,0.2);
+        border-radius: 18px;
+      }
+      .旧世界 h1:before{
+        background-image: url(./辞書画像/傭兵団ロゴ_15.png);
+      }
+      .旧世界 div[data-open="0"] h3:before{
+        background-image: url(./辞書画像/かっこいいイブリン.png);
+      }
+      .word div{
+        display: none;
+      }
+      div[data-open="1"] div{
+        display: block;
+      }
+      </style>
+    <script>
+      class FinalDictionary{
+        constructor() {
+          this.words = [];
+          this.openAttribute = 'data-open';
+        }
+        init(){
+          var nodeWords = this.getElementsByXPath('//div[@class="word"]');
+          var that = this;
+          for (var i = 0; i < nodeWords.length; i++) {
+            var word = {};
+            word.node = nodeWords[i];
+            word.node.onclick = that.clickWord;
+            word.name = this.getElementsByXPath('//h3',word.node)[0].innerText;
+            word.text = word.node.textContent;
+            this.words.push(word);
+          }
+        }
+        getElementsByXPath(expression, parentElement) {
+          var r = []
+          var x = document.evaluate(expression, parentElement || document, null, XPathResult.ORDERED_NODE_SNAPSHOT_TYPE, null)
+          for (var i = 0, l = x.snapshotLength; i < l; i++) {
+              r.push(x.snapshotItem(i))
+          }
+          return r;
+        }
+        clickWord(event){
+          if(!event)return;
+          var that = document.finalDictionary;
+          var word = that.getWordfromNode(event.currentTarget);
+          if(!word)return;
+          event.stopPropagation();
+          that.toggleOpen(word);
+        }
+        toggleOpen(word){
+          var now = word.node.getAttribute(this.openAttribute);
+          if(now=="1")word.node.setAttribute(this.openAttribute,"0");
+          else word.node.setAttribute(this.openAttribute,"1");
+        }
+        getWordfromNode(node){
+          var word = null;
+          for (var i = 0; i < this.words.length; i++) {
+            if(node !== this.words[i].node)continue;
+            return this.words[i];
+          }
+          return null;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div id="wrapper" style="background-image:url('ノーヴァ背景.JPG');">
+    <div id="conteiner">
+      <div id="content_area">
+        <div id="logo_area">
+          <img class="logo_image" src="ロゴ_1.png" width="512" height="209" style="transform: translate(-100%, 0px);opacity: 0;" onloadstyle="transform:translate(0px, 0px);opacity: 1;"/>
+          <p>これはファイナルギアの用語を見るためのツールです。<br/>
+          それなりのネタバレと推測を含みます。
+          </p>
+        </div>
+        <br/><br/>
+        <div class="旧世界">
+          <h1>旧世界</h1>
+          <div class="word" data-open="0">
+            <h3>メテオインパクト前の世界</h3>
+            <div>メテオインパクト以前は人類がもっとも繁栄した時代であり、崩壊後の世界より高い技術力を持っていた。<br/>
+            いくつかの施設は崩壊後も現存している。
+            </div>
+          </div>
+        </div>
+      </div>
+    <!-- フッター -->
+    <br/><br/>
+    <div id="footer">
+      <p>created by ほげん(hogen_feh@twitter.com)</p>
+      <p><a href="https://game.bilibili.co.jp/finalgear/">©ファイナルギア</a>　　<a href="https://game.bilibili.co.jp/">©bilibili</a></p>
+    </div>
+    <script>
+      {
+      var readerAnimator = new StoryAnimation();
+      readerAnimator.actionCSS(null);
+        window.onload = function() {
+        document.finalDictionary = new FinalDictionary();
+        document.finalDictionary.init();
+        }
+      }
+    </script>
+    </div></div>
+  </body>
+</html>

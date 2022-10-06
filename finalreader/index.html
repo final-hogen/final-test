@@ -36,7 +36,9 @@
         }
       };
       var ajaxLoader = new MyFinalAjax(content_area);
-      ajaxLoader.loadPage('ストーリー選択.html');
+      var viewStoryName = (new URL(document.location)).searchParams.get('story');
+      if(viewStoryName)ajaxLoader.loadStoryJson(viewStoryName+'.json');
+      else ajaxLoader.loadPage('ストーリー選択.html');
     </script>
     </div></div>
   </body>

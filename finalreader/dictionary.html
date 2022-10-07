@@ -8,14 +8,32 @@
     <link rel="stylesheet" href="style.css" />
     <script src="finalreader.js"></script>
     <style type="text/css">
+    #totop {
+      position: fixed;
+      bottom: 20px;
+      left: auto;
+      margin:0 0 0 480px;
+      padding: 10px 15px;
+      border: solid 1px #80808038;
+      border-color: rgba(0,0,32,0.2);
+      background-color: rgba(90, 100, 136, 0.514);
+      border-radius: 18px;
+    }
+    #search_template{
+      display: none;
+    }
+    .word img{
+      float: left;
+    }
       h1:before{
         content: '';
-        width: 50px;
-        height: 50px;
+        width: 60px;
+        height: 60px;
         display: inline-block;
         background-size: contain;
         background-repeat: no-repeat;
         vertical-align: middle;
+        background-position:center;
       }
       div[data-open="0"] h3:before{
         content: '';
@@ -32,17 +50,81 @@
       h3{
         margin: 0px 10px;
       }
+      .search{
+        text-align: right;
+      }
+      .search_result{
+        display: block;
+      }
       .word{
         padding: 10px 15px;
         border: solid 1px #80808038;
         border-color: rgba(0,0,32,0.2);
         border-radius: 18px;
       }
-      .旧世界 h1:before{
+      .word:after{
+        clear:both;
+      }
+      .旧世界 h1:before , .ダークメテオ h1:before, .アグネスの関係者 h1:before, .その他 h1:before{
         background-image: url(./辞書画像/傭兵団ロゴ_15.png);
+      }
+      .ケゲア帝国 h1:before {
+        background-image: url(./辞書画像/傭兵団ロゴ_3.png);
+      }
+      .アイレタ連邦 h1:before {
+        background-image: url(./辞書画像/傭兵団ロゴ_7.png);
+      }
+      .ハイクシアー h1:before {
+        background-image: url(./辞書画像/傭兵団ロゴ_5.png);
+      }
+      .ブラックアーク h1:before {
+        background-image: url(./辞書画像/傭兵団ロゴ_13.png);
+      }
+      .ヘルシーアンドハッピーエブリデイ h1:before {
+        background-image: url(./辞書画像/傭兵団ロゴ_11.png);
+      }
+      .パラノイド h1:before {
+        background-image: url(./辞書画像/傭兵団ロゴ_9.png);
       }
       .旧世界 div[data-open="0"] h3:before{
         background-image: url(./辞書画像/かっこいいイブリン.png);
+      }
+      .ダークメテオ div[data-open="0"] h3:before{
+        width: 30px;
+        height: 35px;
+        background-image: url(./辞書画像/ナコトリス.png);
+      }
+      .ケゲア帝国 div[data-open="0"] h3:before{
+        width: 28px;
+        height: 33px;
+        background-image: url(./辞書画像/九条さんチビ_1.png);
+      }
+      .アイレタ連邦 div[data-open="0"] h3:before{
+        width: 25px;
+        height: 35px;
+        background-image: url(./辞書画像/ブレイドチビ_1.png);
+      }
+      .ハイクシアー div[data-open="0"] h3:before{
+        width: 35px;
+        height: 40px;
+        background-image: url(./辞書画像/ニアチビ_1.png);
+      }
+      .ブラックアーク div[data-open="0"] h3:before{
+        background-image: url(./辞書画像/ゼロ.png);
+      }
+      .ヘルシーアンドハッピーエブリデイ div[data-open="0"] h3:before{
+        background-image: url(./辞書画像/ソルヴェイグ.png);
+      }
+      .パラノイド div[data-open="0"] h3:before{
+        width: 28px;
+        background-image: url(./辞書画像/ドロレス.png);
+      }
+      .アグネスの関係者 div[data-open="0"] h3:before{
+        height: 33px;
+        background-image: url(./辞書画像/フェニックス.png);
+      }
+      .その他 div[data-open="0"] h3:before{
+        background-image: url(./辞書画像/団子ちゃんチビ_1.png);
       }
       .word div{
         display: none;
@@ -56,6 +138,8 @@
         constructor() {
           this.words = [];
           this.openAttribute = 'data-open';
+          this.search_templateString = null;
+          this.search_result_area = null;
         }
         init(){
           var nodeWords = this.getElementsByXPath('//div[@class="word"]');
@@ -64,10 +148,14 @@
             var word = {};
             word.node = nodeWords[i];
             word.node.onclick = that.clickWord;
-            word.name = this.getElementsByXPath('//h3',word.node)[0].innerText;
+            word.name = this.getElementsByXPath('.//h3',word.node)[0].textContent;
             word.text = word.node.textContent;
             this.words.push(word);
           }
+          var serchTemplate = document.getElementById('search_template').cloneNode(true);
+          serchTemplate.removeAttribute('id');
+          this.search_templateString = serchTemplate.outerHTML;
+          this.search_result_area = document.getElementById('search_result_area');
         }
         getElementsByXPath(expression, parentElement) {
           var r = []
@@ -90,6 +178,17 @@
           if(now=="1")word.node.setAttribute(this.openAttribute,"0");
           else word.node.setAttribute(this.openAttribute,"1");
         }
+        showWord(title){
+          var word = this.getWordfromTitle(title);
+          if(!word)return;
+          var target = word.node;
+          target.setAttribute(this.openAttribute,"1");
+          var rect = target.getBoundingClientRect();
+          window.scrollTo({
+            top: rect.top+window.scrollY,
+            behavior: 'smooth'
+          });
+        }
         getWordfromNode(node){
           var word = null;
           for (var i = 0; i < this.words.length; i++) {
@@ -98,29 +197,422 @@
           }
           return null;
         }
+        getWordfromTitle(title){
+          var word = null;
+          for (var i = 0; i < this.words.length; i++) {
+            word = this.words[i];
+            if(title == word.name)return word;
+          }
+          return null;
+        }
+        search(keyword){
+          var picks = [];
+          if(keyword!="")for (var i = 0; i < this.words.length; i++) {
+            var word = this.words[i];
+            if(word.text.indexOf(keyword)<0)continue;
+            picks.push(this.search_templateString.replaceAll('keyword',word.name));
+            if(picks.length>=10)break;
+          }
+          this.search_result_area.innerHTML = picks.join('');
+        }
       }
     </script>
   </head>
   <body>
     <div id="wrapper" style="background-image:url('ノーヴァ背景.JPG');">
     <div id="conteiner">
-      <div id="content_area">
+      <div id="content_area" style="position: relative;">
+        <img id="totop" onclick="movetoTop();" height="50px" src="./辞書画像/ナターシャチビ_1.png"/>↑に戻る
         <div id="logo_area">
           <img class="logo_image" src="ロゴ_1.png" width="512" height="209" style="transform: translate(-100%, 0px);opacity: 0;" onloadstyle="transform:translate(0px, 0px);opacity: 1;"/>
           <p>これはファイナルギアの用語を見るためのツールです。<br/>
           それなりのネタバレと推測を含みます。
           </p>
         </div>
-        <br/><br/>
-        <div class="旧世界">
-          <h1>旧世界</h1>
-          <div class="word" data-open="0">
-            <h3>メテオインパクト前の世界</h3>
-            <div>メテオインパクト以前は人類がもっとも繁栄した時代であり、崩壊後の世界より高い技術力を持っていた。<br/>
-            いくつかの施設は崩壊後も現存している。
-            </div>
-          </div>
+        <div class="search">
+          <a id="search_template" class="search_result" href="javascript:null;" onclick="moveWord('keyword',event)">keyword</a>
+          <div>検索<input type="text" onkeyup="searchKeyWord(event)"/></div>
+          <div id="search_result_area"></div>
         </div>
+        <br/>
+<div class="旧世界">
+  <h1>旧世界</h1>
+  <div class="word" data-open="0">
+    <h3>崩壊前の世界</h3>
+    <div>メテオインパクト以前は人類がもっとも繁栄した時代であり、崩壊後の世界より高い技術力を持っていた。<br/>
+    いくつかの施設は崩壊後も現存している。
+    </div>
+  </div>
+  <div class="word" data-open="0">
+    <h3>メテオインパクト</h3>
+    <div>旧暦2110年、『メテオインパクト』と呼ばれる隕石衝突により人類文明は地上からほぼ消滅した。<br/>
+    人類は生き残るため衛星や地下に避難した。これらの計画は『アポカリプス・エクソダスー方舟生存計画』と呼ばれる。<br/>
+    再び人類が地上に戻るまでには数百年の時を要した。
+    </div>
+  </div>
+  <div class="word" data-open="0">
+    <h3>BNF歴</h3>
+    <div>崩壊前の世界で使用されていた年号。詳細は不明。
+    </div>
+  </div>
+  <div class="word" data-open="0">
+    <h3>衛星世界</h3>
+    <div>一部の人々は地上を離れ、星の衛星に避難した。この計画は『サンタドリア』計画と呼ばれた。<br/>
+    衛星に避難するには多額の資金が必要で、衛星に避難した人々は富裕層に限られた。
+    </div>
+  </div>
+  <div class="word" data-open="0">
+    <h3>電子世界</h3>
+    <div><img width="30%" src="./辞書画像/イブリンの両親.jpg" loading="lazy"/>一部の人々は意識を電子化し、仮想の電子世界に避難した。この計画は『サイバーアーク』計画と呼ばれた。<br/>
+    電子化にはあまり費用が掛からず、多くの一般人はこの方法を選択した。電子化した人々の肉体は凍結保存された。<br/>
+    人々は電子世界で年を取ることも繁殖することもなく数百年の時を過ごした。<br/>
+    『イブリンストーリー』の舞台。
+    </div>
+  </div>
+  <div class="word" data-open="0">
+    <h3>海底世界</h3>
+    <div><img width="30%" src="./辞書画像/シグリッドとパール.jpg" loading="lazy"/>一部の人々は海底に避難した。この世界は『<a href="javascript:null" onclick="showStory('八足号の呪い',event)">八足号の呪い</a>』で登場。<br/>
+    長びく海底での生活の中で人々は水中での呼吸や高い水圧に耐える技術を獲得したが、逆に海から離れられない体質となってしまっている。<br/>
+    その正確な位置は不明だが、ケゲアとアイレタの間にある『<a href="javascript:null" onclick="moveWord('ジヌンガ海峡',event)">ジヌンガ海峡</a>』を避け『<a href="javascript:null" onclick="moveWord('千島国',event)">千島国</a>』に海路で渡るならば大きく北から回るか南から回るかしかない。南の海域では『<a href="javascript:null" onclick="moveWord('ヴァイン港',event)">海のモンスター</a>』が目撃されており、この付近の海域である可能性が高い。
+    </div>
+  </div>
+  <div class="word" data-open="0">
+    <h3>地下世界</h3>
+    <div>エリザベスが訪れたという世界。ゲーム中にはまだ登場していない。
+    </div>
+  </div>
+</div><!--カテゴリ-->
+<div class="ダークメテオ">
+  <h1>ダークメテオ</h1>
+  <div class="word" data-open="0">
+    <h3>ダークメテオ</h3>
+    <div>『<a href="javascript:null" onclick="moveWord('メテオインパクト',event)">メテオインパクト</a>』により飛散したとされる物質。ダークマテリアルや黒曜石などとも呼ばれる。<br/>
+    いくつかの施設は崩壊後も現存している。
+    </div>
+  </div>
+</div><!--カテゴリ-->
+<div class="ケゲア帝国">
+  <h1>ケゲア帝国</h1>
+  <div class="word" data-open="0">
+    <h3>ケゲア帝国の成り立ち</h3>
+    <div>大陸東部に位置し、もっとも人口の多い地域にケゲアの前身となる国は誕生した。当初は議会制の国だったが、約60年前、1人の議員が皇帝となり、ケゲア帝国が誕生した。現在の新暦は帝暦でもある。<br/>
+      初代帝国皇帝は第一次侵略戦争を開始し、一気に国土を拡大した。現在の国土はこのころに定まった。<br/>
+      その後女王リサが帝位を継承し、約5～2年前第2次侵略戦争を開始するが、現在のアイレタとなる抵抗軍(ケゲアは反乱軍と呼んだ)との抗争中に娘のリリアンがクーデターを起こしリサ政権は崩壊。現在の女王はリリアンとなっている。<br/>
+      リリアンの治世は概ね好評だが、それはリリアンが目的を達成するための手段の一つに過ぎない。
+    </div>
+  </div>
+  <div class="word" data-open="0">
+    <h3>女王リサ</h3>
+    <div><img width="25%" src="./辞書画像/女王リサ.jpg" loading="lazy"/>先代のケゲア女王。リリアンの母に当たる。<br/>
+      残酷な女王として知られ、敵対するものや失敗するものは容赦なく処刑した。国民にも容赦なく、密告や冤罪によって裁判もなく処刑されたものが多かった。<br/>
+      リリアンのクーデター後はどこかに幽閉されているともすでに死亡しているとも言われる。
+    </div>
+  </div>
+  <div class="word" data-open="0">
+    <h3>ZZ</h3>
+    <div>
+    </div>
+  </div>
+  <div class="word" data-open="0">
+    <h3>反女王派</h3>
+    <div>女王リリアンと敵対する派閥。ベルフォード伯爵など多くの帝国貴族が含まれる。<br/>
+      ベルフォード伯爵の死後一斉決起するが、リリアンによって一掃されようとしている。
+    </div>
+  </div>
+  <div class="word" data-open="0">
+    <h3>騎士団</h3>
+    <div>代々帝国の帝位につく者に仕える直属の騎士団。女王リサ以降は『女王の剣』とも呼ばれている。<br/>
+      皇帝直属の親衛騎士団や教会付きの藍河騎士団など色々な騎士団がある。かつてアイレタに侵攻したコーレリアも騎士団長。
+      彼らの皇帝に対する忠誠は絶対的なものだったが、リリアンのクーデター以降は分裂気味となった。
+    </div>
+  </div>
+  <div class="word" data-open="0">
+    <h3>帝国の4騎士</h3>
+    <div>第2次侵略戦争中に活躍した帝国の騎士。騎士団長コーレリア、ホークアイ・ヘプニェク、剛腕騎士フェニックス、鉄壁騎士エイミー。<br/>
+      帝国の精鋭として何度もアイタ達と激しい戦いを繰り広げた。<br/>
+      しかし現在は2名しか残っておらず、その栄光は失われている。
+    </div>
+  </div>
+  <div class="word" data-open="0">
+    <h3>ブラックピエロ</h3>
+    <div>黒き道化師とも呼ばれる。
+    </div>
+  </div>
+  <div class="word" data-open="0">
+    <h3>千島国</h3>
+    <div>
+    </div>
+  </div>
+  <div class="word" data-open="0">
+    <h3>ファントム計画</h3>
+    <div>
+    </div>
+  </div>
+  <div class="word" data-open="0">
+    <h3>極夜計画</h3>
+    <div>
+    </div>
+  </div>
+  <div class="word" data-open="0">
+    <h3>ミシェール監獄</h3>
+    <div>ミカエル監獄とも呼ばれる。
+    </div>
+  </div>
+  <div class="word" data-open="0">
+    <h3>星新教</h3>
+    <div>ケゲアの国教。衛星に住む人々を崇める。それらは『<a href="javascript:null" onclick="moveWord('衛星世界',event)">サンタドリア計画</a>』で衛星に移住した人々である。<br/>
+      シャコガイやコディスは『天上人』と呼ばれる衛星に住む人で、『執行官』という肩書は天上人としての役割であると考えられる。
+    </div>
+  </div>
+  <div class="word" data-open="0">
+    <h3>悪魔教</h3>
+    <div>ベルナデットが警護するカルト教団。<br/>
+      『<a href="javascript:null" onclick="moveWord('ダークメテオ',event)">ダークメテオ</a>』に関する重大な秘密を握っているとされている。<br/>
+      しかしPN99の目覚めにより壊滅した。
+    </div>
+  </div>
+  <div class="word" data-open="0">
+    <h3>星新教会</h3>
+    <div>ロクサーヌが所属する星新教の教会。『<a href="javascript:null" onclick="moveWord('反女王派',event)">反女王派</a>』に属している。
+    </div>
+  </div>
+  <div class="word" data-open="0">
+    <h3>藍河騎士団</h3>
+    <div>教会を守るための騎士団。しかし現在は教会派とは紛争中。リリアンとの折り合いも悪い。
+    </div>
+  </div>
+  <div class="word" data-open="0">
+    <h3>聖殿山</h3>
+    <div>『<a href="javascript:null" onclick="moveWord('星新教',event)">星新教</a>』が聖地と崇める山。登山も盛ん。<br/>
+      しかし現在は教会と藍河騎士団の一大係争地となっている。
+    </div>
+  </div>
+  <div class="word" data-open="0">
+    <h3>帝国フォーグリン学院</h3>
+    <div>
+      
+    </div>
+  </div>
+  <div class="word" data-open="0">
+    <h3>リンベル研究所</h3>
+    <div>リリアンによって見出された天才リンベル博士の研究所。本来の専門は融合実験。<br/>
+      リンベル自身は融合実験にしか興味はないが、ケゲアからの援助を引き出すため機体の設計やホムンクルスの製造など幅広く行っている。プリンの専用機もリンベル博士の設計。<br/>
+      人体実験なども行っているが被験者には給与などの待遇を約束し、実験の成果たちと一緒に暮らすなど変な倫理観を持っている。<br/>
+      研究員としてニッジーやスウィーティー、メイメイ、戦闘員としてα-16が所属している。<br/>
+      ケゲアの軍事技術の集大成ともいえる『<a href="javascript:null" onclick="moveWord('ファントム計画',event)">ファントム計画</a>』もほぼリンベル博士一人によって完成された。
+    </div>
+  </div>
+  <div class="word" data-open="0">
+    <h3>シェイド研究所</h3>
+    <div>北軍(現在のアイレタ)とケゲアの国境付近にあったとされる研究所。<br/>
+      無人機やホムンクルスなどの製造が専門であり、アリエルはここで製造された。第2次侵略戦争の際アイタらによって破壊された。
+    </div>
+  </div>
+  <div class="word" data-open="0">
+    <h3>アウグスティヌス研究所</h3>
+    <div>オーガスティン研究所やラボラトリー・オブ・レジェンドと呼ばれることもある。<br/>
+      所長は『<a href="javascript:null" onclick="moveWord('アンドレイ・アウグスティヌス',event)">アンドレイ</a>』。『<a href="javascript:null" onclick="moveWord('アグネス',event)">アグネス</a>』もかつてここに所属していた。旧世界から残っている研究所だが、現在はほぼ無人となっている。<br/>
+      かつて『<a href="javascript:null" onclick="moveWord('黒皇后聖典',event)">黒皇后聖典</a>』の解読研究を行っていた施設でもある。</div>
+  </div>
+  <div class="word" data-open="0">
+    <h3>オスフィルド工会</h3>
+    <div>ケゲアの量産機の製造を一手に担っている会社。図鑑にのみ登場。
+    </div>
+  </div>
+</div><!--カテゴリ-->
+<div class="アイレタ連邦">
+  <h1>アイレタ連邦</h1>
+  <div class="word" data-open="0">
+    <h3>ZZ</h3>
+    <div>
+    </div>
+  </div>
+  <div class="word" data-open="0">
+    <h3>総統派</h3>
+    <div>アイレタを収める総統の派閥。軍団長派とは犬猿の仲である。<br/>
+      連邦の統治などは総統の管轄となっている。『<a href="javascript:null" onclick="moveWord('アイレタ連邦保安部',event)">アイレタ保安部</a>』は総統の管轄下にある。
+    </div>
+  </div>
+  <div class="word" data-open="0">
+    <h3>軍団長派</h3>
+    <div>モルガン・ヘリング元帥の派閥。軍や『<a href="javascript:null" onclick="moveWord('アイレタ第1研究所',event)">研究所</a>』は元帥の管轄下にある。
+    </div>
+  </div>
+  <div class="word" data-open="0">
+    <h3>アイレタ連邦保安部</h3>
+    <div>
+    </div>
+  </div>
+  <div class="word" data-open="0">
+    <h3>アイレタ第1研究所</h3>
+    <div>
+    </div>
+  </div>
+  <div class="word" data-open="0">
+    <h3>アイレタ大監獄</h3>
+    <div>
+    </div>
+  </div>
+  <div class="word" data-open="0">
+    <h3>レイガード</h3>
+    <div><img width="25%" src="./辞書画像/レイガード.jpg" loading="lazy"/>アイレタの5つある自治区の1つ。『<a href="javascript:null" onclick="showStory('攻殻機動隊',event)">攻殻機動隊コラボ</a>』で登場。<br/>
+      自己進化するAIによって統治されており、人々はその指示に依存しきっている。そのためAIが自己の進化のために暴走しても盲目的に従った。<br/>
+      イブリンらによってAIが破壊され、数々の人体実験などの悪歴が暴露されてからは自治権剥奪の危機にある。
+    </div>
+  </div>
+  <div class="word" data-open="0">
+    <h3>電子教</h3>
+    <div>サイバー教とも呼ばれる。
+    </div>
+  </div>
+  <div class="word" data-open="0">
+    <h3>ラプール山</h3>
+    <div>サイバー教とも呼ばれる。
+    </div>
+  </div>
+  <div class="word" data-open="0">
+    <h3>ジヌンガ港</h3>
+    <div>『<a href="javascript:null" onclick="moveWord('ジヌンガ海峡',event)">ジヌンガ海峡</a>』に面するアイレタの港。
+    </div>
+  </div>
+  <div class="word" data-open="0">
+    <h3>ヴラミルインダストリ</h3>
+    <div>パンドラの父ディミュが経営する武器会社。多くの一般的な武器やアイレタ量産機の製造を行っている。<br/>
+      『<a href="javascript:null" onclick="showStory('紅茶計画',event)">紅茶計画</a>』に登場。
+    </div>
+  </div>
+  <div class="word" data-open="0">
+    <h3>デコリーインダストリ</h3>
+    <div>ミラベルが経営する会社。ヴラミルインダストリとはライバル関係。<br/>
+      元々は大手運送会社で、製造業やサービス業にも参入している。<br/>
+      アイタ設計の下、巨大合体ロボ『アルカナ』の製造もおこなった。
+    </div>
+  </div>
+</div><!--カテゴリ-->
+<div class="ハイクシアー">
+  <h1>ハイクシアー</h1>
+  <div class="word" data-open="0">
+    <h3>ZZ</h3>
+    <div>
+    </div>
+  </div>
+  <div class="word" data-open="0">
+    <h3>魔女</h3>
+    <div>ナコトリスと共に最近になってハイクシアーに現れたグループ。『魔女システム』と呼ばれる奇妙な技術を持つ。<br/>
+      ソラル、フェヴィア、チリノ、バソリーの4人は四大魔女と呼ばれている。他にマルマ、ミシェリアも所属している。
+    </div>
+  </div>
+  <div class="word" data-open="0">
+    <h3>創設家</h3>
+    <div>創設者や創設一家などとも呼ばれる。ハイクシアー地域に昔から住むメンテナンスなどを生業としているグループ。<br/>
+      現在の当主はスモラ。最近はナコトリスに依頼されて多くの機体などを製造している。部下のオパールは高性能な義肢なども製造している。
+    </div>
+  </div>
+  <div class="word" data-open="0">
+    <h3>シェイプシフター</h3>
+    <div>アレクサによって最近設立されたグループ。部下はフーラ。<br/>
+    </div>
+  </div>
+  <div class="word" data-open="0">
+    <h3>審判の星</h3>
+    <div>処刑人家族などとも呼ばれる。ハイクシアー地域に昔から住む。<br/>
+      
+    </div>
+  </div>
+  <div class="word" data-open="0">
+    <h3>SweetQueen</h3>
+    <div>法の執行一家、法の番人などとも呼ばれる。ハイクシアー地域に昔から住む。<br/>
+      現在の当主はパッティ。部下としてカラマス、ペイズリーなどがいる。
+    </div>
+  </div>
+  <div class="word" data-open="0">
+    <h3>剃刀団</h3>
+    <div>数あるハイクシアーの組織の一つ。強盗などを行っていた。<br/>
+      『<a href="javascript:null" onclick="showStory('トリック＆トリート',event)">トリック＆トリート</a>』でアレクサの策略によって壊滅した。
+    </div>
+  </div>
+  <div class="word" data-open="0">
+    <h3>平和維持隊</h3>
+    <div>数あるハイクシアーの組織の一つ。『<a href="javascript:null" onclick="showStory('トリック＆トリート',event)">トリック＆トリート</a>』に登場。<br/>
+      元保安官のジェシーとの関係は不明。
+    </div>
+  </div>
+  <div class="word" data-open="0">
+    <h3>砂漠暴走族</h3>
+    <div>組織などではなく、ただの同じ趣味の集まりの模様。『<a href="javascript:null" onclick="showStory('サクラ大戦',event)">サクラ大戦コラボ</a>』に登場。<br/>
+
+    </div>
+  </div>
+  <div class="word" data-open="0">
+    <h3>ヴァイン港</h3>
+    <div>ハイクシアーにある小さな港。近くに海のモンスターが出ると騒ぎになっている。<br/>
+      イブリンらの調査によると海のモンスターは機械生物だった。大陸に存在するものではないとも。<br/>
+      『<a href="javascript:null" onclick="moveWord('海底世界',event)">海底世界</a>』との関係は不明。
+    </div>
+  </div>
+</div><!--カテゴリ-->
+<div class="ブラックアーク">
+  <h1>ブラックアーク</h1>
+  <div class="word" data-open="0">
+    <h3>ZZ</h3>
+    <div>
+    </div>
+  </div>
+</div><!--カテゴリ-->
+<div style="font-size:0.8rem;" class="ヘルシーアンドハッピーエブリデイ">
+  <h1>ヘルシーアンドハッピーエブリデイ</h1>
+  <div class="word" data-open="0">
+    <h3>ZZ</h3>
+    <div>
+    </div>
+  </div>
+</div><!--カテゴリ-->
+<div class="パラノイド">
+  <h1>パラノイド</h1>
+  <div class="word" data-open="0">
+    <h3>ZZ</h3>
+    <div>
+    </div>
+  </div>
+</div><!--カテゴリ-->
+<div class="アグネスの関係者">
+  <h1>アグネスの関係者</h1>
+  <div class="word" data-open="0">
+    <h3>アグネス</h3>
+    <div>
+    </div>
+  </div>
+  <div class="word" data-open="0">
+    <h3>アンドレイ・アウグスティヌス</h3>
+    <div>
+    </div>
+  </div>
+</div><!--カテゴリ-->
+<div class="その他">
+  <h1>その他</h1>
+  <div class="word" data-open="0">
+    <h3>黒皇后聖典</h3>
+    <div>
+    </div>
+  </div>
+  <div class="word" data-open="0">
+    <h3>月面</h3>
+    <div><img width="100%" src="./辞書画像/月面運送会社.jpg" loading="lazy"/>
+      大陸中を行動範囲とする運送会社。コディスとシャコガイが取締役。『<a href="javascript:null" onclick="showStory('月面大暴走',event)">月面大暴走</a>』をはじめとする複数のイベントに登場する。<br/>
+      一流の運送会社とのことだが、イベントに登場するたびに必ずトラブルが発生する。
+    </div>
+  </div>
+  <div class="word" data-open="0">
+    <h3>ジヌンガ海峡</h3>
+    <div>
+    </div>
+  </div>
+  <div class="word" data-open="0">
+    <h3>ZZ</h3>
+    <div>
+    </div>
+  </div>
+</div><!--カテゴリ-->
       </div>
     <!-- フッター -->
     <br/><br/>
@@ -130,11 +622,26 @@
     </div>
     <script>
       {
-      var readerAnimator = new StoryAnimation();
-      readerAnimator.actionCSS(null);
+        var readerAnimator = new StoryAnimation();
+        readerAnimator.actionCSS(null);
         window.onload = function() {
         document.finalDictionary = new FinalDictionary();
         document.finalDictionary.init();
+        }
+        function showStory(name,event){
+          window.open('./?story='+encodeURI(name));
+          event.stopPropagation();
+        }
+        function moveWord(name,event){
+          document.finalDictionary.showWord(name);
+          event.stopPropagation();
+        }
+        function movetoTop(){
+          window.scrollTo({top: 0,behavior: 'smooth'});
+        }
+        function searchKeyWord(event){
+          if(!event)return;
+          document.finalDictionary.search(event.target.value);
         }
       }
     </script>

@@ -209,7 +209,7 @@
               var onclick = "showStory('"+story+"',event)";
             }else if(move){
               var onclick = "moveWord('"+move+"',event)";
-            }else if(target.hasAttribute('href')){
+            }else if(target.hasAttribute('href')&&!target.hasAttribute('onclick')){
               target.setAttribute("onclick","event.stopPropagation()");
             }
             if(onclick){

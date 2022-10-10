@@ -237,6 +237,7 @@
             top: rect.top+window.scrollY,
             behavior: 'smooth'
           });
+          return word;
         }
         getWordfromNode(node){
           var word = null;
@@ -245,6 +246,14 @@
             return this.words[i];
           }
           return null;
+        }
+        getWordfromChild(node){
+          var word = null;
+          while (node.getAttribute('class')!='word') {
+            node = node.parentElement;
+            if(!node)return null;
+          }
+          return this.getWordfromNode(node);
         }
         getWordfromTitle(title){
           var word = null;
@@ -424,7 +433,7 @@
   </div>
   <div class="word" data-open="0">
     <h3>ドリアン軍</h3>
-    <div>帝国の首都ドリアンの軍隊。領主の私兵同様リリアンの私兵と言える。<br/>
+    <div><img width="30%" s="./辞書画像/クリスタとリリアン.jpg"/>帝国の首都ドリアンの軍隊。領主の私兵同様リリアンの私兵と言える。<br/>
     リリアンが直接スラムから抜擢したエロイース、クリスタが将軍を務め、常勝将軍と呼ばれるほどの戦績を誇る。
     </div>
   </div>
@@ -452,12 +461,12 @@
     <h3>ケゲア内乱</h3>
     <div>ベルフォード伯爵の死をきっかけに新暦60年8月、ケゲア内部で貴族同士の衝突が発生、瞬く間にケゲア全土での内乱となった。<br/>
       この話は『マーグレットストーリー』『勢力戦前哨』『<a story="国境紛争">国境紛争</a>』で語られる。<br/>
-      これは意図的に内乱を起こさせ、多勢力との抗争に発展さて<a move="ファントム計画">ファントム計画</a>で全ての敵対勢力を一掃するリリアンの計画でった。
+      これは意図的に内乱を起こさせ、多勢力との抗争に発展さて<a move="ファントム計画">ファントム計画</a>で全ての敵対勢力を一掃するリリアンの計画であった。
     </div>
   </div>
   <div class="word" data-open="0">
     <h3>RN-ヴァルキュリア</h3>
-    <div>『ファントム計画』の核となるベースカー。リンベル博士によって開発された。<br/>
+    <div><a move="ファントム計画">ファントム計画</a>の核となるベースカー。リンベル博士によって開発された。<br/>
       四足歩行の大型機体のような姿をしており、遠距離攻撃を得意としている。多くのサイボーグ兵士を搭載できる。<br/>
       多勢力のベースカーより一歩抜きんでた性能を持っているため、新暦61年8月の『全面戦争』ではケゲア有利と言われている。
     </div>
@@ -465,7 +474,7 @@
   <div class="word" data-open="0">
     <h3>ファントム計画</h3>
     <div>リリアンが<a move="反女王派">反女王派</a>や他勢力を一掃するため準備していた計画。『<a story="国境紛争">国境紛争</a>』の最終局面で発動された。<br/>
-      α-16が使用した個人武装、フェニックスに使用されたサイボーグ技術、<a move="ダークメテオ">ダークメテオ</a>での意識共有技術などが使用され、個々の戦闘力が非常に高く通常ではありえないほどの組織的活動が可能になった。<br/>
+      α-16が使用した個人武装、フェニックスに使用されたサイボーグ技術、<a move="ダークメテオ">ダークメテオ</a>での意識共有技術などが使用され、個々の戦闘力が非常に高く通常ではありえないほどの組織的連携が可能になった。<br/>
       圧倒的戦闘能力と引き換えにブレインとなった人間への負荷が高く、数日使用すれば正気を保てなくなる。ブレインが倒されてしまえばただの強い兵士の集まりでしかなくなるなどの欠点もある。<br/>
       プロジェクト発動直後にブレインがハエラによって連れ去られたため、長期間の活動停止を強いられた。
     </div>
@@ -477,7 +486,7 @@
       あまりに凄惨な殺戮は作戦に参加した兵士の心をも壊すほどだった。事態を重く見たケゲア情報部は作戦から帰還した部隊を帰り次第すべて処刑し、その痕跡を抹消した。<br/>
       しかし類まれな生存能力を発揮してレナータは処刑を逃れ、アイレタに潜伏した。だが心を病んでいたレナータはアイレタの街で殺人を繰り返した。この話は『待ちきれない夜明け(日本版未実装)』に登場する。<br/>
       その後逮捕されたレナータは極夜計画の生き証人として<a move="アイレタ大監獄">アイレタ大監獄</a>に投獄された。投獄後の話は『<a story="悪運娘と讃美歌">悪運娘と讃美歌</a>』に登場。<br/>
-      しかしレナータは<a move="帝国情報部">帝国情報部</a>によっ証言不能の状態となり、現在も極夜計画の全容は掴めないままとなっている。
+      その後レナータは<a move="帝国情報部">帝国情報部</a>によって証言不能の状態となり、現在も極夜計画の全容は掴めないままとなっている。
     </div>
   </div>
   <div class="word" data-open="0">
@@ -512,6 +521,12 @@
     <h3>聖殿山</h3>
     <div><a move="星神教">星神教</a>が聖地と崇める山。登山も盛ん。<br/>
       しかし現在は教会と藍河騎士団の一大係争地となっている。
+    </div>
+  </div>
+  <div class="word" data-open="0">
+    <h3>ケゲア南西部</h3>
+    <div>なにかの実験によって汚染された地域が広がっており、<a move="アグネス">アグネス</a>が眠っていた地域。<br/>
+      <a move="第2次侵略戦争">第2次侵略戦争</a>末期に『<a story="国境紛争">国境紛争</a>』のフラビアの話によるとゼロが真っ先に制圧した地域でもあり、なにかがあると予想される地域。
     </div>
   </div>
   <div class="word" data-open="0">
@@ -606,9 +621,14 @@
     </div>
   </div>
   <div class="word" data-open="0">
+    <h3>賞金ハンター組合</h3>
+    <div>リー、神上園凛、ジェシー、ゾーイ、ヨランダ、ジャスミン、鬼影灯、デボラ。
+    </div>
+  </div>
+  <div class="word" data-open="0">
     <h3>アイレタ大監獄</h3>
     <div><img width="30%" s="./辞書画像/監獄外.jpg"/>一般の犯罪者から重犯罪者まで数多くの犯罪者を収監している監獄。所長はシャルンだが、<a move="アイレタ連邦保安部">アイレタ連邦保安部</a>の管理下でもある。<br/>
-      高いセキュリティを持つ監獄ではあるが、ケゲア情報部の工作があった際は収容人数の多さが仇となった。
+      高いセキュリティを持つ監獄ではあるが、<a move="帝国情報部">ケゲア情報部</a>の工作があった際は収容人数の多さが仇となった。
     </div>
   </div>
   <div class="word" data-open="0">
@@ -679,7 +699,7 @@
   <div class="word" data-open="0">
     <h3>魔女</h3>
     <div><img width="100%" s="./辞書画像/魔女.jpg"/>ナコトリスと共に最近になってハイクシアーに現れたグループ。『魔女システム』と呼ばれる奇妙な技術を持つ。<br/>
-      ソラル、フェヴィア、チリノ、バソリーの4人は四大魔女と呼ばれている。他にマルマ、ミシェリア、ニアも所属している。
+      ソラル、フェヴィア、チリノ、バソリーの4人は四大魔女と呼ばれている。他にマルマ、ミシェリア、ニア、ヴァイオレットも所属している。
     </div>
   </div>
   <div class="word" data-open="0">
@@ -690,13 +710,13 @@
   </div>
   <div class="word" data-open="0">
     <h3>シェイプシフター</h3>
-    <div>アレクサによって最近設立されたグループ。部下はフーラ。<br/>
+    <div>アレクサによって最近設立されたグループ。部下はフーラ、オードリー。<br/>
       アレクサの話は欺瞞に満ちていて、簡単に人を騙す。『<a story="トリックアンドトリート">トリック＆トリート</a>』では<a move="平和維持隊">平和維持隊</a>と<a move="剃刀団">剃刀団</a>を戦わせ、『<a story="メインストーリー">メインストーリー</a>』5章ではイブリンが騙されてアレクサの敵対勢力と戦わされた。
     </div>
   </div>
   <div class="word" data-open="0">
     <h3>審判の星</h3>
-    <div>処刑人家族などとも呼ばれる。ハイクシアー地域に昔から住む。<br/>
+    <div>処刑人家族などとも呼ばれる。ハイクシアー地域に昔から住む。リーダーはシンシア。部下はオイフェ、スラ。<br/>
       
     </div>
   </div>
@@ -731,7 +751,8 @@
   </div>
   <div class="word" data-open="0">
     <h3>ハイクシアー学院</h3>
-    <div><img width="30%" s="./辞書画像/ハイクシアー学院.jpg"/><a story="退屈な日常">退屈な日常</a>の舞台。
+    <div><img width="30%" s="./辞書画像/ハイクシアー学院.jpg"/><a story="退屈な日常">退屈な日常</a>の舞台。<br/>
+      学長はフレイダ。教師にユニス、レイラニ。現在の学生はゼノビア、ナオミ、ストラ、ミナヅキ。
     </div>
   </div>
   <div class="word" data-open="0">
@@ -834,6 +855,7 @@
     </div>
     <script>
       {
+        document.wordHistory = [];
         var readerAnimator = new StoryAnimation();
         readerAnimator.actionCSS(null);
         window.onload = function() {
@@ -846,10 +868,14 @@
         }
         function moveWord(name,event){
           document.finalDictionary.showWord(name);
+          var word = document.finalDictionary.getWordfromChild(event.target);
+          if(word)document.wordHistory.push(word);
           event.stopPropagation();
         }
         function movetoTop(){
-          window.scrollTo({top: 0,behavior: 'smooth'});
+          var word = document.wordHistory.pop();
+          if(word)document.finalDictionary.showWord(word.name);
+          else window.scrollTo({top: 0,behavior: 'smooth'});
         }
         function searchKeyWord(event){
           if(!event)return;

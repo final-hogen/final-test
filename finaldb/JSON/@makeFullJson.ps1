@@ -33,9 +33,6 @@ function makeDirectory {
   {
     $dir = $targetDirectory+"/"+$file
     $retval = makeDirectory ($dir)
-    #$fullJsonPath = $dir+"/"+$makeFilename
-    #$jsonData =(Get-Content $fullJsonPath | ConvertFrom-Json)
-    #$result.Add($file , $jsonData)
     $result.Add($file , $retval)
   }
   $fullJsonFilepath = $targetDirectory+"/"+$makeFilename

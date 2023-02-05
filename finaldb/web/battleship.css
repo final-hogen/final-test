@@ -1,5 +1,43 @@
 
+.wepon{
+  width:550px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.wepon:after{
+  content: '';
+  clear: both;
+  display: block;
+}
+.wepon table{
+  border: solid 1px #80808038;
+  width: 550px;
+  font-size: 0.5em;
+}
+.wepon tr:not(:first-child) td,th{
+  border-top: solid 1px #80808038;
+}
+.wepon td:not(.image){
+  border-left: solid 1px #80808038;
+  width:450px;
+}
+.wepon span{
+  float: left;
+}
 .wepon .image{
   width: 100px;
   height:100px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+
+}
+.wepon  img{
+  width: 100px;
+  height:100px;
+}
+.wepon .infomation{
+  width: 450px;
+  height:100px;
+  display: block;
 }

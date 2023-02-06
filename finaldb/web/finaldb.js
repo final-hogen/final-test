@@ -156,6 +156,7 @@ class FinalAutoMarkup extends FinalAjax{
     this.textParents = this.getElementsByXPath(".//text()[(normalize-space())]/..",this.replaceTarget);
     this.keyvalues = {};
     this.sortKeys = [];
+    this.markupTagStrings = {};
   }
   loadJson(fileName){
     this.ajaxLoad(fileName,null,'onLoad',null);
@@ -242,25 +243,13 @@ class FinalAutoMarkup extends FinalAjax{
    * @returns 
    */
   makeMarkupString(key,desc){
+    if(this.makeMarkupString[key])return this.makeMarkupString[key];
     const keyword = '{keyword}';
     const description = '{description}';
     var resultString = this.templateString.replaceAll(keyword,key);
     resultString = resultString.replaceAll(description,desc);
 
+    this.makeMarkupString[key] = resultString;
     return resultString;
-  }
-  insert(arr, index, ...items)
-  {
-      return [
-              ...arr.slice(0, index),
-              ...items,
-              ...arr.slice(index)
-          ];
-          var max = months.length-1;
-          for(var i= max; i>0 ; --i){
-            months.splice(i,0,"/");
-          }
-          
-          
   }
 }

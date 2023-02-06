@@ -96,6 +96,7 @@ label.markup input{
   padding: 5px;
   border-radius: 10px;
   word-break: break-all;
+  z-index: 2;
 }
 label.markup input:checked ~ .markup_baloon{
   display: inline;

@@ -22,11 +22,31 @@
         画像をタップすると説明や低ランクの情報が出ます。
       </p>
       <br/>
+<!-- チェックボックス -->
+レアリティ：
+<input type="checkbox" id="rare_SSR" checked="1"/>SSR　　　
+<input type="checkbox" id="rare_SR" checked="1"/>SR　　　
+<input type="checkbox" id="rare_R" checked="1"/>R　　　　
+<br/>
+ダメージ：
+<input type="checkbox" id="dmg_solid" checked="1"/>実弾　　　　
+<input type="checkbox" id="dmg_penetrate" checked="1"/>貫通　　
+<input type="checkbox" id="dmg_beam" checked="1"/>ビーム　　　
+<input type="checkbox" id="dmg_energy" checked="1"/>エネルギー
+<br/>
+　　　　　<input type="checkbox" id="dmg_unknown" checked="1"/>なし
+<br/>
+タイプ：　
+<input type="checkbox" id="pos_mainwep" checked="1"/>主砲　　　　
+<input type="checkbox" id="pos_subwep" checked="1"/>副砲
+<br/><br/>
 <!-- 武器情報一覧 -->
 <div id="wepon_dataarea">
-  <div id="wepon_template" class="wepon">
+  <div id="wepon_template" class="wepon" レア="{レアリティ}" タイプ="{ダメージタイプ}" 場所="{種別}">
+    <input type="checkbox" id="{レアリティ}_{名前}" class="fullviewcheck"/>
     <table>
-      <tr><td class="image" rowspan="3" style="background-image:url('../画像/戦艦/艦載砲/{名前}/アイコン.webp');"></td>
+      <tr><td class="image" rowspan="3" style="background-image:url('../画像/戦艦/艦載砲/{名前}/アイコン.webp');">
+              <label  for="{レアリティ}_{名前}"></label></td>
         <td>{名前}</td>
         <td><img class="rare" src="レア/{レアリティ}.webp"/></td>
       </tr>
@@ -39,16 +59,39 @@
         <td>場所：{種別}</td>
       </tr>
     </table>
-    <div class="rank_describe">
-      <div class="rank" data-rank="{}">
-        ランク：★★★★★★
-      </div>
+    <div class="rank_describe" data-view="{ランク/6}">
+      <div class="rank">ランク：★★★★★★</div>
       {ランク/6/説明}
     </div>
-    <div class="describe">
-      <div>説明：</div>
+    <div class="rank_describe" data-view="{ランク/-1}">
+      <div class="rank">ランク：★強化はできない武器</div>
+      {ランク/-1/説明}
+    </div>
+    <div class="describe expview">
+      <div>説明文：</div>
       {説明}
     </div>
+    <div class="rank_describe expview" data-view="{ランク/5}">
+      <div class="rank">ランク：★★★★★</div>
+      {ランク/5/説明}
+    </div>
+    <div class="rank_describe expview" data-view="{ランク/4}">
+      <div class="rank">ランク：★★★★</div>
+      {ランク/4/説明}
+    </div>
+    <div class="rank_describe expview" data-view="{ランク/3}">
+      <div class="rank">ランク：★★★</div>
+      {ランク/3/説明}
+    </div>
+    <div class="rank_describe expview" data-view="{ランク/2}">
+      <div class="rank">ランク：★★</div>
+      {ランク/2/説明}
+    </div>
+    <div class="rank_describe expview" data-view="{ランク/1}">
+      <div class="rank">ランク：★</div>
+      {ランク/1/説明}
+    </div>
+    <br/>
   </div>
 </div>
      <!-- フッター -->

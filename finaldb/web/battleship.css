@@ -1,4 +1,7 @@
 
+#wepon_template{
+  display: none;
+}
 .wepon{
   width:550px;
   margin-left: auto;
@@ -8,6 +11,7 @@
   border: solid 1px #80808038;
   width: 550px;
   font-size: 1.0em;
+  background-color: #a1a1b6a1;
 }
 .wepon tr:not(:first-child) td,th{
   border-top: solid 1px #80808038;
@@ -31,4 +35,51 @@
   border: solid 1px #80808038;
   border-top: 0px;
   min-height: 100px;
+  background-color: #a1a1b6a1;
+}
+
+#rare_R:not(:checked) ~ #wepon_dataarea .wepon[レア="R"]{
+  display: none;
+}
+#rare_SR:not(:checked) ~ #wepon_dataarea .wepon[レア="SR"]{
+  display: none;
+}
+#rare_SSR:not(:checked) ~ #wepon_dataarea .wepon[レア="SSR"]{
+  display: none;
+}
+#dmg_solid:not(:checked) ~ #wepon_dataarea .wepon[タイプ="実弾"]{
+  display: none;
+}
+#dmg_penetrate:not(:checked) ~ #wepon_dataarea .wepon[タイプ="貫通"]{
+  display: none;
+}
+#dmg_beam:not(:checked) ~ #wepon_dataarea .wepon[タイプ="ビーム"]{
+  display: none;
+}
+#dmg_energy:not(:checked) ~ #wepon_dataarea .wepon[タイプ="エネルギー"]{
+  display: none;
+}
+#dmg_unknown:not(:checked) ~ #wepon_dataarea .wepon[タイプ="なし"]{
+  display: none;
+}
+#pos_mainwep:not(:checked) ~ #wepon_dataarea .wepon[場所="主砲"]{
+  display: none;
+}
+#pos_subwep:not(:checked) ~ #wepon_dataarea .wepon[場所="副砲"]{
+  display: none;
+}
+
+.wepon *[data-view="false"]{
+  display: none;
+}
+.wepon label{
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.wepon .fullviewcheck{
+  display: none;
+}
+.wepon .fullviewcheck:not(:checked) ~ .expview{
+  display: none;
 }

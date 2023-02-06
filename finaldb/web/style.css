@@ -42,6 +42,9 @@ body {
 #footer a{
   color: white;
 }
+.nodisp{
+  display: none;
+}
 
 .logoarea{
   padding-top: 15px;
@@ -69,6 +72,54 @@ body {
   box-shadow:  10px  5px 0px #f0faff;
   transform:skewX(-30deg);
 }
+
+/* --- 吹き出し ------------------ */
+#markup_template{
+  display: none;
+}
+.markup {
+  position: relative;
+  text-decoration:underline;
+  display: inline;
+}
+label.markup input{
+  display: none;
+  position: absolute;
+}
+.markup_baloon {
+  display: none;
+  position: absolute;
+  background-color: #b8d2daef;
+  width:200px;
+  left : 10%;
+  top : 100%;
+  padding: 5px;
+  border-radius: 10px;
+  word-break: break-all;
+}
+label.markup input:checked ~ .markup_baloon{
+  display: inline;
+  padding: 7px;
+  padding-right: 20px;
+}
+.markup_baloon:after{
+  border-bottom: 12px solid #b8d2daef;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  top: -12px;
+  left : 5%;
+  content: "";
+  position: absolute;
+}
+.markupicon{
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+/* --- 吹き出しおわり ------------------ */
 
 .finaldatasvg {
   height: 100%;

@@ -72,7 +72,7 @@
 .wepon *[data-view="false"]{
   display: none;
 }
-.wepon label{
+.wepon .iconlabel{
   width: 100%;
   height: 100%;
   display: block;

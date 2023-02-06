@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="battleship.css" />
     <script src="finalajax.js"></script>
     <script src="finaldb.js"></script>
-    <script>var globalFullJsonData = null;</script>
   </head>
   <body>
     <div id="wrapper" style="background-image:url('wallpaper5.webp');">
@@ -22,31 +21,18 @@
         画像をタップすると説明や低ランクの情報が出ます。
       </p>
       <br/>
-<!-- チェックボックス -->
-レアリティ：
-<input type="checkbox" id="rare_SSR" checked="1"/>SSR　　　
-<input type="checkbox" id="rare_SR" checked="1"/>SR　　　
-<input type="checkbox" id="rare_R" checked="1"/>R　　　　
-<br/>
-ダメージ：
-<input type="checkbox" id="dmg_solid" checked="1"/>実弾　　　　
-<input type="checkbox" id="dmg_penetrate" checked="1"/>貫通　　
-<input type="checkbox" id="dmg_beam" checked="1"/>ビーム　　　
-<input type="checkbox" id="dmg_energy" checked="1"/>エネルギー
-<br/>
-　　　　　<input type="checkbox" id="dmg_unknown" checked="1"/>なし
-<br/>
-タイプ：　
-<input type="checkbox" id="pos_mainwep" checked="1"/>主砲　　　　
-<input type="checkbox" id="pos_subwep" checked="1"/>副砲
-<br/><br/>
-<!-- 武器情報一覧 -->
-<div id="wepon_dataarea">
+<!-- 効果説明テンプレート -->
+<label id="markup_template" class="markup">{keyword}<input type="checkbox"/>
+    <span class="markup_baloon">
+        <span class="markupicon" style="background-image:url('../画像/戦艦/バフ/{keyword}/アイコン.webp');">
+        </span>{description}</span>
+</label>
+<!-- 武器テンプレート -->
   <div id="wepon_template" class="wepon" レア="{レアリティ}" タイプ="{ダメージタイプ}" 場所="{種別}">
     <input type="checkbox" id="{レアリティ}_{名前}" class="fullviewcheck"/>
     <table>
       <tr><td class="image" rowspan="3" style="background-image:url('../画像/戦艦/艦載砲/{名前}/アイコン.webp');">
-              <label  for="{レアリティ}_{名前}"></label></td>
+              <label  for="{レアリティ}_{名前}" class="iconlabel"></label></td>
         <td>{名前}</td>
         <td><img class="rare" src="レア/{レアリティ}.webp"/></td>
       </tr>
@@ -92,7 +78,27 @@
       {ランク/1/説明}
     </div>
     <br/>
-  </div>
+  </div><!-- 武器テンプレート終わり -->
+<!-- チェックボックス -->
+レアリティ：
+<input type="checkbox" id="rare_SSR" checked="1"/>SSR　　　
+<input type="checkbox" id="rare_SR" checked="1"/>SR　　　
+<input type="checkbox" id="rare_R" checked="1"/>R　　　　
+<br/>
+ダメージ：
+<input type="checkbox" id="dmg_solid" checked="1"/>実弾　　　　
+<input type="checkbox" id="dmg_penetrate" checked="1"/>貫通　　
+<input type="checkbox" id="dmg_beam" checked="1"/>ビーム　　
+<input type="checkbox" id="dmg_energy" checked="1"/>エネルギー
+<br/>
+　　　　　<input type="checkbox" id="dmg_unknown" checked="1"/>なし
+<br/>
+タイプ：　
+<input type="checkbox" id="pos_mainwep" checked="1"/>主砲　　　　
+<input type="checkbox" id="pos_subwep" checked="1"/>副砲
+<br/><br/>
+<!-- 武器情報一覧 -->
+<div id="wepon_dataarea">
 </div>
      <!-- フッター -->
     <br/><br/>
@@ -104,10 +110,16 @@
       var fullweponpath = "../JSON/戦艦/艦載砲/@FullJsonData.json";
       var buffpath = "../JSON/戦艦/バフ/@FullJsonData.json";
       window.onload = function(event){
-        var activeArea = document.getElementById("wepon_dataarea");
+        window.activeArea = document.getElementById("wepon_dataarea");
         var itemTemplate = document.getElementById("wepon_template");
-        window.weponloader = new FinalJsonDB(activeArea,itemTemplate);
-        window.weponloader.loadJson(fullweponpath);
+        window.weponloader = new FinalJsonDB(window.activeArea,itemTemplate);
+        window.weponloader.loadJson(fullweponpath,mainDataLoaded);
+      }
+      function mainDataLoaded(){
+        console.log("loaded.");
+        var markup_template = document.getElementById("markup_template");
+        window.markup = new FinalAutoMarkup(window.activeArea,markup_template);
+        window.markup.loadJson(buffpath);
       }
     </script>
     </div></div>

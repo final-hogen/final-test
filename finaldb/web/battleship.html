@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="battleship.css" />
+    <script src="finalajax.js"></script>
+    <script src="finaldb.js"></script>
     <script>var globalFullJsonData = null;</script>
   </head>
   <body>
@@ -21,15 +23,32 @@
       </p>
       <br/>
 <!-- 武器情報一覧 -->
-<div class="wepon_dataarea">
-  <div class="wepon">
-    <img src="../画像/戦艦/艦載砲/II-50貫通砲/アイコン.webp"/>
+<div id="wepon_dataarea">
+  <div id="wepon_template" class="wepon">
     <table>
-      <tr><td class="image" rowspan="3" style="background-image:url('../画像/戦艦/艦載砲/II-50貫通砲/アイコン.webp');"></td>
-        <td>名前:れあ</td></tr>
-      <tr><td>射程：ダメージタイプ:</td></tr>
-      <tr><td>種別:発動タイプ</td></tr>
+      <tr><td class="image" rowspan="3" style="background-image:url('../画像/戦艦/艦載砲/{名前}/アイコン.webp');"></td>
+        <td>{名前}</td>
+        <td><img class="rare" src="レア/{レアリティ}.webp"/></td>
+      </tr>
+      <tr>
+        <td>攻撃：<img class="rare" src="ダメージ/{ダメージタイプ}.webp"/>{ダメージタイプ}</td>
+        <td>射程：{射程/最小}～{射程/最大}</td>
+      </tr>
+      <tr>
+        <td>発動：{発動タイプ}</td>
+        <td>場所：{種別}</td>
+      </tr>
     </table>
+    <div class="rank_describe">
+      <div class="rank" data-rank="{}">
+        ランク：★★★★★★
+      </div>
+      {ランク/6/説明}
+    </div>
+    <div class="describe">
+      <div>説明：</div>
+      {説明}
+    </div>
   </div>
 </div>
      <!-- フッター -->
@@ -39,6 +58,14 @@
       <p><a href="https://game.bilibili.co.jp/finalgear/">©ファイナルギア</a>　　<a href="https://game.bilibili.co.jp/">©bilibili</a></p>
     </div>
     <script>
+      var fullweponpath = "../JSON/戦艦/艦載砲/@FullJsonData.json";
+      var buffpath = "../JSON/戦艦/バフ/@FullJsonData.json";
+      window.onload = function(event){
+        var activeArea = document.getElementById("wepon_dataarea");
+        var itemTemplate = document.getElementById("wepon_template");
+        window.weponloader = new FinalJsonDB(activeArea,itemTemplate);
+        window.weponloader.loadJson(fullweponpath);
+      }
     </script>
     </div></div>
   </body>

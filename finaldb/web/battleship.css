@@ -4,25 +4,21 @@
   margin-left: auto;
   margin-right: auto;
 }
-.wepon:after{
-  content: '';
-  clear: both;
-  display: block;
-}
 .wepon table{
   border: solid 1px #80808038;
   width: 550px;
-  font-size: 0.5em;
+  font-size: 1.0em;
 }
 .wepon tr:not(:first-child) td,th{
   border-top: solid 1px #80808038;
 }
 .wepon td:not(.image){
   border-left: solid 1px #80808038;
-  width:450px;
+  width:200px;
 }
-.wepon span{
-  float: left;
+.wepon td img{
+  height: 30px;
+  vertical-align: middle;
 }
 .wepon .image{
   width: 100px;
@@ -30,14 +26,9 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-
 }
-.wepon  img{
-  width: 100px;
-  height:100px;
-}
-.wepon .infomation{
-  width: 450px;
-  height:100px;
-  display: block;
+.wepon .describe,.wepon .rank_describe{
+  border: solid 1px #80808038;
+  border-top: 0px;
+  min-height: 100px;
 }

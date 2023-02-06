@@ -80,7 +80,7 @@ body {
 .markup {
   position: relative;
   text-decoration:underline;
-  display: inline;
+  display: inline-block;
 }
 label.markup input{
   display: none;

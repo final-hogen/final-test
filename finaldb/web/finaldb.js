@@ -45,7 +45,6 @@ class FinalJsonDB extends FinalAjax{
    * データをタグに変換してぶっこむ
    */
   convert(){
-    var target = this.baseNode;
     var objects = Object.values(this.innerObjects);
     objects.sort(this.compareFn);
     for(var i in objects){
@@ -205,7 +204,6 @@ class FinalAutoMarkup extends FinalAjax{
   convertTextNode(sourceNode){
     if(sourceNode.nodeType!=Node.TEXT_NODE)return sourceNode;
     var srcstring = sourceNode.textContent;
-    var changeCount = 0;
     var srcarray = [srcstring];
     for (let i in this.sortKeys) {
       const key = this.sortKeys[i];

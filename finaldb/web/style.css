@@ -121,6 +121,28 @@ label.markup input:checked ~ .markup_baloon{
 }
 /* --- 吹き出しおわり ------------------ */
 
+/* --- ループするメッセージ ------------------ */
+.loopmsg{
+  white-space: nowrap;
+  overflow: hidden;
+}
+.loopmsg > span{
+  display: inline-block;
+  margin-left: 0%;
+}
+.loopmsg > span > span{
+  display: inline-block;
+  position: relative;
+  animation: message-loop 4s infinite ease-in-out;
+}
+/*動く幅に合わせて50pxを変えたanimation-nameで上書き*/
+@keyframes message-loop {
+  0% {left: 0px;}
+  95% {left: min( calc(50px - 100%) , 0px );}
+  100% {left: 0px;}
+}
+/* --- ループするメッセージおわり ------------------ */
+
 .finaldatasvg {
   height: 100%;
   filter: drop-shadow(7px 7px 0px #353599);

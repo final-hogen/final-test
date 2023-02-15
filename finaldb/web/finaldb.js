@@ -47,12 +47,27 @@ class FinalJsonDB extends FinalAjax{
   convert(){
     var objects = Object.values(this.innerObjects);
     objects.sort(this.compareFn);
+    this.convertArray(objects);
+  }
+  /**
+   * データをタグに変換してぶっこむ
+   */
+  convertArray(objects){
+    var results = new Array();
     for(var i in objects){
       var newTagString = objects[i].convertString(this.templateString,this.templateMatches);
       this.dummyTag.innerHTML = newTagString;
       var newTag = this.dummyTag.firstChild;
-      this.replaceTarget.appendChild(newTag);
+      results.push(newTag);
     }
+    this.inputTags(results);
+  }
+  /**
+   * タグデータをターゲットに入れる
+   * @param {*} tags 
+   */
+  inputTags(tags){
+    tags.forEach(tag=> this.replaceTarget.appendChild(tag));
   }
   static sortOederRare(rare){
     switch(rare){
@@ -60,7 +75,7 @@ class FinalJsonDB extends FinalAjax{
       case "R":return 1;
       case "SR":return 2;
       case "SSR":return 3;
-      case "URR":return 4;
+      case "UR":return 4;
     }
     return -1;
   }
@@ -80,6 +95,16 @@ class FinalJsonDB extends FinalAjax{
     if(a_name==null)return  1;   //b前
     if(b_name==null)return  -1;  //a前
     return a_name.localeCompare(b_name);
+  }
+}
+
+class FinalJsonDBInsert extends FinalJsonDB
+{
+  constructor(template){
+    super(template,template);
+  }
+  inputTags(tags){
+    tags.forEach(tag=> this.replaceTarget.parentNode.insertBefore(tag,this.replaceTarget));
   }
 }
 
@@ -135,8 +160,21 @@ class FinalJsonObject {
   convertString(templateString,matches){
     for( var i in matches ){
       var key = matches[i];
-      var path = key.substring(1, key.length-1);
+      var inner = key.substring(1, key.length-1);
+      var split = inner.split(":");
+      var path = "";
+      var com = "";
+      if(split.length>1){
+        com = split[0];
+        path = split[1];
+      }else{
+        path = split[0];
+      }
       var value = this.fetchString(path);
+      switch(com){
+        case"eu":value = encodeURI(value);break;
+        case"et":value = value = value.replaceAll("\n","<br/>");break;
+      }
       templateString = templateString.replaceAll(key,value);
     }
     return templateString;

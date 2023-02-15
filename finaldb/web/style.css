@@ -72,6 +72,10 @@ body {
   transform:skewX(-30deg);
 }
 
+*[data-virew="false"]{
+  display: none;;
+}
+
 /* --- 吹き出し ------------------ */
 #markup_template{
   display: none;

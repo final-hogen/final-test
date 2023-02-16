@@ -1,0 +1,176 @@
+:root {
+  --table-border: solid 1px #80808038;
+  --table-width: 530px;
+  --table-th-color: #ced0ec;
+  --耐久--color:#bae988;
+  --攻撃--color:#dfabab;
+  --防御--color:#a2b2da;
+  --回避--color:#caa1d1;
+  --会心--color:#e4d7ac;
+}
+.explanation{
+  margin-left: 20px;
+  color: darkgrey;
+}
+.datatable{
+  border-left: var(--table-border);
+  border-top: var(--table-border);
+  border-spacing: 0;
+  width: var(--table-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+.datatable td,.datatable th{
+  border-bottom: var(--table-border);
+  border-right: var(--table-border);
+  font-weight: normal;
+  padding: 0;
+}
+.datatable td{
+  padding-left: 5px;
+}
+.datatable th{
+  background-color: var(--table-th-color);
+  width: 50px;
+}
+.pilotinfo td{
+  width: 160px;
+}
+.datatable td.imagearea{
+  width: 100px;
+}
+.data-adddiv{
+  width: var(--table-width);
+  border-left: var(--table-border);
+  border-bottom: var(--table-border);
+  border-right: var(--table-border);
+  margin-left: auto;
+  margin-right: auto;
+}
+.data-adddiv.th{
+  background-color: var(--table-th-color);
+}
+
+/*-----------------  ステータス ----------------------*/
+#statustable td,#statustable th{
+}
+#statustable #statuscircle{
+  width: 150px;
+  height: 150px;
+}
+#statustable td{
+  text-align: right;
+  width:60px;
+}
+#statustable th:first-child{
+  width:40px;
+}
+#statustable th:nth-child(2){
+  background-color: var(--耐久--color);
+}
+#statustable th:nth-child(3){
+  background-color: var(--攻撃--color);
+}
+#statustable th:nth-child(4){
+  background-color: var(--防御--color);
+}
+#statustable th:nth-child(5){
+  background-color: var(--回避--color);
+}
+#statustable th:nth-child(6){
+  background-color: var(--会心--color);
+}
+
+/* --------------  ベースカー  ----------------------*/
+#basecarskill tr:nth-child(1) th:first-child{
+  background-color: rgb(225, 230, 236); /* 固有 */
+}
+#basecarskill tr:nth-child(3) th:first-child{
+  background-color: rgb(154, 188, 230); /* 知恵 */
+}
+#basecarskill tr:nth-child(5) th:first-child{
+  background-color: rgb(223, 199, 159); /* 製造 */
+}
+#basecarskill tr:nth-child(7) th:first-child{
+  background-color: rgb(138, 207, 219);  /* 敏速 */
+}
+#basecarskill tr:nth-child(9) th:first-child{
+  background-color: rgb(224, 170, 122);  /* 体質 */
+}
+#basecarskill tr:nth-child(11) th:first-child{
+  background-color: rgb(193, 146, 226);  /* 感情 */
+} 
+/* 休憩
+#basecarskill th:nth-child(7){
+  background-color: rgb(22,108,13);
+} */
+/* ブリッジ
+#basecarskill th:nth-child(7){
+  background-color: rgb(135,19,19); 
+} */
+
+/*---------------- 誓約 ---------------------------*/
+#vowtable th{
+  width: 100px;
+}
+
+/*---------------  スキル  --------------------*/
+#skilltable .icon{
+  height:100px ;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+#skilltable th:nth-child(2n+0){
+  height: 2em;
+}
+
+/*------------------- スキン --------------------*/
+.pilotskin{
+  width: 100px;
+  height: 200px;
+}
+.pilotskin .pilotface{
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.pilotskin .pilotface > div{
+  width: 100%;
+  height: 100%;
+  background-size: auto 25px;
+  background-position: left bottom;
+  background-repeat: no-repeat;
+}
+.pilotskin[data-rare="UR"] {
+  background-image: radial-gradient(#00000000, var(--panel-UR-color-o));
+}
+.pilotskin[data-rare="SSR"] {
+  background-image: radial-gradient(#00000000, var(--panel-SSR-color-o));
+}
+.pilotskin[data-rare="SR"] {
+  background-image: radial-gradient(#00000000, var(--panel-SR-color-o));
+}
+.pilotskin[data-rare="R"] {
+  background-image: radial-gradient(#00000000, var(--panel-R-color-o));
+}
+.pilotskin[data-rare="N"] {
+  background-image: radial-gradient(#00000000, var(--panel-N-color-o));
+}
+.pilotskin[data-rare="UR"] .pilotface > div{
+  background-image: url(アイコン/UR.webp);
+}
+.pilotskin[data-rare="SSR"] .pilotface > div{
+  background-image: url(アイコン/SSR.webp);
+}
+.pilotskin[data-rare="SR"] .pilotface > div{
+  background-image: url(アイコン/SR.webp);
+}
+.pilotskin[data-rare="R"] .pilotface > div{
+  background-image: url(アイコン/R.webp);
+}
+.pilotpanel[data-rare="N"] .pilotface > div{
+  background-image: url(アイコン/N.webp);
+}

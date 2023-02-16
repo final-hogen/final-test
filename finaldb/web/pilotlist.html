@@ -22,29 +22,62 @@
       </p>
       <br/>
       <div id="content_area">
-      <h1 class="headline">パイロット一覧</h1>
-      <input id="wep守護" type="radio" name="wepons" checked="true"/>
-      <input id="wep格闘" type="radio" name="wepons"/>
-      <input id="wep射撃" type="radio" name="wepons"/>
-      <input id="wep炸裂" type="radio" name="wepons"/>
-      <input id="wep狙撃" type="radio" name="wepons"/>
-      <input id="wep投射" type="radio" name="wepons"/>
-      <div class="tabview">
-        <label for="wep守護" class="select_tab"><span>守護</span></label>
-        <label for="wep格闘" class="select_tab"><span>格闘</span></label>
-        <label for="wep射撃" class="select_tab"><span>射撃</span></label>
-        <label for="wep炸裂" class="select_tab"><span>炸裂</span></label>
-        <label for="wep狙撃" class="select_tab"><span>狙撃</span></label>
-        <label for="wep投射" class="select_tab"><span>投射</span></label>
-      </div>
-      <div id="pilotarea">
-        <a id="pilotpanel_template" href ="./pilot.html?name={eu:名前}" class="pilotpanel" data-rare="{レアリティ}" data-class="{情報/クラス}">
-          <div class="pilotface" style="background-image: url('../画像/パイロット/{eu:名前}/スキン/{eu:スキン/1/名前}/アイコン.webp');"><div></div></div>
-          <div class="loopmsg"><span><span>{名前}</span></span></div>
-        </a>
-      </div>
+        <h1 class="headline">分類方法</h1>
+        <input id="クラス別" type="radio" name="filters" checked="true"/>
+        <input id="勢力別" type="radio" name="filters"/>
+        <input id="血液型" type="radio" name="filters"/>
+        <div id="filter_tabs" class="tabview">
+          <label for="クラス別" class="filter-radio-btn"><span>クラス別</span></label>
+          <label for="勢力別" class="filter-radio-btn"><span>勢力別</span></label>
+          <label for="血液型" class="filter-radio-btn"><span>血液型</span></label>
+        </div>
+        <h1 class="headline">パイロット一覧</h1>
+        <input id="wep守護" type="radio" name="wepons" checked="true"/>
+        <input id="wep格闘" type="radio" name="wepons"/>
+        <input id="wep射撃" type="radio" name="wepons"/>
+        <input id="wep炸裂" type="radio" name="wepons"/>
+        <input id="wep狙撃" type="radio" name="wepons"/>
+        <input id="wep投射" type="radio" name="wepons"/>
+        <input id="frcアイレタ" type="radio" name="forces" checked="true"/>
+        <input id="frcケゲア" type="radio" name="forces"/>
+        <input id="frcハイクシアー" type="radio" name="forces"/>
+        <input id="frc無所属" type="radio" name="forces"/>
+        <input id="frcその他" type="radio" name="forces"/>
+        <input id="bldA" type="radio" name="bloods" checked="true"/>
+        <input id="bldB" type="radio" name="bloods"/>
+        <input id="bldO" type="radio" name="bloods"/>
+        <input id="bldAB" type="radio" name="bloods"/>
+        <input id="bldその他" type="radio" name="bloods"/>
+        <div id="wep_tabs" class="tabview subtabs">
+          <label for="wep守護" class="select_tab"><span>守護</span></label>
+          <label for="wep格闘" class="select_tab"><span>格闘</span></label>
+          <label for="wep射撃" class="select_tab"><span>射撃</span></label>
+          <label for="wep炸裂" class="select_tab"><span>炸裂</span></label>
+          <label for="wep狙撃" class="select_tab"><span>狙撃</span></label>
+          <label for="wep投射" class="select_tab"><span>投射</span></label>
+        </div>
+        <div id="frc_tabs" class="tabview subtabs">
+          <label for="frcアイレタ" class="select_tab"><span>アイレタ</span></label>
+          <label for="frcケゲア" class="select_tab"><span>ケゲア</span></label>
+          <label for="frcハイクシアー" class="select_tab"><span>ハイクシア</span></label>
+          <label for="frc無所属" class="select_tab"><span>無所属</span></label>
+          <label for="frcその他" class="select_tab"><span>その他</span></label>
+        </div>
+        <div id="bld_tabs" class="tabview subtabs">
+          <label for="bldA" class="select_tab"><span>A 型</span></label>
+          <label for="bldB" class="select_tab"><span>B 型</span></label>
+          <label for="bldO" class="select_tab"><span>O 型</span></label>
+          <label for="bldAB" class="select_tab"><span>AB型</span></label>
+          <label for="その他" class="select_tab"><span>その他</span></label>
+        </div>
+        <div id="pilotarea">
+          <a id="pilotpanel_template" href ="./pilot.html?name={eu:名前}" class="pilotpanel" data-rare="{レアリティ}" data-class="{情報/クラス}" data-force="{所属/勢力}">
+            <div class="pilotface" style="background-image: url('../画像/パイロット/{eu:名前}/スキン/{eu:スキン/1/名前}/アイコン.webp');"><div></div></div>
+            <div class="loopmsg"><span><span>{名前}</span></span></div>
+          </a>
+        </div>
       <br/>
-    </div>
+    </div><!--contentarea-->
      <!-- フッター -->
     <br/><br/>
     <div id="footer">

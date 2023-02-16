@@ -1,0 +1,211 @@
+:root {
+  --pilot-tab-color:#d8daee;
+}
+
+#pilotarea{
+  position: relative;
+  padding: 5px;
+  border: solid 1px #80808038;
+  border-radius: 10px;
+  top: -3px;
+  background-color: var(--pilot-tab-color);
+  text-align: left;
+  width: 540px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#content_area{
+  text-align: center;
+}
+
+/*------------ タブ -----------------*/
+#content_area input{
+  display: none;
+}
+#filter_tabs label{
+  position: relative;
+  transform: scale(1.2);
+  z-index: 1;
+  border: var(--table-border);
+}
+#クラス別:checked ~ #filter_tabs label:not([for="クラス別"])
+,#勢力別:checked ~ #filter_tabs label:not([for="勢力別"])
+,#血液型:checked ~ #filter_tabs label:not([for="血液型"])
+{
+  filter: grayscale(80%);
+  color: gray;
+  transform: scale(1.0);
+  z-index: 0;
+}
+#クラス別:checked ~ .subtabs:not([id="wep_tabs"])
+,#勢力別:checked ~ .subtabs:not([id="frc_tabs"])
+,#血液型:checked ~ .subtabs:not([id="bld_tabs"])
+{
+  display: none;
+}
+#filter_tabs label > span::after{
+  display: inline-block;
+  content: "　";
+  width: 22px;
+  height: 22px;
+}
+#filter_tabs label > span:before{
+  display: inline-block;
+  content: "　";
+  width: 22px;
+  height: 22px;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url(./アイコン/辞書.webp);
+}
+
+.select_tab{
+  display: inline-block;
+  font-size: 16px;
+  padding: .5em 1.0em .2em .8em;
+  position: relative;
+  z-index: 1;
+}
+.select_tab::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  transform: scaleY(0.8) perspective(0.6em) rotateX(4deg);
+  border-radius: 12px 12px 0 0;
+  border-left: var(--table-border);
+  border-top:  var(--table-border);
+  border-right: var(--table-border);
+  background: linear-gradient(var(--pilot-tab-color), #fafcfd, var(--pilot-tab-color));
+}
+.select_tab > span:before{
+  display: inline-block;
+  content: "　";
+  width: 22px;
+  height: 22px;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+#bld_tabs .select_tab > span:before{
+  width: 0px;
+  height: 0px;
+}
+.select_tab[for="wep守護"] > span:before {
+  background-image: url(./アイコン/片手武器.webp);
+}
+.select_tab[for="wep格闘"] > span:before {
+  background-image: url(./アイコン/強襲.webp);
+}
+.select_tab[for="wep射撃"] > span:before {
+  background-image: url(./アイコン/マシンガン.webp);
+}
+.select_tab[for="wep炸裂"] > span:before {
+  background-image: url(./アイコン/炸裂.webp);
+}
+.select_tab[for="wep狙撃"] > span:before {
+  background-image: url(./アイコン/狙撃.webp);
+}
+.select_tab[for="wep投射"] > span:before {
+  background-image: url(./アイコン/投射.webp);
+}
+.select_tab[for="wep守護"] > span:before {
+  background-image: url(./アイコン/片手武器.webp);
+}
+.select_tab[for="frcアイレタ"] > span:before {
+  background-image: url(./アイコン/アイレタ.webp);
+}
+.select_tab[for="frcケゲア"] > span:before {
+  background-image: url(./アイコン/ケゲア.webp);
+}
+.select_tab[for="frcハイクシアー"] > span:before {
+  background-image: url(./アイコン/ハイクシアー.webp);
+}
+.select_tab[for="frc無所属"] > span:before {
+  background-image: url(./アイコン/無所属.webp);
+}
+.select_tab[for="frc他組織"] > span:before {
+  background-image: url(./アイコン/ブラックアーク.webp);
+}
+.tabview{
+  margin-left: 0px;
+}
+
+#wep守護:checked ~ #wep_tabs label:not([for="wep守護"])
+,#wep格闘:checked ~ #wep_tabs label:not([for="wep格闘"])
+,#wep射撃:checked ~ #wep_tabs label:not([for="wep射撃"])
+,#wep炸裂:checked ~ #wep_tabs label:not([for="wep炸裂"])
+,#wep狙撃:checked ~ #wep_tabs label:not([for="wep狙撃"])
+,#wep投射:checked ~ #wep_tabs label:not([for="wep投射"])
+,#frcアイレタ:checked ~ #frc_tabs label:not([for="frcアイレタ"])
+,#frcケゲア:checked ~ #frc_tabs label:not([for="frcケゲア"])
+,#frcハイクシアー:checked ~ #frc_tabs label:not([for="frcハイクシアー"])
+,#frc無所属:checked ~ #frc_tabs label:not([for="frc無所属"])
+,#frc他組織:checked ~ #frc_tabs label:not([for="frc他組織"])
+,#bldA:checked ~ #bld_tabs label:not([for="bldA"])
+,#bldB:checked ~ #bld_tabs label:not([for="bldB"])
+,#bldO:checked ~ #bld_tabs label:not([for="bldO"])
+,#bldAB:checked ~ #bld_tabs label:not([for="bldAB"])
+,#bldその他:checked ~ #bld_tabs label:not([for="bldその他"])
+{
+  filter: grayscale(80%) contrast(0.5) brightness(1.3);
+  color: #80717b;
+  z-index: 0;
+}
+
+#クラス別:checked ~ #wep守護:checked ~ #pilotarea .pilotpanel:not([data-class="守護"])
+,#クラス別:checked ~ #wep格闘:checked ~ #pilotarea .pilotpanel:not([data-class="格闘"])
+,#クラス別:checked ~ #wep射撃:checked ~ #pilotarea .pilotpanel:not([data-class="射撃"])
+,#クラス別:checked ~ #wep炸裂:checked ~ #pilotarea .pilotpanel:not([data-class="炸裂"])
+,#クラス別:checked ~ #wep狙撃:checked ~ #pilotarea .pilotpanel:not([data-class="狙撃"])
+,#クラス別:checked ~ #wep投射:checked ~ #pilotarea .pilotpanel:not([data-class="投射"])
+,#勢力別:checked ~ #frcアイレタ:checked ~ #pilotarea .pilotpanel:not([data-force="アイレタ"])
+,#勢力別:checked ~ #frcケゲア:checked ~ #pilotarea .pilotpanel:not([data-force="ケゲア"])
+,#勢力別:checked ~ #frcハイクシアー:checked ~ #pilotarea .pilotpanel:not([data-force="ハイクシアー"])
+,#勢力別:checked ~ #frc無所属:checked ~ #pilotarea .pilotpanel:not([data-force="無所属"])
+,#勢力別:checked ~ #frc他組織:checked ~ #pilotarea .pilotpanel[data-force="アイレタ"]
+,#勢力別:checked ~ #frc他組織:checked ~ #pilotarea .pilotpanel[data-force="ケゲア"]
+,#勢力別:checked ~ #frc他組織:checked ~ #pilotarea .pilotpanel[data-force="ハイクシアー"]
+,#勢力別:checked ~ #frc他組織:checked ~ #pilotarea .pilotpanel[data-force="無所属"]
+,#血液型:checked ~ #bldA:checked ~ #pilotarea .pilotpanel:not([data-blood~="A"])
+,#血液型:checked ~ #bldB:checked ~ #pilotarea .pilotpanel:not([data-blood~="B"])
+,#血液型:checked ~ #bldO:checked ~ #pilotarea .pilotpanel:not([data-blood~="O"])
+,#血液型:checked ~ #bldAB:checked ~ #pilotarea .pilotpanel:not([data-blood~="AB"])
+,#血液型:checked ~ #bldその他:checked ~ #pilotarea .pilotpanel[data-blood~="A"]
+,#血液型:checked ~ #bldその他:checked ~ #pilotarea .pilotpanel[data-blood~="B"]
+,#血液型:checked ~ #bldその他:checked ~ #pilotarea .pilotpanel[data-blood~="O"]
+,#血液型:checked ~ #bldその他:checked ~ #pilotarea .pilotpanel[data-blood~="AB"]
+{
+  display: none;
+}
+
+.tabview label:hover{
+  filter: sepia(100%)  !important;
+}
+
+/*--------------- フィルタタイプボタン ----------------*/
+.filter-radio-btn {
+  display: inline-table;
+  color: #614be7;
+  border-radius: 15px;
+  min-width: 150px;
+  height: 40px;
+  font-weight: bold;
+  transition: 0.1s;
+  box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.25);
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 1);
+  background-image: radial-gradient(at 25% 25%, rgba(214, 245, 254, 1), rgba(126, 169, 255, 1));
+}
+.filter-radio-btn:hover {
+  filter: sepia(100%);
+}
+.filter-radio-btn > span{  
+  display: table-cell;
+  height: 100%;
+  vertical-align: middle;
+}

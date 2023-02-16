@@ -144,12 +144,12 @@ class FinalJsonObject {
   writeData(path,value){
     var array = path.split('/');
     var check = this.baseNode;
-    for( var i in array ){
+    for( var i=0; i<array.length-1; ++i ){
       var check2 = check[array[i]];
-      if(check2==undefined)check2 = check[array[i]] = new Object();
+      if(check2==undefined)check[array[i]] = check2 = new Object();
       check = check2;
     }
-    check = value;
+    check[array[i]] = value;
   }
   /**
    * 文字列の　”{JSONパス}”　をデータに置き換える

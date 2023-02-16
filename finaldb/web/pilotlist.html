@@ -7,8 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="pilot.css" />
+    <link rel="stylesheet" href="pilotlist.css" />
     <script src="finalajax.js"></script>
     <script src="finaldb.js"></script>
+    <script src="pilot.js"></script>
     <script></script>
   </head>
   <body>
@@ -42,7 +44,7 @@
         <input id="frcケゲア" type="radio" name="forces"/>
         <input id="frcハイクシアー" type="radio" name="forces"/>
         <input id="frc無所属" type="radio" name="forces"/>
-        <input id="frcその他" type="radio" name="forces"/>
+        <input id="frc他組織" type="radio" name="forces"/>
         <input id="bldA" type="radio" name="bloods" checked="true"/>
         <input id="bldB" type="radio" name="bloods"/>
         <input id="bldO" type="radio" name="bloods"/>
@@ -59,19 +61,19 @@
         <div id="frc_tabs" class="tabview subtabs">
           <label for="frcアイレタ" class="select_tab"><span>アイレタ</span></label>
           <label for="frcケゲア" class="select_tab"><span>ケゲア</span></label>
-          <label for="frcハイクシアー" class="select_tab"><span>ハイクシア</span></label>
+          <label for="frcハイクシアー" class="select_tab"><span>ﾊｲｸｼｱｰ</span></label>
           <label for="frc無所属" class="select_tab"><span>無所属</span></label>
-          <label for="frcその他" class="select_tab"><span>その他</span></label>
+          <label for="frc他組織" class="select_tab"><span>他組織</span></label>
         </div>
         <div id="bld_tabs" class="tabview subtabs">
           <label for="bldA" class="select_tab"><span>A 型</span></label>
           <label for="bldB" class="select_tab"><span>B 型</span></label>
           <label for="bldO" class="select_tab"><span>O 型</span></label>
           <label for="bldAB" class="select_tab"><span>AB型</span></label>
-          <label for="その他" class="select_tab"><span>その他</span></label>
+          <label for="bldその他" class="select_tab"><span>その他</span></label>
         </div>
         <div id="pilotarea">
-          <a id="pilotpanel_template" href ="./pilot.html?name={eu:名前}" class="pilotpanel" data-rare="{レアリティ}" data-class="{情報/クラス}" data-force="{所属/勢力}">
+          <a id="pilotpanel_template" href ="./pilot.html?name={eu:名前}" class="pilotpanel" data-rare="{レアリティ}" data-class="{情報/クラス}" data-force="{所属/勢力}" data-blood="{blood}">
             <div class="pilotface" style="background-image: url('../画像/パイロット/{eu:名前}/スキン/{eu:スキン/1/名前}/アイコン.webp');"><div></div></div>
             <div class="loopmsg"><span><span>{名前}</span></span></div>
           </a>
@@ -88,8 +90,9 @@
       var fullpilotpath = "../JSON/パイロット/@FullJsonData.json";
       window.onload = function(event){
         var pilotpanelTemplate = document.getElementById("pilotpanel_template");
-        window.weponloader = new FinalJsonDBInsert(pilotpanelTemplate);
-        window.weponloader.loadJson(fullpilotpath,mainDataLoaded);
+        window.finalloader = new FinalJsonDBInsert(pilotpanelTemplate);
+        window.finalloader.loadJson(fullpilotpath,mainDataLoaded);
+        window.finalloader.objectConstructor = BloodPilotData;
       }
       function mainDataLoaded(){
         console.log("loaded.");

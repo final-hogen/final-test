@@ -160,24 +160,33 @@ class FinalJsonObject {
   convertString(templateString,matches){
     for( var i in matches ){
       var key = matches[i];
-      var inner = key.substring(1, key.length-1);
-      var split = inner.split(":");
-      var path = "";
-      var com = "";
-      if(split.length>1){
-        com = split[0];
-        path = split[1];
-      }else{
-        path = split[0];
-      }
-      var value = this.fetchString(path);
-      switch(com){
-        case"eu":value = encodeURI(value);break;
-        case"et":value = value = value.replaceAll("\n","<br/>");break;
-      }
-      templateString = templateString.replaceAll(key,value);
+      templateString = this.convertStringSingle(templateString,key);
     }
     return templateString;
+  }
+  /**
+   * 文字列の　”{JSONパス}”　をデータに置き換える
+   * @param {*} templateString 
+   * @param {*} key     "{esc:exsample}"
+   * @returns 
+   */
+  convertStringSingle(templateString,key){
+    var inner = key.substring(1, key.length-1);
+    var split = inner.split(":");
+    var path = "";
+    var com = "";
+    if(split.length>1){
+      com = split[0];
+      path = split[1];
+    }else{
+      path = split[0];
+    }
+    var value = this.fetchString(path);
+    switch(com){
+      case"eu":value = encodeURI(value);break;
+      case"et":value = value = value.replaceAll("\n","<br/>");break;
+    }
+    return templateString.replaceAll(key,value);
   }
 }
 

@@ -6,6 +6,7 @@
   --panel-N-color-o: #a4fc98e8;
   --border-color: #80808038;
   --table-border: solid 1px #80808038;
+  --pilot-tab-color:#d8daee;
 }
 
 #pilotpanel_template{
@@ -13,9 +14,20 @@
 }
 
 #pilotarea{
+  position: relative;
+  padding: 5px;
+  border: solid 1px #80808038;
+  border-radius: 10px;
+  top: -3px;
+  background-color: var(--pilot-tab-color);
+  text-align: left;
+  width: 540px;
   margin-left: auto;
   margin-right: auto;
-  width: 530px;
+}
+
+#content_area{
+  text-align: center;
 }
 
 .pilotpanel{
@@ -64,22 +76,22 @@
   background-size: auto 25px;
   background-position: left bottom;
   background-repeat: no-repeat;
-  background-image: url(レア/UR.webp);
+  background-image: url(アイコン/UR.webp);
 }
 .pilotpanel[data-rare="UR"] .pilotface > div{
-  background-image: url(レア/UR.webp);
+  background-image: url(アイコン/UR.webp);
 }
 .pilotpanel[data-rare="SSR"] .pilotface > div{
-  background-image: url(レア/SSR.webp);
+  background-image: url(アイコン/SSR.webp);
 }
 .pilotpanel[data-rare="SR"] .pilotface > div{
-  background-image: url(レア/SR.webp);
+  background-image: url(アイコン/SR.webp);
 }
 .pilotpanel[data-rare="R"] .pilotface > div{
-  background-image: url(レア/R.webp);
+  background-image: url(アイコン/R.webp);
 }
 .pilotpanel[data-rare="N"] .pilotface > div{
-  background-image: url(レア/N.webp);
+  background-image: url(アイコン/N.webp);
 }
 
 /*------------ タブ -----------------*/
@@ -89,58 +101,33 @@
 
 .select_tab{
   display: inline-block;
+  font-size: 16px;
+  padding: .5em 1.0em .2em .8em;
   position: relative;
-  width: 95px;
-  height: 30px;
   z-index: 1;
 }
-.select_tab tr{
-  opacity: 1.0;
-}
-.select_tab td{
-  padding: 0px;
-  background-color: #bcb2f1;
-  background: linear-gradient(#9198e5, #fafcfd, #9198e5);
-}
-.select_tab td:nth-child(1){
+.select_tab::before {
+  content: "";
   position: absolute;
-  display: inline-block;
-  width: 30px;
-  height: 30px;
-  transform: skew(-20deg);
-  border-top-left-radius: 10px;
-  left: -5px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  transform: scaleY(0.8) perspective(0.6em) rotateX(4deg);
+  border-radius: 12px 12px 0 0;
   border-left: var(--table-border);
   border-top:  var(--table-border);
+  border-right: var(--table-border);
+  background: linear-gradient(#9198e5, #fafcfd, #9198e5);
+  background: linear-gradient(var(--pilot-tab-color), #fafcfd, var(--pilot-tab-color));
+  background-color: var(--pilot-tab-color);
 }
-.select_tab td:nth-child(2){
-  display: inline-table;
-  position: absolute;
-  width: 60px;
-  height: 30px;
-  left: 15px;
-  text-align: center;
-  vertical-align:bottom;
-  border-top:  var(--table-border);
-}
-.select_tab td:nth-child(2)  span {
-  display: inline-block;
-  position: relative;
-}
-.select_tab > span {
-  display: block;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  white-space: nowrap;
-  top: 5px;
-  left: 10px;
-}
-.select_tab > span:before {
+.select_tab > span:before{
   display: inline-block;
   content: "　";
-  width: 25px;
-  height: 25px;
+  width: 22px;
+  height: 22px;
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -148,108 +135,51 @@
   background-image: radial-gradient(#00000000, var(--panel-R-color-o));
 }
 .select_tab[for="wep守護"] > span:before {
-  background-image: url(./タイプ/片手武器.webp);
+  background-image: url(./アイコン/片手武器.webp);
 }
 .select_tab[for="wep格闘"] > span:before {
-  background-image: url(./タイプ/強襲.webp);
+  background-image: url(./アイコン/強襲.webp);
 }
 .select_tab[for="wep射撃"] > span:before {
-  background-image: url(./タイプ/マシンガン.webp);
+  background-image: url(./アイコン/マシンガン.webp);
 }
 .select_tab[for="wep炸裂"] > span:before {
-  background-image: url(./タイプ/炸裂.webp);
+  background-image: url(./アイコン/炸裂.webp);
 }
 .select_tab[for="wep狙撃"] > span:before {
-  background-image: url(./タイプ/狙撃.webp);
+  background-image: url(./アイコン/狙撃.webp);
 }
 .select_tab[for="wep投射"] > span:before {
-  background-image: url(./タイプ/投射.webp);
+  background-image: url(./アイコン/投射.webp);
 }
-.select_tab td:nth-child(3){
-  position: absolute;
-  display: inline-block;
-  width: 30px;
-  height: 30px;
-  left: 65px;
-  transform: skew(20deg);
-  border-top-right-radius: 10px;
-  border-right: var(--table-border);
-  border-top:  var(--table-border);
-}
-
 .tabview{
-  transform: scale(0.9);
-  transform-origin: left bottom;
-  width: 600px;
-  margin-left: 15px;
+  margin-left: 0px;
 }
 
-#wep守護:checked ~ .tabview label:not([for="wep守護"]){
+#wep守護:checked ~ .tabview label:not([for="wep守護"])
+,#wep格闘:checked ~ .tabview label:not([for="wep格闘"])
+,#wep射撃:checked ~ .tabview label:not([for="wep射撃"])
+,#wep炸裂:checked ~ .tabview label:not([for="wep炸裂"])
+,#wep狙撃:checked ~ .tabview label:not([for="wep狙撃"])
+,#wep投射:checked ~ .tabview label:not([for="wep投射"])
+{
   filter: grayscale(80%);
+  color: lightgray;
   z-index: 0;
 }
-#wep守護:checked ~ #pilotarea .pilotpanel:not([data-class="守護"]){
-  display: none;
-}
-#wep格闘:checked ~ .tabview label:not([for="wep格闘"]){
-  filter: grayscale(80%);
-  z-index: 0;
-}
-#wep格闘:checked ~ #pilotarea .pilotpanel:not([data-class="格闘"]){
-  display: none;
-}
-#wep射撃:checked ~ .tabview label:not([for="wep射撃"]){
-  filter: grayscale(80%);
-  z-index: 0;
-}
-#wep射撃:checked ~ #pilotarea .pilotpanel:not([data-class="射撃"]){
-  display: none;
-}
-#wep炸裂:checked ~ .tabview label:not([for="wep炸裂"]){
-  filter: grayscale(80%);
-  z-index: 0;
-}
-#wep炸裂:checked ~ #pilotarea .pilotpanel:not([data-class="炸裂"]){
-  display: none;
-}
-#wep狙撃:checked ~ .tabview label:not([for="wep狙撃"]){
-  filter: grayscale(80%);
-  z-index: 0;
-}
-#wep狙撃:checked ~ #pilotarea .pilotpanel:not([data-class="狙撃"]){
-  display: none;
-}
-#wep投射:checked ~ .tabview label:not([for="wep投射"]){
-  filter: grayscale(80%);
-  z-index: 0;
-}
-#wep投射:checked ~ #pilotarea .pilotpanel:not([data-class="投射"]){
+
+#wep守護:checked ~ #pilotarea .pilotpanel:not([data-class="守護"])
+,#wep格闘:checked ~ #pilotarea .pilotpanel:not([data-class="格闘"])
+,#wep射撃:checked ~ #pilotarea .pilotpanel:not([data-class="射撃"])
+,#wep炸裂:checked ~ #pilotarea .pilotpanel:not([data-class="炸裂"])
+,#wep狙撃:checked ~ #pilotarea .pilotpanel:not([data-class="狙撃"])
+,#wep投射:checked ~ #pilotarea .pilotpanel:not([data-class="投射"])
+{
   display: none;
 }
 
-/*------------ らじおぼたん -----------------*/
-
-.selectradio {
-  filter: grayscale(60%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  line-height: 1;
-  text-decoration: none;
-  color: #604bd7;
-  font-size: 18px;
-  border-radius: 20px;
-  width: 200px;
-  height: 40px;
-  font-weight: bold;
-  transition: 0.3s;
-  box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.25);
-  text-shadow: 1px 1px 2px rgba(255, 255, 255, 1);
-  background-image: radial-gradient(at 25% 27%, rgba(214, 227, 254, 1), rgba(199, 213, 244, 1) 0%, rgba(72, 140, 218, 1));
-}
-
-.selectradio:hover {
-  box-shadow: 0 0 rgba(0, 0, 0, 0);
+.tabview label:hover{
+  filter: sepia(100%)  !important;
 }
 
 .loopmsg > span > span{

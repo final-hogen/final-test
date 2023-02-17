@@ -8,3 +8,14 @@ class BloodPilotData extends FinalJsonObject
     this.writeData("blood",blood);
   }
 }
+
+class SingleFinalJsonDB extends FinalJsonDBInsert
+{
+  constructor(template, name){
+    super(template);
+    this.viewPilotName = name;
+  }
+  convert(){
+    this.convertArray([this.innerObjects[this.viewPilotName]]);
+  }
+}

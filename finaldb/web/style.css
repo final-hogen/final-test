@@ -72,7 +72,7 @@ body {
   transform:skewX(-30deg);
 }
 
-*[data-virew="false"]{
+*[data-view="false"]{
   display: none;;
 }
 

@@ -47,12 +47,18 @@
 .data-adddiv.th{
   background-color: var(--table-th-color);
 }
+.data-adddiv:not(.th){
+  min-height: 50px;
+}
 
 #content_area input{
   display: none;
 }
 
-#pilot_template{
+#pilot_template
+,#attendance_template
+,#instoryLink_template
+{
   display: none;
 }
 /*------------------ パイロット情報 ------------------*/
@@ -94,6 +100,16 @@
 }
 #denki:not(:checked) ~ #denki_long{
   display: none;
+}
+
+#in_story a,#in_story a:visited{
+  color: blue;
+  text-decoration:none;
+}
+#in_story{
+  margin: 0;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 /*-----------------  ステータス ----------------------*/

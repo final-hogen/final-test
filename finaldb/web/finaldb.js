@@ -50,6 +50,18 @@ class FinalJsonDB extends FinalAjax{
     this.convertArray(objects);
   }
   /**
+   * 名前から変換
+   * @param {*} names 
+   */
+  convertNames(names){
+    if(!names || names.length<=0)return;
+    var result = [];
+    for(const name of names){
+      result.push(this.innerObjects[name]);
+    }
+    this.convertArray(result);
+  }
+  /**
    * データをタグに変換してぶっこむ
    */
   convertArray(objects){

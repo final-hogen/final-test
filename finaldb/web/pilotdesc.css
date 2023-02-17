@@ -69,6 +69,7 @@
 }
 
 #pilotinfo .loopmsg > span > span{
+  animation-duration: 6s;
   animation-name: message-loop-160px;
 }
 @keyframes message-loop-160px {
@@ -78,7 +79,9 @@
   95% {left: min( calc(160px - 100%) , 0px );}
   100% {left: 0px;}
 }
-
+.英名{
+  font-size: 0.8em;
+}
 .inline_comment{
   display: inline-block;
   width:400px;

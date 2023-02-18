@@ -262,7 +262,9 @@ class FinalAutoMarkup extends FinalAjax{
       for (var j = 0; j < chileds.length; j++) {
         var chiled = chileds[j];
         if(chiled.nodeType!=Node.TEXT_NODE)continue;
-        chiled.parentNode.replaceChild(this.convertTextNode(chiled),chiled);
+        var newNode = this.convertTextNode(chiled);
+        //if(newNode!==chiled)this.replaceChilds(chiled,this.convertTextNode(chiled));
+        chiled.parentNode.replaceChild(newNode,chiled);
       }
     }
   }

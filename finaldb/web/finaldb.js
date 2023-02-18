@@ -241,6 +241,15 @@ class FinalAutoMarkup extends FinalAjax{
     this.sortKeys.sort();
     this.sortKeys.reverse();
   }
+  setJsonDataKeyValue(keyval){
+    for( var key in keyval){
+      var value = keyval[key];
+      this.setData(key,value);
+    }
+    this.sortKeys = Object.keys(this.keyvalues);
+    this.sortKeys.sort();
+    this.sortKeys.reverse();
+  }
   setData(key,value){
     this.keyvalues[key]=value;
   }
@@ -305,8 +314,10 @@ class FinalAutoMarkup extends FinalAjax{
     if(this.makeMarkupString[key])return this.makeMarkupString[key];
     const keyword = '{keyword}';
     const description = '{description}';
+    const eudescription = '{eu:description}';
     var resultString = this.templateString.replaceAll(keyword,key);
     resultString = resultString.replaceAll(description,desc);
+    resultString = resultString.replaceAll(eudescription,encodeURI(desc));
 
     this.makeMarkupString[key] = resultString;
     return resultString;

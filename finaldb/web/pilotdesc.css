@@ -9,6 +9,26 @@
   --会心--color:#e4d7ac;
   --statuscircle-size:150px;
 }
+#menu{
+  position:fixed;
+  right:20px;
+  bottom:10px;
+  transition:1s;
+  background-color: #b9c9e2f0;
+  z-index: 30;
+}
+#menu > div{
+  border: dashed 2px #47495aad;
+  padding: 0 5px;
+}
+#menu a
+,#menu a:hover
+,#menu a:visited
+{
+  color: initial;
+  font-weight: bolder;
+  text-decoration: none;
+}
 .explanation{
   margin-left: 20px;
   color: darkgrey;

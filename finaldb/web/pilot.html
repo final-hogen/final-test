@@ -209,11 +209,26 @@
       <a id="ステータス位置"><h1 class="headline">ステータス</h1></a>
       <input id="showStatusDesc" type="checkbox"/>
       <div class="explanation">※ベースカー、アーク計画などの効果は除く。比較の目安程度で。</div>
+      <div class="explanation">※与ダメージは武器倍率やスキルの影響が大きいです。</div>
       <table id="statustable" class="datatable">
         <tbody>
           <tr>
             <th></th><th>強固</th><th>操作</th><th>忍耐</th><th>反応</th><th>技術</th>
-            <td id="statuscircle" rowspan="5"></td>
+            <td rowspan="5" class="statuscirclearea">
+              <div>
+                <div id="backcirclecolor" style="clip-path: polygon(0 0, 0 0, 0 0);"></div>
+                <svg id="statuscircle" viewbox="0 0 100 100">
+                  <polygon points="50,0 97.5528258147577,34.5491502812526 79.3892626146237,90.4508497187474 20.6107373853764,90.4508497187474 2.44717418524232,34.5491502812526" class="maxline" />
+                  <polygon id="aveSSRline" points="" class="aveline" />
+                  <polygon id="myline" points="" class="myline" />
+                  <text class="circletext"  x="50" y="8" transform="rotate(0)" dominant-baseline="middle" text-anchor="middle">耐久</text>
+                  <text class="circletext"  x="10" y="32" transform="rotate(-50 10,32)" dominant-baseline="middle" text-anchor="middle">会心</text>
+                  <text class="circletext"  x="85" y="30" transform="rotate(50 85,30)" dominant-baseline="middle" text-anchor="middle">攻撃</text>
+                  <text class="circletext"  x="85" y="88" transform="rotate(-15 85,88)" dominant-baseline="middle" text-anchor="middle">防御</text>
+                  <text class="circletext"  x="18" y="90" transform="rotate(15 18,90)" dominant-baseline="middle" text-anchor="middle">回避</text>
+                </svg>
+              </div>
+            </td>
           </tr>
           <tr>
             <th>最大</th>
@@ -239,6 +254,7 @@
         <tbody class="statusdesc">
           <tr>
             <th></th><th>強固</th><th>操作</th><th>忍耐</th><th>反応</th><th>技術</th>
+            <td>※破線はSSR平均</td>
           </tr>
           <tr>
             <th>Lv60</th>
@@ -441,53 +457,7 @@
       <div class="explanation">※表示される文字です。実際の音声とは異なることがあります。</div>
       <input id="viewexvoice" type="checkbox"/>
       <div id="voice_skinselectarea"></div>
-      <div id="voiceskin_area"></div><!--
-      <table class="datatable voicetable">
-        <tbody>
-          <tr data-view="{スキン/1/ボイス/参加}"><th>参加</th><td>{スキン/1/ボイス/参加}</td></tr>
-          <tr data-view="{スキン/1/ボイス/対話1}"><th>対話1</th><td>{スキン/1/ボイス/対話1}</td></tr>
-          <tr data-view="{スキン/1/ボイス/対話2}"><th>対話2</th><td>{スキン/1/ボイス/対話2}</td></tr>
-          <tr data-view="{スキン/1/ボイス/対話3}"><th>対話3</th><td>{スキン/1/ボイス/対話3}</td></tr>
-          <tr data-view="{スキン/1/ボイス/対話4}"><th>対話4</th><td>{スキン/1/ボイス/対話4}</td></tr>
-          <tr data-view="{スキン/1/ボイス/対話5}"><th>対話5</th><td>{スキン/1/ボイス/対話5}</td></tr>
-          <tr data-view="{スキン/1/ボイス/対話6}"><th>対話6</th><td>{スキン/1/ボイス/対話6}</td></tr>
-          <tr data-view="{スキン/1/ボイス/対話7}"><th>対話7</th><td>{スキン/1/ボイス/対話7}</td></tr>
-          <tr data-view="{スキン/1/ボイス/対話8}"><th>対話8</th><td>{スキン/1/ボイス/対話8}</td></tr>
-          <tr data-view="{スキン/1/ボイス/対話9}"><th>対話9</th><td>{スキン/1/ボイス/対話9}</td></tr>
-          <tr data-view="{スキン/1/ボイス/待機}"><th>待機</th><td>{スキン/1/ボイス/待機}</td></tr>
-          <tr data-view="{スキン/1/ボイス/部隊編入}"><th>部隊編入</th><td>{スキン/1/ボイス/部隊編入}</td></tr>
-          <tr data-view="{スキン/1/ボイス/戦闘開始}"><th>戦闘開始</th><td>{スキン/1/ボイス/戦闘開始}</td></tr>
-          <tr data-view="{スキン/1/ボイス/操作変更}"><th>操作変更</th><td>{スキン/1/ボイス/操作変更}</td></tr>
-          <tr data-view="{スキン/1/ボイス/戦闘不能}"><th>戦闘不能</th><td>{スキン/1/ボイス/戦闘不能}</td></tr>
-          <tr data-view="{スキン/1/ボイス/スキル準備}"><th>スキル準備</th><td>{スキン/1/ボイス/スキル準備}</td></tr>
-          <tr data-view="{スキン/1/ボイス/スキル1}"><th>スキル1</th><td>{スキン/1/ボイス/スキル1}</td></tr>
-          <tr data-view="{スキン/1/ボイス/スキル2}"><th>スキル2</th><td>{スキン/1/ボイス/スキル2}</td></tr>
-          <tr data-view="{スキン/1/ボイス/HP低下}"><th>HP低下</th><td>{スキン/1/ボイス/HP低下}</td></tr>
-          <tr data-view="{スキン/1/ボイス/勝利}"><th>勝利</th><td>{スキン/1/ボイス/勝利}</td></tr>
-          <tr data-view="{スキン/1/ボイス/敗北}"><th>敗北</th><td>{スキン/1/ボイス/敗北}</td></tr>
-          <tr data-view="{スキン/1/ボイス/マップ配置}"><th>マップ配置</th><td>{スキン/1/ボイス/マップ配置}</td></tr>
-          <tr data-view="{スキン/1/ボイス/強化}"><th>強化</th><td>{スキン/1/ボイス/強化}</td></tr>
-          <tr data-view="{スキン/1/ボイス/改造}"><th>改造</th><td>{スキン/1/ボイス/改造}</td></tr>
-          <tr data-view="{スキン/1/ボイス/スキル上昇}"><th>スキル上昇</th><td>{スキン/1/ボイス/スキル上昇}</td></tr>
-          <tr data-view="{スキン/1/ボイス/アイテム発見}"><th>ｱｲﾃﾑ発見</th><td>{スキン/1/ボイス/アイテム発見}</td></tr>
-          <tr data-view="{スキン/1/ボイス/敵発見}"><th>敵発見</th><td>{スキン/1/ボイス/敵発見}</td></tr>
-          <tr data-view="{スキン/1/ボイス/拠点占拠}"><th>拠点占拠</th><td>{スキン/1/ボイス/拠点占拠}</td></tr>
-          <tr data-view="{スキン/1/ボイス/補給獲得}"><th>補給獲得</th><td>{スキン/1/ボイス/補給獲得}</td></tr>
-          <tr data-view="{スキン/1/ボイス/呼び1}"><th>呼び1</th><td>{スキン/1/ボイス/呼び1}</td></tr>
-          <tr data-view="{スキン/1/ボイス/呼び2}"><th>呼び2</th><td>{スキン/1/ボイス/呼び2}</td></tr>
-          <tr data-view="{スキン/1/ボイス/呼び3}"><th>呼び3</th><td>{スキン/1/ボイス/呼び3}</td></tr>
-          <tr data-view="{スキン/1/ボイス/呼び4}"><th>呼び4</th><td>{スキン/1/ボイス/呼び4}</td></tr>
-          <tr data-view="{スキン/1/ボイス/呼び5}"><th>呼び5</th><td>{スキン/1/ボイス/呼び5}</td></tr>
-          <tr data-view="{スキン/1/ボイス/呼び6}"><th>呼び6</th><td>{スキン/1/ボイス/呼び6}</td></tr>
-        </tbody>
-        <tbody>
-          <tr data-view="{スキン/1/ボイス/誕生日}"><th colspan="2"><label for="viewexvoice">誓約・誕生日のボイスを表示する</label></th></tr>
-        </tbody>
-        <tbody id="exvoice">
-          <tr><th>誕生日</th><td>{スキン/1/ボイス/誕生日}</td></tr>
-          <tr data-view="{スキン/1/ボイス/誓約}"><th>誓約</th><td>{スキン/1/ボイス/誓約}</td></tr>
-        </tbody>
-      </table>-->
+      <div id="voiceskin_area"></div>
       </div></div><!-- content_area -->
       <br/>
      <!-- フッター -->
@@ -509,8 +479,18 @@
       function mainDataLoaded(){
         console.log("loaded.");
         setSkins(window.finalloader.getPilotObject());
+        setStatusCircle();
         setAttendance();
         loadInStory();
+      }
+      function setStatusCircle(){
+        var circleEditor = new StatusCircle(window.finalloader.baseNode);
+        var pilot = window.finalloader.getPilotObject();
+        document.getElementById("backcirclecolor").setAttribute("style"
+          ,circleEditor.getPilotObjectCSS(pilot));
+        document.getElementById("myline").setAttribute("points"
+          ,circleEditor.getPilotObjectPolygon(pilot));
+        document.getElementById("aveSSRline").setAttribute("points",circleEditor.getAvePolygon());
       }
       function setAttendance(){
         var attendanceTemplate = document.getElementById("attendance_template");

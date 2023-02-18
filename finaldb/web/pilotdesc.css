@@ -7,6 +7,7 @@
   --防御--color:#a2b2da;
   --回避--color:#caa1d1;
   --会心--color:#e4d7ac;
+  --statuscircle-size:150px;
 }
 .explanation{
   margin-left: 20px;
@@ -120,9 +121,55 @@
 #statustable{
   table-layout: fixed;
 }
+#statustable .statuscirclearea{
+  width: var(--statuscircle-size);
+  height: var(--statuscircle-size);
+  text-align: center;
+  overflow: hidden;
+}
+#statustable .statuscirclearea > div{
+  width: var(--statuscircle-size);
+  margin-left: auto;
+  margin-right: auto;
+  transform: translate(0,5px);
+}
 #statustable #statuscircle{
-  width: 150px;
-  height: 150px;
+  display: block;
+  position: relative;
+  width: var(--statuscircle-size);
+  height: var(--statuscircle-size);
+}
+#statuscircle .aveline{
+  fill:none;
+  stroke:#7f70ddba;
+  stroke-width:1.5;
+  stroke-dasharray:5,2;
+}
+#statuscircle .myline{
+  fill:none;
+  stroke:#bd316166;
+  stroke-width:1.5;
+}
+#statuscircle .maxline{
+  fill:none;
+  stroke:#92bde780;
+  stroke-width:1.0;
+}
+#backcirclecolor{
+  position: absolute;
+  width: var(--statuscircle-size);
+  height: var(--statuscircle-size);
+  background: conic-gradient(
+    var(--耐久--color),
+    var(--攻撃--color),
+    var(--防御--color),
+    var(--回避--color),
+    var(--会心--color),
+    var(--耐久--color));
+}
+.circletext{
+  font-size: 1.0em;
+  fill: #36368587;
 }
 #statustable td{
   text-align: right;
@@ -246,7 +293,7 @@
 .voicetable #exvoice td{
   font-size: initial;
 }
-#viewexvoice:not(:checked) ~ .voicetable #exvoice{
+#viewexvoice:not(:checked) ~ #voiceskin_area #exvoice{
   display: none;
 }
 
@@ -322,7 +369,7 @@
 .imagearea[data-rare="SR"] .pilotskin> div:last-child{
   background-image: url(アイコン/SR.webp);
 }
-.pilotskin[data-rare="R"] .pilotskin> div:last-child{
+.imagearea[data-rare="R"] .pilotskin> div:last-child{
   background-image: url(アイコン/R.webp);
 }
 .imagearea[data-rare="N"] .pilotskin> div:last-child{

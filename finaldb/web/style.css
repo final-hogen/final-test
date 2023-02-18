@@ -73,7 +73,7 @@ body {
 }
 
 *[data-view="false"]{
-  display: none;;
+  display: none !important;
 }
 
 /* --- 吹き出し ------------------ */

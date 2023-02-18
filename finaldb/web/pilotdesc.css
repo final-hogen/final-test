@@ -58,6 +58,10 @@
 #pilot_template
 ,#attendance_template
 ,#instoryLink_template
+,#pilotface_template
+,#pilotface_radio_template
+,#pilotvoice_radio_template
+,#voicetable_template
 {
   display: none;
 }
@@ -186,11 +190,6 @@
   display: none;
 }
 
-/*---------------- 誓約 ---------------------------*/
-#vowtable th{
-  width: 100px;
-}
-
 /*---------------  スキル  --------------------*/
 #skilltable .icon{
   height:100px ;
@@ -219,67 +218,128 @@
   display: none;
 }
 
+/*---------------- 誓約 ---------------------------*/
+#vowtable th{
+  width: 100px;
+}
+#attendance_parent{
+  width: 420px;
+}
+#attendance_area{
+  transform-origin: left top;
+  transform: scale( calc(420 / 530) );
+  width: 530px;
+}
+
 /*-------------------  ボイス  -------------------------*/
-#vowtable td{
+.voicetable th{
+  width: 100px;
+}
+
+.voicetable td{
   font-size: 0.8em;
 }
-#vowtable th label{
+.voicetable th label{
   display: inline-block;
   width: 100%;
 }
-#vowtable #exvoice td{
+.voicetable #exvoice td{
   font-size: initial;
 }
-#viewexvoice:not(:checked) ~ #vowtable #exvoice{
+#viewexvoice:not(:checked) ~ .voicetable #exvoice{
   display: none;
 }
+
+#voice_skinselectarea{
+  width: 530px;
+  margin-left: auto;
+  margin-right: auto;
+}
+#voice_skinselectarea > label{
+  display: inline-block;
+  padding: 2px 5px;
+  border: dashed 2px #47495aad ;
+  font-size: 0.8em;
+}
+#voice_skinselectarea > label:first-child:last-child{
+  display: none;
+}
+#voiceskin_area input:not(:checked)+table{
+  display: none;
+ }
 
 /*------------------- スキン --------------------*/
 .pilotskin{
   width: 100px;
   height: 200px;
 }
-.pilotskin .pilotface{
+#pilotfaces{
   width: 100%;
   height: 100%;
+}
+#pilotfaces div{
+  position: absolute;
+  width: 100px;
+  height: 200px;
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
+  transition: 1s;
 }
-.pilotskin .pilotface > div{
+#pilotfaces input:not(:checked)+div{
+ opacity: 0;
+}
+.imagearea[data-rare="UR"] {
+  background-image: radial-gradient(#00000000, var(--panel-UR-color-o));
+}
+.imagearea[data-rare="SSR"] {
+  background-image: radial-gradient(#00000000, var(--panel-SSR-color-o));
+}
+.imagearea[data-rare="SR"] {
+  background-image: radial-gradient(#00000000, var(--panel-SR-color-o));
+}
+.imagearea[data-rare="R"] {
+  background-image: radial-gradient(#00000000, var(--panel-R-color-o));
+}
+.imagearea[data-rare="N"] {
+  background-image: radial-gradient(#00000000, var(--panel-N-color-o));
+}
+.pilotskin > div:last-child{
   width: 100%;
   height: 100%;
   background-size: auto 25px;
   background-position: left bottom;
   background-repeat: no-repeat;
+  position: relative;
+  top: -100%;
 }
-.pilotskin[data-rare="UR"] {
-  background-image: radial-gradient(#00000000, var(--panel-UR-color-o));
-}
-.pilotskin[data-rare="SSR"] {
-  background-image: radial-gradient(#00000000, var(--panel-SSR-color-o));
-}
-.pilotskin[data-rare="SR"] {
-  background-image: radial-gradient(#00000000, var(--panel-SR-color-o));
-}
-.pilotskin[data-rare="R"] {
-  background-image: radial-gradient(#00000000, var(--panel-R-color-o));
-}
-.pilotskin[data-rare="N"] {
-  background-image: radial-gradient(#00000000, var(--panel-N-color-o));
-}
-.pilotskin[data-rare="UR"] .pilotface > div{
+.imagearea[data-rare="UR"] .pilotskin> div:last-child{
   background-image: url(アイコン/UR.webp);
 }
-.pilotskin[data-rare="SSR"] .pilotface > div{
+.imagearea[data-rare="SSR"] .pilotskin> div:last-child{
   background-image: url(アイコン/SSR.webp);
 }
-.pilotskin[data-rare="SR"] .pilotface > div{
+.imagearea[data-rare="SR"] .pilotskin> div:last-child{
   background-image: url(アイコン/SR.webp);
 }
-.pilotskin[data-rare="R"] .pilotface > div{
+.pilotskin[data-rare="R"] .pilotskin> div:last-child{
   background-image: url(アイコン/R.webp);
 }
-.pilotskin[data-rare="N"] .pilotface > div{
+.imagearea[data-rare="N"] .pilotskin> div:last-child{
   background-image: url(アイコン/N.webp);
+}
+
+#face_skinselectarea{
+  width: 530px;
+  margin-left: auto;
+  margin-right: auto;
+}
+#face_skinselectarea > label{
+  display: inline-block;
+  padding: 2px 5px;
+  border: dashed 2px #47495aad ;
+  font-size: 0.8em;
+}
+#face_skinselectarea > label:first-child:last-child{
+  display: none;
 }

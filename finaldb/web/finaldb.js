@@ -38,7 +38,7 @@ class FinalJsonDB extends FinalAjax{
     this.baseNode = data;
     this.innerObjects = {};
     for (const [key, value] of Object.entries(data)) {
-      this.innerObjects[key] = new this.objectConstructor(value);
+      this.innerObjects[key] = new this.objectConstructor(value,key);
     }
   }
   /**
@@ -124,8 +124,9 @@ class FinalJsonDBInsert extends FinalJsonDB
  * 一つのデータを扱うクラス
  */
 class FinalJsonObject {
-  constructor(node) {
+  constructor(node,index) {
     this.baseNode = node;
+    this.myIndex = index;
   }
   /**
    * 武器名/名前 みたいなJSONパスを指定してデータを取り出す
@@ -133,6 +134,7 @@ class FinalJsonObject {
    * @returns 
    */
   fetchData(path){
+    if(path=="myindex")return this.myIndex;
     var array = path.split('/');
     var check = this.baseNode;
     for( var i in array ){

@@ -25,6 +25,7 @@
   background-image: radial-gradient(#00000000, var(--panel-R-color-o));
   transform-origin: center;
   transition: 0.3s;
+  overflow: hidden;
 }
 .pilotpanel:hover{
   transform: scale(1.2);

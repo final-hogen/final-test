@@ -76,7 +76,7 @@
   bottom: 0;
   left: 0;
   z-index: -1;
-  transform: scaleY(0.8) perspective(0.6em) rotateX(4deg);
+  transform: scale(1.2) scaleY(0.8) perspective(0.6em) rotateX(4deg) translateZ(-1px);
   border-radius: 12px 12px 0 0;
   border-left: var(--table-border);
   border-top:  var(--table-border);
@@ -134,6 +134,7 @@
 }
 .tabview{
   margin-left: 0px;
+  position: relative;
 }
 
 #wep守護:checked ~ #wep_tabs label:not([for="wep守護"])
@@ -192,13 +193,13 @@
   min-width: 150px;
   height: 40px;
   font-weight: bold;
-  transition: 0.1s;
   box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.25);
   text-shadow: 1px 1px 2px rgba(255, 255, 255, 1);
-  background-image: radial-gradient(at 25% 25%, rgba(214, 245, 254, 1), rgba(126, 169, 255, 1));
+  overflow: hidden;
 }
 .filter-radio-btn > span{  
   display: table-cell;
   height: 100%;
   vertical-align: middle;
+  background-image: radial-gradient(at 25% 25%, rgba(214, 245, 254, 1), rgba(126, 169, 255, 1));
 }

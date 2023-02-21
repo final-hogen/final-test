@@ -1,0 +1,180 @@
+:root {
+  --table-border: solid 1px #80808038;
+  --table-width: 530px;
+  --table-th-color: #ced0ec;
+  --固有-color:#bbc4ce;
+  --知恵-color:#9abce6;
+  --製造-color:#dfc79f;
+  --敏速-color:#8acfdb;
+  --体質-color:#e0aa7a;
+  --感情-color:#c192e2;
+}
+
+#pilotface_template
+,#basecarskill_template
+{
+  display: none;
+}
+
+#conteiner input[type="radio"] {
+  display: none;
+}
+
+.search_filters{
+  position: relative;
+}
+#skilltypes > div{
+  display: flex;
+}
+#skilltypes .type{
+  width: 33%;
+  text-align: center;
+  border: var(--table-border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+#skilltypes .type label{
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+#r全て:checked ~ #search_filters .type label:not([for="r全て"])
+,#r固有:checked ~ #search_filters .type label:not([for="r固有"])
+,#r知恵:checked ~ #search_filters .type label:not([for="r知恵"])
+,#r製造:checked ~ #search_filters .type label:not([for="r製造"])
+,#r体質:checked ~ #search_filters .type label:not([for="r体質"])
+,#r敏速:checked ~ #search_filters .type label:not([for="r敏速"])
+,#r感情:checked ~ #search_filters .type label:not([for="r感情"])
+{
+  color: gray;
+}
+#r全て:checked ~ #search_filters .type label[for="r全て"]{
+  background-color: white;
+}
+#r固有:checked ~ #search_filters .type label[for="r固有"]{
+  background-color: var(--固有-color);
+}
+#r知恵:checked ~ #search_filters .type label[for="r知恵"]{
+  background-color: var(--知恵-color);
+}
+#r製造:checked ~ #search_filters .type label[for="r製造"]{
+  background-color: var(--製造-color);
+}
+#r体質:checked ~ #search_filters .type label[for="r体質"]{
+  background-color: var(--体質-color);
+}
+#r敏速:checked ~ #search_filters .type label[for="r敏速"]{
+  background-color: var(--敏速-color);
+}
+#r感情:checked ~ #search_filters .type label[for="r感情"]{
+  background-color: var(--感情-color);
+}
+
+#r固有:checked ~ #basecar_skills tr:not([data-hav-type~="固有"])
+,#r知恵:checked ~ #basecar_skills tr:not([data-hav-type~="知恵"])
+,#r製造:checked ~ #basecar_skills tr:not([data-hav-type~="製造"])
+,#r体質:checked ~ #basecar_skills tr:not([data-hav-type~="体質"])
+,#r敏速:checked ~ #basecar_skills tr:not([data-hav-type~="敏速"])
+,#r感情:checked ~ #basecar_skills tr:not([data-hav-type~="感情"])
+,#r固有:checked ~ #basecar_skills a:not([class~="f固有"])
+,#r知恵:checked ~ #basecar_skills a:not([class~="f知恵"])
+,#r製造:checked ~ #basecar_skills a:not([class~="f製造"])
+,#r体質:checked ~ #basecar_skills a:not([class~="f体質"])
+,#r敏速:checked ~ #basecar_skills a:not([class~="f敏速"])
+,#r感情:checked ~ #basecar_skills a:not([class~="f感情"])
+{
+  display: none;
+}
+
+#search_word1,#search_word2{
+  display: inline-block;
+  width: 40%;
+}
+
+#basecar_skills{
+  table-layout: fixed;
+  border-spacing: 0px;
+}
+#basecar_skills th{
+  background-color: var(--table-th-color);
+  border-right: var(--table-border);
+  border-bottom: var(--table-border);
+  padding: 0;
+}
+#basecar_skills tr:first-child th{
+  border-top: var(--table-border);
+}
+#basecar_skills th:first-child{
+  border-left: var(--table-border);
+}
+#basecar_skills th:nth-child(1){
+  width: 20%;
+}
+#basecar_skills th:nth-child(2){
+  width: 30%;
+}
+#basecar_skills td{
+  font-size: 0.8em;
+  padding: 0;
+  border-right: var(--table-border);
+  border-bottom: var(--table-border);
+}
+#basecar_skills td:first-child{
+  border-left: var(--table-border);
+}
+
+#basecar_skills .pilotface{
+  width: 50px;
+  height: 50px;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  content-visibility: auto;
+  contain: size;
+}
+
+#basecar_skills .highlight{
+  background-color: yellow;
+}
+
+#r固有:checked ~ #search_filters .type label[for="r固有"]{
+  background-color: var(--固有-color);
+}
+#r知恵:checked ~ #search_filters .type label[for="r知恵"]{
+  background-color: var(--知恵-color);
+}
+#r製造:checked ~ #search_filters .type label[for="r製造"]{
+  background-color: var(--製造-color);
+}
+#r体質:checked ~ #search_filters .type label[for="r体質"]{
+  background-color: var(--体質-color);
+}
+#r敏速:checked ~ #search_filters .type label[for="r敏速"]{
+  background-color: var(--敏速-color);
+}
+#basecar_skills .f固有{
+  background-color: var(--感情-color);
+}
+#basecar_skills a{
+  display:inline-block;
+  border-radius: 7px;
+  overflow: hidden;
+}
+#basecar_skills .f固有{
+  background-color: var(--固有-color);
+}
+#basecar_skills .f知恵{
+  background-color: var(--知恵-color);
+}
+#basecar_skills .f製造{
+  background-color: var(--製造-color);
+}
+#basecar_skills .f体質{
+  background-color: var(--体質-color);
+}
+#basecar_skills .f敏速{
+  background-color: var(--敏速-color);
+}
+#basecar_skills .f感情{
+  background-color: var(--感情-color);
+}

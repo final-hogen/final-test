@@ -41,7 +41,7 @@ class FinalSearchTable{
   updateSingle(trNode,split1,split2){
     const searchWord = trNode.getAttribute("data-search-word");
     var result = true;
-    if(split1.length>0&&split2.length>0)result = this.check(searchWord,split1)||this.check(searchWord,split2);
+    if(split1.length>0&&split2.length>0)result = this.check(searchWord,split1)&&this.check(searchWord,split2);
     else if(split1.length>0)result = this.check(searchWord,split1);
     else if(split2.length>0)result = this.check(searchWord,split2);
 
@@ -69,9 +69,9 @@ class FinalSearchTable{
     if(!splitwords)return true;
     for( let word of splitwords){
       if(!word)continue;
-      if(search.indexOf(word)<0)return false;
+      if(search.indexOf(word)>=0)return true;
     }
-    return true;
+    return false;
   }
   /**
    * xpath 検索

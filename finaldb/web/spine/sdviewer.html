@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>ファイナルデータ</title>
+    <link rel="shortcut icon" type="image/png" href="../サイトアイコン.PNG">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="../style.css" />
+    <style>
+      label{
+        display: inline-block;
+        width: 120px;
+      }
+      #radio_template{
+        display: none;
+      }
+      /** { margin: 0; padding: 0; }
+      canvas { position: absolute; width: 100% ;height: 100%; }*/
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r100/three.js"></script>
+    <script src="./spine-threejs.js"></script>
+    <script src="../finalajax.js"></script>
+    <script src="../finaldb.js"></script>
+    <script src="./sdviewer.js"></script>
+    <script></script>
+  </head>
+  <body>
+    <div id="wrapper" style="background-image:url('../wallpaper5.webp');">
+    <div id="conteiner">
+      <div id="content_area"></div>
+      <div class="logoarea">
+        <svg class="finaldatasvg" viewBox="0 0 128.76073 19.578484" version="1.1" id="svg5" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg"> <defs id="defs2">  <linearGradient  id="linearGradient994"> <stop style="stop-color:#fdfbfb;stop-opacity:1;" offset="0" id="stop990" /> <stop style="stop-color:#b1b1f6;stop-opacity:1;" offset="1" id="stop992" />  </linearGradient>  <linearGradient  xlink:href="#linearGradient994"  id="linearGradient996"  x1="118.51225"  y1="96.831802"  x2="118.58122"  y2="115.57824"  gradientUnits="userSpaceOnUse" />  <linearGradient  xlink:href="#linearGradient994"  id="linearGradient1162"  gradientUnits="userSpaceOnUse"  x1="118.51225"  y1="96.831802"  x2="118.58122"  y2="115.57824" />  <linearGradient  xlink:href="#linearGradient994"  id="linearGradient1164"  gradientUnits="userSpaceOnUse"  x1="118.51225"  y1="96.831802"  x2="118.58122"  y2="115.57824" />  <linearGradient  xlink:href="#linearGradient994"  id="linearGradient1166"  gradientUnits="userSpaceOnUse"  x1="118.51225"  y1="96.831802"  x2="118.58122"  y2="115.57824" />  <linearGradient  xlink:href="#linearGradient994"  id="linearGradient1168"  gradientUnits="userSpaceOnUse"  x1="118.51225"  y1="96.831802"  x2="118.58122"  y2="115.57824" />  <linearGradient  xlink:href="#linearGradient994"  id="linearGradient1170"  gradientUnits="userSpaceOnUse"  x1="118.51225"  y1="96.831802"  x2="118.58122"  y2="115.57824" />  <linearGradient  xlink:href="#linearGradient994"  id="linearGradient1172"  gradientUnits="userSpaceOnUse"  x1="118.51225"  y1="96.831802"  x2="118.58122"  y2="115.57824" />  <linearGradient  xlink:href="#linearGradient994"  id="linearGradient1174"  gradientUnits="userSpaceOnUse"  x1="118.51225"  y1="96.831802"  x2="118.58122"  y2="115.57824" />  <linearGradient  xlink:href="#linearGradient994"  id="linearGradient1176"  gradientUnits="userSpaceOnUse"  x1="118.51225"  y1="96.831802"  x2="118.58122"  y2="115.57824" /> </defs> <g id="layer1" transform="translate(-53.659719,-96.66911)">  <g  aria-label="ファイナルデ-タ"  id="text236"  style="font-size:22.5778px;font-family:'MStiffHei PRC';-inkscape-font-specification:'MStiffHei PRC, Normal';fill:url(#linearGradient996);fill-opacity:1;stroke:#91a9ff;stroke-width:0.79375;"> <path d="M 66.505034,115.78298 H 55.374178 l -1.083734,-2.25778 h 8.263475 l 5.84765,-13.614413 H 54.245288 v -2.25778 h 18.716997 v 3.048003 z" id="path950" style="fill:url(#linearGradient1162);fill-opacity:1;stroke-width:0.79375;" /> <path d="m 86.69036,108.12911 h -4.086582 l 2.889959,-5.41868 H 73.753281 v -1.96426 h 15.60126 v 2.25778 z m -7.744185,7.7216 h -4.967116 l 4.673604,-4.96711 v -7.06685 h 3.860804 v 8.128 z" id="path952" style="fill:url(#linearGradient1164);fill-opacity:1;stroke-width:0.79375;" /> <path d="m 100.50148,103.02652 v 12.66615 h -4.470406 v -9.0537 l -1.761068,1.39983 H 87.722444 L 101.31428,97.065984 h 6.54756 z" id="path954" style="fill:url(#linearGradient1166);fill-opacity:1;stroke-width:0.79375;" /> <path d="m 114.90497,105.46493 v 5.62187 l -4.42525,4.65103 h -6.14116 l 5.96054,-6.32179 v -3.95111 h -7.17974 v -2.21263 h 7.17974 v -6.163738 l 4.60587,0.02258 v 6.141158 h 7.11201 v 2.21263 z" id="path956" style="fill:url(#linearGradient1168);fill-opacity:1;stroke-width:0.79375;" /> <path d="m 135.18061,115.78298 h -4.62845 V 97.088562 h 4.40268 v 12.598408 l 1.6256,-2.73191 h 4.60587 z m -9.8665,0 h -5.08 l 3.43182,-5.14774 V 97.088562 h 4.3801 v 14.562678 z" id="path958" style="fill:url(#linearGradient1170);fill-opacity:1;stroke-width:0.79375;" /> <path d="m 156.29661,103.16199 -1.2192,-2.75449 h 2.39325 l 1.19662,2.75449 z m -3.18347,0 -1.19662,-2.75449 h 2.37067 l 1.19662,2.75449 z m -12.73388,-3.454403 v -2.235202 h 16.23344 v 2.235202 z m 10.74703,6.344363 v 6.09601 l -4.38009,3.68018 h -6.59272 l 6.38952,-5.28321 v -4.49298 h -7.11201 v -2.2352 h 18.94278 v 2.2352 z" id="path960" style="fill:url(#linearGradient1172);fill-opacity:1;stroke-width:0.79375;" /> <path d="m 157.20278,110.274 v -2.28036 h 6.68303 v 2.28036 z" id="path962" style="fill:url(#linearGradient1174);fill-opacity:1;stroke-width:0.79375;" /> <path d="m 177.41299,110.61266 4.064,4.15432 h -5.14773 l -0.79023,-0.8128 -1.03858,1.8288 h -10.25032 l -1.24178,-2.2352 h 7.81192 l 1.64818,-2.79965 -4.40267,-4.56071 h 5.21547 l 1.08374,1.19662 2.77707,-4.89938 h -7.4281 l -2.48356,4.49298 h -4.92196 l 5.46383,-9.843922 h 4.89938 l -1.71591,3.115732 h 10.6793 v 2.9577 z" id="path964" style="fill:url(#linearGradient1176);fill-opacity:1;stroke-width:0.79375;" />  </g> </g> </svg>
+      </div>
+      <p>
+        仮。パイロットを眺めるやつ。
+      </p>
+      <br/>
+      <h1 class="headline">パイロットイメージ</h1>
+      <div style="text-align: center;">
+        <div><canvas id="viewer" width="500" height="500"></canvas></div>
+      </div>
+      <div id="selects">
+        <label id="radio_template"><input type="radio" name="act" onchange="actchange(event)" value="{anime}">{name}</label>
+      </div>
+      <br/>
+     <!-- フッター -->
+    <br/><br/>
+    <div id="footer">
+      <p>created by ほげん(hogen_feh@twitter.com)</p>
+      <p><a href="https://game.bilibili.co.jp/finalgear/">©ファイナルギア</a>　　<a href="https://game.bilibili.co.jp/">©bilibili</a></p>
+    </div>
+    <script>
+      var params = (new URL(document.location)).searchParams;
+      var pilotname = params.get('name');
+      if(!pilotname)pilotname="イブリン";
+      var skinname = params.get('skin');
+      if(!skinname)skinname=pilotname;
+      window.onload = function(event){
+        var viewer = document.getElementById("viewer");
+        var dir = "../../画像/パイロット/"+pilotname+"/スキン/"+skinname+"/spine/sd/";
+        window.finalsd = new SDViewer(viewer,dir,onSDload);
+      }
+      function onSDload(finalsd){
+        var temp = document.getElementById("radio_template");
+        var insert = new FinalJsonDBInsert(temp);
+        var tempdata = {};
+        for( let name of finalsd.animationList){
+          tempdata[name]={anime:name,name:name};
+        }
+        insert.setJsonData(tempdata);
+        insert.convert();
+      }
+      function actchange(event){
+        window.finalsd.setAnimation( event.target.value );
+      }
+
+    </script>
+    </div></div>
+  </body>
+</html>

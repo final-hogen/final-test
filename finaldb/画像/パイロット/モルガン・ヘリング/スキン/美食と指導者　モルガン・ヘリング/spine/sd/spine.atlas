@@ -1,0 +1,251 @@
+
+spine.webp
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Pilot/Pilot_000951/01_10
+  rotate: false
+  xy: 592,74
+  size: 126,26
+  orig: 126,26
+  offset: 0, 0
+  index: -1
+Pilot/Pilot_000951/01_11
+  rotate: false
+  xy: 815,140
+  size: 130,49
+  orig: 130,49
+  offset: 0, 0
+  index: -1
+Pilot/Pilot_000951/01_12
+  rotate: false
+  xy: 788,68
+  size: 124,26
+  orig: 124,26
+  offset: 0, 0
+  index: -1
+Pilot/Pilot_000951/01_13
+  rotate: false
+  xy: 417,405
+  size: 226,247
+  orig: 226,247
+  offset: 0, 0
+  index: -1
+Pilot/Pilot_000951/01_14
+  rotate: false
+  xy: 417,94
+  size: 172,19
+  orig: 172,19
+  offset: 0, 0
+  index: -1
+Pilot/Pilot_000951/01_15
+  rotate: false
+  xy: 801,98
+  size: 170,38
+  orig: 170,38
+  offset: 0, 0
+  index: -1
+Pilot/Pilot_000951/01_16
+  rotate: true
+  xy: 949,279
+  size: 157,72
+  orig: 157,72
+  offset: 0, 0
+  index: -1
+Pilot/Pilot_000951/01_17
+  rotate: false
+  xy: 818,504
+  size: 172,62
+  orig: 172,62
+  offset: 0, 0
+  index: -1
+Pilot/Pilot_000951/01_18
+  rotate: true
+  xy: 801,153
+  size: 32,9
+  orig: 32,9
+  offset: 0, 0
+  index: -1
+Pilot/Pilot_000951/01_19
+  rotate: true
+  xy: 935,402
+  size: 34,9
+  orig: 34,9
+  offset: 0, 0
+  index: -1
+Pilot/Pilot_000951/01_20
+  rotate: false
+  xy: 860,26
+  size: 40,38
+  orig: 40,38
+  offset: 0, 0
+  index: -1
+Pilot/Pilot_000951/01_21
+  rotate: false
+  xy: 949,145
+  size: 51,30
+  orig: 51,30
+  offset: 0, 0
+  index: -1
+Pilot/Pilot_000951/01_22
+  rotate: false
+  xy: 645,739
+  size: 260,281
+  orig: 260,281
+  offset: 0, 0
+  index: -1
+Pilot/Pilot_000951/01_23
+  rotate: true
+  xy: 785,439
+  size: 60,213
+  orig: 60,213
+  offset: 0, 0
+  index: -1
+Pilot/Pilot_000951/01_24
+  rotate: true
+  xy: 647,409
+  size: 102,134
+  orig: 102,134
+  offset: 0, 0
+  index: -1
+Pilot/Pilot_000951/01_25
+  rotate: true
+  xy: 211,4
+  size: 87,126
+  orig: 87,126
+  offset: 0, 0
+  index: -1
+Pilot/Pilot_000951/01_26
+  rotate: true
+  xy: 673,8
+  size: 62,47
+  orig: 62,47
+  offset: 0, 0
+  index: -1
+Pilot/Pilot_000951/01_27
+  rotate: false
+  xy: 462,21
+  size: 113,70
+  orig: 113,70
+  offset: 0, 0
+  index: -1
+Pilot/Pilot_000951/01_28
+  rotate: false
+  xy: 700,189
+  size: 111,217
+  orig: 111,217
+  offset: 0, 0
+  index: -1
+Pilot/Pilot_000951/01_29
+  rotate: true
+  xy: 818,570
+  size: 151,202
+  orig: 151,202
+  offset: 0, 0
+  index: -1
+Pilot/Pilot_000951/01_30
+  rotate: false
+  xy: 909,724
+  size: 111,296
+  orig: 111,296
+  offset: 0, 0
+  index: -1
+Pilot/Pilot_000951/01_31
+  rotate: false
+  xy: 647,515
+  size: 168,221
+  orig: 168,221
+  offset: 0, 0
+  index: -1
+Pilot/Pilot_000951/01_32
+  rotate: false
+  xy: 602,104
+  size: 94,298
+  orig: 94,298
+  offset: 0, 0
+  index: -1
+Pilot/Pilot_000951/01_33
+  rotate: true
+  xy: 579,4
+  size: 66,91
+  orig: 66,91
+  offset: 0, 0
+  index: -1
+Pilot/Pilot_000951/01_34
+  rotate: false
+  xy: 417,117
+  size: 181,285
+  orig: 181,285
+  offset: 0, 0
+  index: -1
+Pilot/Pilot_000951/01_35
+  rotate: false
+  xy: 724,43
+  size: 60,70
+  orig: 60,70
+  offset: 0, 0
+  index: -1
+Pilot/Pilot_000951/01_36
+  rotate: true
+  xy: 788,4
+  size: 60,68
+  orig: 60,68
+  offset: 0, 0
+  index: -1
+Pilot/Pilot_000951/01_37
+  rotate: false
+  xy: 700,117
+  size: 98,68
+  orig: 98,68
+  offset: 0, 0
+  index: -1
+Pilot/Pilot_000951/01_38
+  rotate: false
+  xy: 949,179
+  size: 68,96
+  orig: 68,96
+  offset: 0, 0
+  index: -1
+Pilot/Pilot_000951/01_39
+  rotate: false
+  xy: 815,304
+  size: 117,132
+  orig: 117,132
+  offset: 0, 0
+  index: -1
+Pilot/Pilot_000951/01_40
+  rotate: false
+  xy: 4,94
+  size: 409,558
+  orig: 409,558
+  offset: 0, 0
+  index: -1
+Pilot/Pilot_000951/01_41
+  rotate: true
+  xy: 4,4
+  size: 87,204
+  orig: 87,204
+  offset: 0, 0
+  index: -1
+Pilot/Pilot_000951/01_6
+  rotate: true
+  xy: 815,192
+  size: 107,130
+  orig: 107,130
+  offset: 0, 0
+  index: -1
+Pilot/Pilot_000951/01_7
+  rotate: false
+  xy: 341,4
+  size: 117,87
+  orig: 117,87
+  offset: 0, 0
+  index: -1
+Pilot/Pilot_000951/01_8
+  rotate: false
+  xy: 4,656
+  size: 637,364
+  orig: 637,364
+  offset: 0, 0
+  index: -1

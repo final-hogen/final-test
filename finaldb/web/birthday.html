@@ -130,6 +130,7 @@
         db.convertArray(window.finalloader.result2);
       }
       function convertAllMonth(finalDB){
+        delete finalDB.innerObjects["イブリン＆コーラル"];
         var array = Object.values(finalDB.innerObjects);
         array.sort(finalDB.compareFn);
         convertToday(finalDB,array);

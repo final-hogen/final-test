@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>ファイナルデータ</title>
+    <link rel="shortcut icon" type="image/png" href="サイトアイコン.PNG">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="pilot.css" />
+    <link rel="stylesheet" href="confetti.css" />
+    <style>
+      .pilotpanel{
+        height: initial;
+        text-decoration: none;
+      }
+      #today{
+        padding: 15px 0px;
+      }
+      #today>div{
+        text-align: center;
+        font-size: 3em;
+      }
+      #today .pilotpanel .date,#m0 .pilotpanel .date{
+        display: none;
+      }
+      .pilotpanel .date{
+        text-align: center;
+        background-color: #00008b48;
+      }
+      .pilotpanel .date span{
+        font-weight: bold;
+      }
+    </style>
+    <script src="finalajax.js"></script>
+    <script src="finaldb.js"></script>
+    <script>
+      function writeMonthArea(month){
+        document.write('<h1 class="headline">'+month+'月</h1>');
+        document.write('<div id="m'+month+'"></div>');
+        document.write('<br/>');
+      }
+      var today = new Date(Date.now());</script>
+  </head>
+  <body>
+    <div id="wrapper" style="background-image:url('wallpaper5.webp');">
+    <div id="conteiner">
+      <div id="content_area"></div>
+      <div class="logoarea">
+        <img src="logo.svg" class="finaldatasvg"/>
+      </div>
+      <p>
+        各キャラクターのお誕生日です。
+      </p>
+      <br/>
+      <a id="pilotpanel_template" href ="./pilot.html?name={eu:名前}" class="pilotpanel" data-rare="{レアリティ}" data-class="{情報/クラス}" data-force="{所属/勢力}" data-blood="{blood}">
+        <div class="pilotface" style="background-image: url('../画像/パイロット/{eu:名前}/スキン/{eu:スキン/1/名前}/アイコン.webp');"><div></div></div>
+        <div class="date"><span>{day}</span> 日</div>
+        <div class="loopmsg"><span><span>{名前}</span></span></div>
+      </a>
+      <h1 class="headline">本日 <script>document.write((today.getMonth()+1)+"月"+(today.getDate())+"日")</script></h1>
+      <div id="today" class="confetticontainer">
+        <div id="nopilot" style="display: none;">誰もいません</div>
+        <div id="confetti" class="confetti" style="display: none;"><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+      </div>
+      <br/>
+      <script>
+        let nowMonth = today.getMonth()+1;
+        writeMonthArea(nowMonth);
+        for(let i=1;i<=12;++i){
+          if(i==nowMonth)continue;
+          writeMonthArea(i);
+        }
+      </script>
+      <h1 class="headline">誕生日不明</h1>
+      <div id="m0"></div>
+      <br/>
+     <!-- フッター -->
+    <br/><br/>
+    <div id="footer">
+      <p>created by ほげん(hogen_feh@twitter.com)</p>
+      <p><a href="https://game.bilibili.co.jp/finalgear/">©ファイナルギア</a>　　<a href="https://game.bilibili.co.jp/">©bilibili</a></p>
+    </div>
+    <script>
+      class MyObject extends FinalJsonObject{
+        constructor(node,index) {
+          super(node,index);
+          let birthday = node.情報.誕生日;
+          birthday = (birthday.replace("&","＆").split("＆"))[0];
+          birthday = birthday.split(".");
+          this.month = parseInt(birthday[0]);
+          if(!this.month)this.month=0;
+          this.day = (birthday.length>1)?(parseInt(birthday[1])):(0);
+        }
+        fetchData(path){
+          if(path=="month")return this.month;
+          if(path=="day")return this.day;
+          return super.fetchData(path);
+        }
+      }
+      class MyDB extends FinalJsonDB{
+        convert(){
+          convertAllMonth(this);
+        }
+        compareFn(a,b){
+          if(a.day<b.day)return -1; //a前
+          if(a.day>b.day)return   1; //b前
+          return super.compareFn(a,b);
+        }
+      }
+      var fullpilotpath = "../JSON/パイロット/@FullJsonData.json";
+      var pilotpanelTemplate = document.getElementById("pilotpanel_template");
+      window.onload = function(event){
+        window.finalloader = new MyDB(null,pilotpanelTemplate);
+        window.finalloader.objectConstructor = MyObject;
+        window.finalloader.loadJson(fullpilotpath,mainDataLoaded);
+      }
+      function mainDataLoaded(){
+        var unknowndiv = document.getElementById("unknown");
+        var db = new FinalJsonDB(unknowndiv,pilotpanelTemplate);
+        db.convertArray(window.finalloader.result2);
+      }
+      function convertAllMonth(finalDB){
+        var array = Object.values(finalDB.innerObjects);
+        array.sort(finalDB.compareFn);
+        convertToday(finalDB,array);
+        for(let i=1;i<=12;++i)convertMonth(finalDB,i,array);
+        convertMonth(finalDB,0,array);
+      }
+      function convertMonth(finalDB, month, objects){
+        let array = [];
+        for(let obj of objects){
+          if(obj.month!=month)continue;
+          array.push(obj);
+        }
+        finalDB.replaceTarget = document.getElementById("m"+month);
+        finalDB.convertArray(array);
+      }
+      function convertToday(finalDB, objects){
+        let month = today.getMonth()+1;
+        let date = today.getDate();
+        let array = [];
+        for(let obj of objects){
+          if(obj.month!=month)continue;
+          if(obj.day!=date)continue;
+          array.push(obj);
+        }
+        let nopilot = document.getElementById("nopilot");
+        if(array.length<=0){
+          nopilot.style="";
+          return;
+        }
+        nopilot.parentNode.removeChild(nopilot);
+        let confetti = document.getElementById("confetti");
+        confetti.style="";
+        finalDB.replaceTarget = document.getElementById("today");
+        finalDB.convertArray(array);
+      }
+    </script>
+    </div></div>
+  </body>
+</html>

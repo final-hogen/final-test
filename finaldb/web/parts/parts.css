@@ -1,0 +1,35 @@
+:root {
+  --border-color: #80808038;
+  --table-border: solid 1px #80808038;
+}
+
+table{
+  table-layout: fixed;
+  border-left: var(--table-border);
+  border-top: var(--table-border);
+  border-spacing: 0px;
+  width: 550px;
+  margin-left: 10px;
+}
+th{
+  background-color: lightblue;
+}
+th,td{
+  border-right: var(--table-border);
+  border-bottom: var(--table-border);
+  vertical-align: middle;
+  height: 50px;
+}
+#weponlist_table th:first-child{
+  width: 50px;
+}
+#weponlist_table th:nth-child(2){
+  width: 250px;
+}
+.iconmini{
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}

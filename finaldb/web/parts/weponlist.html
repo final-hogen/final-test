@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>ファイナルデータ</title>
+    <link rel="shortcut icon" type="image/png" href="../サイトアイコン.PNG">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="parts.css" />
+    <script src="../finalajax.js"></script>
+    <script src="../finaldb.js"></script>
+    <script></script>
+  </head>
+  <body>
+    <div id="wrapper" style="background-image:url('../wallpaper5.webp');">
+    <div id="conteiner">
+      <div id="content_area"></div>
+      <div class="logoarea">
+        <img src="../logo.svg" class="finaldatasvg"/>
+      </div>
+      <p>
+        各キャラクターのお誕生日です。
+      </p>
+      <br/>
+      <h1 class="headline">武器パーツリスト</h1>
+      <div id="sorttable">
+        <table id="weponlist_table">
+          <tr><th>画像</th><th>名前</th><th>エネルギー<br/>×攻撃速度</th><th>武器倍率<br/>×攻撃速度</th></tr>
+          <tr id="wepon_template">
+            <td><div class="iconmini" style="background-image: url('../../画像/パーツ/武器/N実験型スナイパーライフル/');"></div></td>
+            <td><a href="">なまえ</a></div></td>
+            <td>えね</td>
+            <td>こうげき</td>
+          </tr>
+        </table>
+      </div>
+      <br/>
+     <!-- フッター -->
+    <br/><br/>
+    <div id="footer">
+      <p>created by ほげん(hogen_feh@twitter.com)</p>
+      <p><a href="https://game.bilibili.co.jp/finalgear/">©ファイナルギア</a>　　<a href="https://game.bilibili.co.jp/">©bilibili</a></p>
+    </div>
+    <script>
+      var fullpilotpath = "../../JSON/パーツ/武器/@FullJsonData.json";
+      var pilotpanelTemplate = document.getElementById("pilotpanel_template");
+      window.onload = function(event){
+        window.finalloader = new MyDB(null,pilotpanelTemplate);
+        window.finalloader.objectConstructor = MyObject;
+        window.finalloader.loadJson(fullpilotpath,mainDataLoaded);
+      }
+    </script>
+    </div></div>
+  </body>
+</html>

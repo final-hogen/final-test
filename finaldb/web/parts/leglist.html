@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>ファイナルデータ</title>
+    <link rel="shortcut icon" type="image/png" href="../サイトアイコン.PNG">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="parts.css" />
+    <script src="../finalajax.js"></script>
+    <script src="../finaldb.js"></script>
+    <script src="../pilot.js"></script>
+    <script src="parts.js"></script>
+    <script src="sorttable.js"></script>
+    <style>
+      #leg_template{
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrapper" style="background-image:url('../wallpaper5.webp');">
+    <div id="conteiner">
+      <div class="logoarea">
+        <img src="../logo.svg" class="finaldatasvg"/>
+      </div>
+      <div id="content_area">
+      <p>
+        脚部パーツのリストです。数値の項目名をタップすると並び変えられます。<br/>
+        リストの表記は汎用機状態のものです。名前をタップすると詳細表示。
+      </p>
+      <h1 class="headline">表示条件</h1>
+      <input type="radio" id="r全て" name="r_types" checked="checked"/>
+      <input type="radio" id="r軽型" name="r_types"/>
+      <input type="radio" id="r中型" name="r_types"/>
+      <input type="radio" id="r重型" name="r_types"/>
+      <div id="search_filters">
+        <div id="partstypes">
+          <div>
+            <div class="type"><label for="r全て"><span>全て</span></label></div>
+            <div class="type"><label for="r軽型"><span>軽型</span></label></div>
+            <div class="type"><label for="r中型"><span>中型</span></label></div>
+            <div class="type"><label for="r重型"><span>重型</span></label></div>
+          </div>
+        </div>
+      <h1 class="headline">脚部パーツリスト</h1>
+      <div id="weponlist_table">
+        <table class="sorttable itemlist">
+          <tbody>
+          <tr><th>画像</th><th>名前</th><th>衝撃耐性</th><th>移動速度</th></tr>
+        </tbody>
+        <tbody>
+            <tr id="leg_template" data-type="{種類}">
+              <td><div class="iconmini" style="background-image: url('../../画像/パーツ/脚部/{名前}/アイコン.webp');"></div></td>
+              <td><a href="leg.html?name={eu:名前}">{名前}</a></div></td>
+              <td>{基本性能/衝撃耐性/基礎}</td>
+              <td>{基本性能/移動速度/通常}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <br/>
+      </div>
+     <!-- フッター -->
+    <br/><br/>
+    <div id="footer">
+      <p>created by ほげん(hogen_feh@twitter.com)</p>
+      <p><a href="https://game.bilibili.co.jp/finalgear/">©ファイナルギア</a>　　<a href="https://game.bilibili.co.jp/">©bilibili</a></p>
+    </div>
+    <script>
+      var fatapath = "../../JSON/パーツ/脚部/@FullJsonData.json";
+      var template = document.getElementById("leg_template");
+      window.onload = function(event){
+        window.finalloader = new FinalJsonDBInsert(template);
+        window.finalloader.objectConstructor = PartsObject;
+        window.finalloader.dummyTag = document.createElement("tbody");
+        window.finalloader.loadJson(fatapath,mainDataLoaded);
+      }
+      function mainDataLoaded(){
+        var sortTables = document.querySelectorAll('table.sorttable');
+        for(let table of sortTables){
+          table.mysorter = new FinalSortTable(table);
+        }
+      }
+    </script>
+    </div></div>
+  </body>
+</html>

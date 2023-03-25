@@ -120,6 +120,20 @@ class FinalJsonDBInsert extends FinalJsonDB
   }
 }
 
+class OneFinalJsonDB extends FinalJsonDBInsert
+{
+  constructor(template, name){
+    super(template);
+    this.viewDataName = name;
+  }
+  convert(){
+    this.convertArray([this.getViewObject()]);
+  }
+  getViewObject(){
+    return this.innerObjects[this.viewDataName];
+  }
+}
+
 /**
  * 一つのデータを扱うクラス
  */

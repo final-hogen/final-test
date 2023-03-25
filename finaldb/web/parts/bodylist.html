@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>ファイナルデータ</title>
+    <link rel="shortcut icon" type="image/png" href="../サイトアイコン.PNG">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="parts.css" />
+    <script src="../finalajax.js"></script>
+    <script src="../finaldb.js"></script>
+    <script src="../pilot.js"></script>
+    <script src="parts.js"></script>
+    <script src="sorttable.js"></script>
+    <style>
+      #body_template{
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrapper" style="background-image:url('../wallpaper5.webp');">
+    <div id="conteiner">
+      <div class="logoarea">
+        <img src="../logo.svg" class="finaldatasvg"/>
+      </div>
+      <div id="content_area">
+      <p>
+        胸部パーツのリストです。胸部はパラメータが一つしかなく、専用機起動しても変化しません。
+      </p>
+      <h1 class="headline">表示条件</h1>
+      <input type="radio" id="r全て" name="r_types" checked="checked"/>
+      <input type="radio" id="r軽型" name="r_types"/>
+      <input type="radio" id="r中型" name="r_types"/>
+      <input type="radio" id="r重型" name="r_types"/>
+      <div id="search_filters">
+        <div id="partstypes">
+          <div>
+            <div class="type"><label for="r全て"><span>全て</span></label></div>
+            <div class="type"><label for="r軽型"><span>軽型</span></label></div>
+            <div class="type"><label for="r中型"><span>中型</span></label></div>
+            <div class="type"><label for="r重型"><span>重型</span></label></div>
+          </div>
+        </div>
+      <h1 class="headline">胸部パーツリスト</h1>
+      <div id="weponlist_table">
+        <table class="sorttable itemlist">
+          <tbody>
+          <tr><th>画像</th><th>名前</th><th>貫通耐性</th></tr>
+        </tbody>
+        <tbody>
+            <tr id="body_template" data-type="{種類}">
+              <td><div class="iconmini" style="background-image: url('../../画像/パーツ/胸部/{名前}/アイコン.webp');"></div></td>
+              <td><a href="body.html?name={eu:名前}">{名前}</a></div></td>
+              <td>{基本性能/貫通耐性}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <br/>
+      </div>
+     <!-- フッター -->
+    <br/><br/>
+    <div id="footer">
+      <p>created by ほげん(hogen_feh@twitter.com)</p>
+      <p><a href="https://game.bilibili.co.jp/finalgear/">©ファイナルギア</a>　　<a href="https://game.bilibili.co.jp/">©bilibili</a></p>
+    </div>
+    <script>
+      var fatapath = "../../JSON/パーツ/胸部/@FullJsonData.json";
+      var template = document.getElementById("body_template");
+      window.onload = function(event){
+        window.finalloader = new FinalJsonDBInsert(template);
+        window.finalloader.objectConstructor = PartsObject;
+        window.finalloader.dummyTag = document.createElement("tbody");
+        window.finalloader.loadJson(fatapath,mainDataLoaded);
+      }
+      function mainDataLoaded(){
+        var sortTables = document.querySelectorAll('table.sorttable');
+        for(let table of sortTables){
+          table.mysorter = new FinalSortTable(table);
+        }
+      }
+    </script>
+    </div></div>
+  </body>
+</html>

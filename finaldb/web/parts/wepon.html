@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>ファイナルデータ</title>
+    <link rel="shortcut icon" type="image/png" href="../サイトアイコン.PNG">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="parts.css" />
+    <script src="../finalajax.js"></script>
+    <script src="../finaldb.js"></script>
+    <script src="../pilot.js"></script>
+    <script src="parts.js"></script>
+    <style>
+      #概要,#製造情報,#基本性能,#専用機性能
+      ,#attackspeed_template,#attackproperty_template
+      {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrapper" style="background-image:url('../wallpaper5.webp');">
+    <div id="conteiner">
+      <div class="logoarea">
+        <img src="../logo.svg" class="finaldatasvg"/>
+      </div>
+      <table id="attackproperty_template" class="attackproptable">
+        <tr><th>種類</th><td>{種類}</td></tr>
+        <tr><th>貫通力</th><td>{貫通力}</td></tr>
+        <tr><th>KB力</th><td>{ノックバック}</td></tr>
+        <tr data-view="{飛距離}"><th>飛距離</th><td>{飛距離}</td></tr>
+        <tr data-view="{多段ヒット}"><th style="font-size: 0.8em;">多段ヒット</th><td>{多段ヒット}</td></tr>
+      </table>
+      <span id="attackspeed_template" class="attackspeed">{攻撃速度}</span>
+      <div id="content_area">
+      <p>
+        武器の詳細情報です。用語の説明は一番下にあります。
+      </p>
+      <a name="概要"><h1 class="headline">概要</h1></a>
+      <table class="itemdesc" id="概要">
+        <tr>
+          <td class="iconbig" rowspan="3" style="background-image: url('../../画像/パーツ/武器/{名前}/アイコン.webp');"></td>
+          <th>名前</th><td>{名前}</td>
+        </tr>
+        <tr>
+          <th>種類</th><td>{種類}</td>
+        </tr>
+        <tr>
+          <th>説明</th><td>{説明}</td>
+        </tr>
+      </table>
+      <a name="基本性能"></a><h1 class="headline">基本性能<a href="#説明" class="question">？</a></h1>
+      <table class="itemdesc" id="基本性能">
+        <tr>
+          <th>武器倍率</th><td>{武器倍率}</td>
+          <th style="font-size: 0.8em;line-height:1em;">エネルギー<br/>回復</th><td>{エネルギー回復}</td>
+        </tr>
+        <tr>
+          <th>攻撃距離</th><td>{攻撃距離}</td>
+          <th>衝撃力</th><td>{衝撃力}</td>
+        </tr>
+        <tr>
+          <th>貫通耐性</th><td>{貫通耐性}</td>
+          <th>チャージ時間</th><td>{チャージ時間} 秒</td>
+        </tr>
+        <tr data-view="{弾薬数}">
+          <th>弾薬数</th><td>{弾薬数}</td>
+          <th>リロード時間</th><td>{リロード時間} 秒</td>
+        </tr>
+        <tr>
+          <th>攻撃速度</th><td colspan="3">{attackspeed}</td>
+        </tr>
+        <tr data-view="{攻撃倍率}">
+          <th>攻撃段変化</th><td colspan="3">{攻撃倍率}</td>
+        </tr>
+        <tr>
+          <th>攻撃特性</th><td colspan="3">{attackproperty}</td>
+        </tr>
+      </table>
+      <a name="専用機性能"></a><h1 class="headline">専用機性能<a href="#説明" class="question">？</a></h1>
+      <table class="itemdesc" id="専用機性能">
+        <tr>
+          <th>武器倍率</th><td>{武器倍率}</td>
+          <th style="font-size: 0.8em;line-height:1em;">エネルギー<br/>回復</th><td>{エネルギー回復}</td>
+        </tr>
+        <tr>
+          <th>攻撃距離</th><td>{攻撃距離}</td>
+          <th>衝撃力</th><td>{衝撃力}</td>
+        </tr>
+        <tr>
+          <th>貫通耐性</th><td>{貫通耐性}</td>
+          <th>チャージ時間</th><td>{チャージ時間} 秒</td>
+        </tr>
+        <tr data-view="{弾薬数}">
+          <th>弾薬数</th><td>{弾薬数}</td>
+          <th>リロード時間</th><td>{リロード時間} 秒</td>
+        </tr>
+        <tr>
+          <th>攻撃速度</th><td colspan="3">{attackspeed}</td>
+        </tr>
+        <tr data-view="{攻撃倍率}">
+          <th>攻撃段変化</th><td colspan="3">{攻撃倍率}</td>
+        </tr>
+        <tr>
+          <th>攻撃特性</th><td colspan="3">{attackproperty}</td>
+        </tr>
+      </table>
+      <a name="製造情報"><h1 class="headline">製造情報</h1></a>
+      <table class="itemdesc" id="製造情報">
+        <tr>
+          <th>陣営</th><td>{陣営}</td>
+          <th>型名</th><td>{型名}</td>
+        </tr>
+        <tr>
+          <th>設計者</th><td>{設計者}</td>
+          <th>製造者</th><td style="font-size: 0.8em;line-height:1em;">{製造者}</td>
+        </tr>
+        <tr data-view="{シリーズ名}">
+          <th>シリーズ</th><td>{シリーズ名}</td>
+          <th>タイプ</th><td>{タイプ}</td>
+        </tr>
+        <tr>
+          <th>説明</th><td colspan="3">{説明}</td>
+        </tr>
+      </table>
+      <br/>
+      <a name="説明"><h1 class="headline">説明</h1></a>
+      <h2 class="thinmargin">・武器倍率</h2>
+      <p class="thinmargin">通常攻撃で攻撃した時、攻撃力にこの倍率が適用されます。
+      基本的に攻撃速度が高いほど低く設定されています。<br/>
+      アクティブスキルには影響ありません。</p>
+      <h2 class="thinmargin">・エネルギー回復</h2>
+      <p class="thinmargin">通常攻撃で攻撃した時、この値のエネルギーが回復します。
+      エネルギーメーターの最大値は各キャラクターのスキル発動に必要な数値(5000～6000ぐらい)なので、同じ値でもキャラによって増え方は違って見えます。<br/>
+      多段ヒット時や貫通して複数の敵に当たった場合でもエネルギー回復は一回分です。</p>
+      <h2 class="thinmargin">・攻撃距離</h2>
+      <p class="thinmargin">オート時に攻撃を開始する距離です。</p>
+      <h2 class="thinmargin">・衝撃力</h2>
+      <p class="thinmargin">通常攻撃時、この値が相手の衝撃耐性を上回るとよろめかせて相手の行動を中断することができます。
+      複数回の攻撃で蓄積します。詳細は脚部パーツの説明で。</p>
+      <h2 class="thinmargin">・貫通耐性</h2>
+      <p class="thinmargin">敵の狙撃武器などによる貫通攻撃を阻止する力です。盾があるパーツは高めに設定されています。(だいたい0～1.5)<br/>
+      専用機起動時は0になるパーツが多いですが、その分脚部パーツに加算されていることが多いです。</p>
+      <h2 class="thinmargin">・チャージ時間</h2>
+      <p class="thinmargin">攻撃前にエネルギーチャージが必要な武器の場合設定される数値です。チャージ中によろめくと最初からチャージしなおしとなります。</p>
+      <h2 class="thinmargin">・弾薬数</h2>
+      <p class="thinmargin">武器の弾薬数です。射撃タイプでも弾薬設定がなく、撃ち放題の武器もあります。</p>
+      <h2 class="thinmargin">・リロード時間</h2>
+      <p class="thinmargin">弾薬が尽きたときリロードにかかる時間です。よろめいても中断されず、アクティブスキル実行中でもリロードが進みます。</p>
+      <h2 class="thinmargin">・攻撃速度</h2>
+      <p class="thinmargin">通常攻撃を一秒間に何回攻撃できるかです。ここの攻撃速度は当サイトで独自に計算したもので、複数の攻撃パターンを持つ場合は複数表記しています。（）内はゲーム公式の数値です。</p>
+      <h2 class="thinmargin">・攻撃段変化</h2>
+      <p class="thinmargin">連続攻撃時に変化するダメージ割合です。設定されていない武器は全ての攻撃が1倍になります。全段を平均すると100%になるようになっています。</p>
+      <h2 class="thinmargin">・攻撃特性</h2>
+      <p class="thinmargin">攻撃の貫通力やノックバック力(KB力)です。攻撃パターンを複数持ってたり、攻撃段数によって違いがある場合は複数表記しています。<br/>
+      実際のところ貫通力以外はゲーム中では目立たず気にしなくてもよい要素です。<br>
+      貫通力は敵に当たるたび貫通耐性の数値が差し引かれ、0以下になると貫通できません。
+      例えば、貫通力1.5の攻撃は貫通耐性0.6の敵を三体まで攻撃できます。</p>
+      </div>
+     <!-- フッター -->
+    <br/><br/>
+    <div id="footer">
+      <p>created by ほげん(hogen_feh@twitter.com)</p>
+      <p><a href="https://game.bilibili.co.jp/finalgear/">©ファイナルギア</a>　　<a href="https://game.bilibili.co.jp/">©bilibili</a></p>
+    </div>
+    <script>
+      var params = (new URL(document.location)).searchParams;
+      window.itemname = params.get('name');
+      if(!window.itemname)window.itemname ="ホワイトレイヴンライトカタール";
+      var fatapath = "../../JSON/パーツ/武器/@FullJsonData.json";
+      var t概要 = document.getElementById("概要");
+      var t基本性能 = document.getElementById("基本性能");
+      var t専用機性能 = document.getElementById("専用機性能");
+      var t製造情報 = document.getElementById("製造情報");
+      WeponInfoObject.attackspeed_template = document.getElementById("attackspeed_template");
+      WeponInfoObject.attackproperty_template = document.getElementById("attackproperty_template");
+      window.onload = function(event){
+        window.finalloader = new OneFinalJsonDB(t概要,window.itemname);
+        //window.finalloader.objectConstructor = WeponObject;
+        window.finalloader.loadJson(fatapath,mainDataLoaded);
+      }
+      function mainDataLoaded(){
+        let finalNode = window.finalloader.getViewObject().baseNode;
+        ConvertTemplateSingleNode(finalNode.製造情報,t製造情報,WeponInfoObject);
+        ConvertTemplateSingleNode(finalNode.基本性能,t基本性能,WeponInfoObject);
+        ConvertTemplateSingleNode(finalNode.専用機性能,t専用機性能,WeponInfoObject);
+      }
+    </script>
+    </div></div>
+  </body>
+</html>

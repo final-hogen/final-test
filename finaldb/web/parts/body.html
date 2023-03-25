@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>ファイナルデータ</title>
+    <link rel="shortcut icon" type="image/png" href="../サイトアイコン.PNG">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="parts.css" />
+    <script src="../finalajax.js"></script>
+    <script src="../finaldb.js"></script>
+    <script src="../pilot.js"></script>
+    <script src="parts.js"></script>
+    <style>
+      #概要,#製造情報,#基本性能,#専用機性能
+      {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrapper" style="background-image:url('../wallpaper5.webp');">
+    <div id="conteiner">
+      <div class="logoarea">
+        <img src="../logo.svg" class="finaldatasvg"/>
+      </div>
+      <div id="content_area">
+      <p>
+        胸部の詳細情報です。説明は一番下にあります。パーツによる違いは貫通耐性のみで、専用機起動した場合はそれも使用されません？
+      </p>
+      <a name="概要"><h1 class="headline">概要</h1></a>
+      <table class="itemdesc" id="概要">
+        <tr>
+          <td class="iconbig" rowspan="3" style="background-image: url('../../画像/パーツ/胸部/{名前}/アイコン.webp');"></td>
+          <th>名前</th><td>{名前}</td>
+        </tr>
+        <tr>
+          <th>種類</th><td>{種類}</td>
+        </tr>
+        <tr>
+          <th>説明</th><td>{説明}</td>
+        </tr>
+      </table>
+      <a name="基本性能"></a><h1 class="headline">基本性能<a href="#説明" class="question">？</a></h1>
+      <table class="itemdesc" id="基本性能">
+        <tr>
+          <th>貫通耐性</th><td>{貫通耐性}</td>
+        </tr>
+      </table>
+      <a name="製造情報"><h1 class="headline">製造情報</h1></a>
+      <table class="itemdesc" id="製造情報">
+        <tr>
+          <th>陣営</th><td>{陣営}</td>
+          <th>型名</th><td>{型名}</td>
+        </tr>
+        <tr>
+          <th>設計者</th><td>{設計者}</td>
+          <th>製造者</th><td style="font-size: 0.8em;line-height:1em;">{製造者}</td>
+        </tr>
+        <tr data-view="{シリーズ名}">
+          <th>シリーズ</th><td>{シリーズ名}</td>
+          <th>タイプ</th><td>{タイプ}</td>
+        </tr>
+        <tr>
+          <th>説明</th><td colspan="3">{説明}</td>
+        </tr>
+      </table>
+      <br/>
+      <a name="説明"><h1 class="headline">説明</h1></a>
+      <h2 class="thinmargin">・貫通耐性</h2>
+      <p class="thinmargin">この機体に敵の攻撃が当たると貫通力がこの数値分消費されます。0以下になると貫通できません。<br/>
+        例えば、貫通力1.5の攻撃は貫通耐性0.6の敵を三体まで攻撃できます。<br>
+      専用機起動すると胸部の貫通耐性が使用されず、脚部の貫通耐性が使用される？ようです。</p>
+      </div>
+     <!-- フッター -->
+    <br/><br/>
+    <div id="footer">
+      <p>created by ほげん(hogen_feh@twitter.com)</p>
+      <p><a href="https://game.bilibili.co.jp/finalgear/">©ファイナルギア</a>　　<a href="https://game.bilibili.co.jp/">©bilibili</a></p>
+    </div>
+    <script>
+      var params = (new URL(document.location)).searchParams;
+      window.itemname = params.get('name');
+      if(!window.itemname)window.itemname ="ホワイトレイヴン-コックピット";
+      var fatapath = "../../JSON/パーツ/胸部/@FullJsonData.json";
+      var t概要 = document.getElementById("概要");
+      var t基本性能 = document.getElementById("基本性能");
+      var t製造情報 = document.getElementById("製造情報");
+      window.onload = function(event){
+        window.finalloader = new OneFinalJsonDB(t概要,window.itemname);
+        //window.finalloader.objectConstructor = WeponObject;
+        window.finalloader.loadJson(fatapath,mainDataLoaded);
+      }
+      function mainDataLoaded(){
+        let finalNode = window.finalloader.getViewObject().baseNode;
+        ConvertTemplateSingleNode(finalNode.製造情報,t製造情報);
+        ConvertTemplateSingleNode(finalNode.基本性能,t基本性能);
+      }
+    </script>
+    </div></div>
+  </body>
+</html>

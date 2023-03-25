@@ -3,6 +3,10 @@
   --table-border: solid 1px #80808038;
 }
 
+.thinmargin{
+  margin: 5px 1em;
+}
+
 table{
   table-layout: fixed;
   border-left: var(--table-border);
@@ -18,13 +22,15 @@ th,td{
   border-right: var(--table-border);
   border-bottom: var(--table-border);
   vertical-align: middle;
+}
+.itemlist tr,.itemlist td{
   height: 50px;
 }
-#weponlist_table th:first-child{
-  width: 50px;
+td:not(:first-child){
+  padding-left: 10px;
 }
-#weponlist_table th:nth-child(2){
-  width: 250px;
+a{
+  color: initial;
 }
 .iconmini{
   width: 100%;
@@ -32,4 +38,165 @@ th,td{
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
+}
+.iconbig{
+  width: 100px;
+  height: 100px;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.question {
+  background: rgba(167, 156, 194, 0.068);
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: solid 2px white;
+  text-align: center;
+  color: inherit;
+  float: right;
+  text-decoration: none;
+}
+.itemdesc th{
+  width: 100px;
+}
+#content_area input{
+  display: none;
+}
+
+#partstypes > div{
+  display: flex;
+}
+#partstypes .type{
+  width: 20%;
+  margin: 1.5px 0.5%;
+}
+#partstypes label{
+  border: var(--table-border);
+  border-radius: 12px;
+  background-color: lightskyblue;
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+/*-------------------- 武器 -------------------------*/
+#weponlist_table th:first-child{
+  width: 50px;
+}
+#weponlist_table th:nth-child(2){
+  width: 250px;
+}
+#wepon_template{
+  display: none;
+}
+#weponlist_table th:nth-child(n+3){
+  font-size: 0.8em;
+}
+#weponlist_table td:nth-child(n+3){
+  text-align: right;
+  padding-right: 15px;
+}
+#r全て:checked ~ #search_filters label:not([for="r全て"])
+,#r防壁武器:checked ~ #search_filters label:not([for="r防壁武器"])
+,#r片手武器:checked ~ #search_filters label:not([for="r片手武器"])
+,#r強襲武器:checked ~ #search_filters label:not([for="r強襲武器"])
+,#r突撃武器:checked ~ #search_filters label:not([for="r突撃武器"])
+,#r機銃武器:checked ~ #search_filters label:not([for="r機銃武器"])
+,#r突進武器:checked ~ #search_filters label:not([for="r突進武器"])
+,#r炸裂武器:checked ~ #search_filters label:not([for="r炸裂武器"])
+,#r狙撃武器:checked ~ #search_filters label:not([for="r狙撃武器"])
+,#r投射武器:checked ~ #search_filters label:not([for="r投射武器"])
+{
+  opacity: 50%;
+}
+#r防壁武器:checked ~ #search_filters tbody:not(:first-child) tr:not([data-type="防壁武器"])
+,#r片手武器:checked ~ #search_filters tbody:not(:first-child) tr:not([data-type="片手武器"])
+,#r強襲武器:checked ~ #search_filters tbody:not(:first-child) tr:not([data-type="強襲武器"])
+,#r突撃武器:checked ~ #search_filters tbody:not(:first-child) tr:not([data-type="突撃武器"])
+,#r機銃武器:checked ~ #search_filters tbody:not(:first-child) tr:not([data-type="機銃武器"])
+,#r突進武器:checked ~ #search_filters tbody:not(:first-child) tr:not([data-type="突進武器"])
+,#r炸裂武器:checked ~ #search_filters tbody:not(:first-child) tr:not([data-type="炸裂武器"])
+,#r狙撃武器:checked ~ #search_filters tbody:not(:first-child) tr:not([data-type="狙撃武器"])
+,#r投射武器:checked ~ #search_filters tbody:not(:first-child) tr:not([data-type="投射武器"])
+{
+  display: none;
+}
+
+#search_filters.useicon label > span:before {
+  display: inline-block;
+  content: "　";
+  width: 22px;
+  height: 22px;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+#search_filters label[for="r全て"] > span:before {
+  display: none;
+}
+#search_filters label[for="r防壁武器"] > span:before
+,#search_filters label[for="r片手武器"] > span:before {
+  background-image: url(../アイコン/片手武器.webp);
+}
+#search_filters label[for="r強襲武器"] > span:before
+,#search_filters label[for="r突撃武器"] > span:before {
+  background-image: url(../アイコン/強襲.webp);
+}
+#search_filters label[for="r機銃武器"] > span:before
+,#search_filters label[for="r突進武器"] > span:before {
+  background-image: url(../アイコン/マシンガン.webp);
+}
+#search_filters label[for="r炸裂武器"] > span:before {
+  background-image: url(../アイコン/炸裂.webp);
+}
+#search_filters label[for="r狙撃武器"] > span:before {
+  background-image: url(../アイコン/狙撃.webp);
+}
+#search_filters label[for="r投射武器"] > span:before {
+  background-image: url(../アイコン/投射.webp);
+}
+.attackspeed{
+  display: inline-block;
+}
+.attackspeed:not(:first-child):before{
+  content: ",";
+}
+.attackspeed:after{
+  font-size: 0.7em;
+  content: "回/秒";
+}
+.attackspeed:last-child:before{
+  font-size: 0.7em;
+  content: ",(";
+}
+.attackspeed:last-child:after{
+  content: "回/秒)";
+}
+.attackproptable{
+  width: initial;
+  display: inline-block;
+  margin: 1px;
+}
+.attackproptable th{
+  width: initial;
+}
+.attackproptable td:not(:first-child) {
+  padding-left: 3px;
+}
+
+/*-------------------- そのた -------------------------*/
+
+#r全て:checked ~ #search_filters label:not([for="r全て"])
+,#r軽型:checked ~ #search_filters label:not([for="r軽型"])
+,#r中型:checked ~ #search_filters label:not([for="r中型"])
+,#r重型:checked ~ #search_filters label:not([for="r重型"])
+{
+  opacity: 50%;
+}
+#r軽型:checked ~ #search_filters tbody:not(:first-child) tr:not([data-type="軽型"])
+,#r中型:checked ~ #search_filters tbody:not(:first-child) tr:not([data-type="中型"])
+,#r重型:checked ~ #search_filters tbody:not(:first-child) tr:not([data-type="重型"])
+{
+  display: none;
 }

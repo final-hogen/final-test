@@ -41,6 +41,9 @@ body {
 #footer a{
   color: white;
 }
+.template{
+  display: none;
+}
 .nodisp{
   display: none;
 }

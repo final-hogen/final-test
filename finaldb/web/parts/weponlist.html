@@ -9,32 +9,70 @@
     <link rel="stylesheet" href="parts.css" />
     <script src="../finalajax.js"></script>
     <script src="../finaldb.js"></script>
+    <script src="../pilot.js"></script>
+    <script src="parts.js"></script>
+    <script src="sorttable.js"></script>
     <script></script>
   </head>
   <body>
     <div id="wrapper" style="background-image:url('../wallpaper5.webp');">
     <div id="conteiner">
-      <div id="content_area"></div>
       <div class="logoarea">
         <img src="../logo.svg" class="finaldatasvg"/>
       </div>
+      <div id="content_area">
       <p>
-        各キャラクターのお誕生日です。
+        武器パーツのリストです。数値の項目名をタップすると並び変えられます。<br/>
+        攻撃速度は当方で算出したもので、合ってるか分かりません。<br/>
+        リストの表記は汎用機状態のものです。名前をタップすると詳細表示。
       </p>
-      <br/>
+      <h1 class="headline">表示条件</h1>
+      <input type="radio" id="r全て" name="r_types" checked="checked"/>
+      <input type="radio" id="r防壁武器" name="r_types"/>
+      <input type="radio" id="r片手武器" name="r_types"/>
+      <input type="radio" id="r突撃武器" name="r_types"/>
+      <input type="radio" id="r強襲武器" name="r_types"/>
+      <input type="radio" id="r機銃武器" name="r_types"/>
+      <input type="radio" id="r突進武器" name="r_types"/>
+      <input type="radio" id="r狙撃武器" name="r_types"/>
+      <input type="radio" id="r炸裂武器" name="r_types"/>
+      <input type="radio" id="r投射武器" name="r_types"/>
+      <div id="search_filters" class="useicon">
+        <div id="partstypes">
+          <div>
+            <div class="type"><label for="r全て"><span>全て</span></label></div>
+            <div class="type"><label for="r防壁武器"><span>防壁武器</span></label></div>
+            <div class="type"><label for="r片手武器"><span>片手武器</span></label></div>
+            <div class="type"><label for="r強襲武器"><span>強襲武器</span></label></div>
+            <div class="type"><label for="r突撃武器"><span>突撃武器</span></label></div>
+          </div>
+          <div>
+            <div class="type"><label for="r機銃武器"><span>機銃武器</span></label></div>
+            <div class="type"><label for="r突進武器"><span>突進武器</span></label></div>
+            <div class="type"><label for="r炸裂武器"><span>炸裂武器</span></label></div>
+            <div class="type"><label for="r狙撃武器"><span>狙撃武器</span></label></div>
+            <div class="type"><label for="r投射武器"><span>投射武器</span></label></div>
+          </div>
+        </div>
       <h1 class="headline">武器パーツリスト</h1>
-      <div id="sorttable">
-        <table id="weponlist_table">
-          <tr><th>画像</th><th>名前</th><th>エネルギー<br/>×攻撃速度</th><th>武器倍率<br/>×攻撃速度</th></tr>
-          <tr id="wepon_template">
-            <td><div class="iconmini" style="background-image: url('../../画像/パーツ/武器/N実験型スナイパーライフル/');"></div></td>
-            <td><a href="">なまえ</a></div></td>
-            <td>えね</td>
-            <td>こうげき</td>
-          </tr>
+      <div id="weponlist_table">
+        <table class="sorttable itemlist">
+          <tbody>
+          <tr><th>画像</th><th>名前</th><th>エネルギー<br/>×攻撃速度</th><th>武器倍率<br/>×攻撃速度</th><th>攻撃距離</th></tr>
+        </tbody>
+        <tbody>
+            <tr id="wepon_template" data-type="{種類}">
+              <td><div class="iconmini" style="background-image: url('../../画像/パーツ/武器/{名前}/アイコン.webp');"></div></td>
+              <td><a href="wepon.html?name={eu:名前}">{名前}</a></div></td>
+              <td>{energy}</td>
+              <td>{attack}</td>
+              <td>{基本性能/攻撃距離}</td>
+            </tr>
+          </tbody>
         </table>
       </div>
       <br/>
+      </div>
      <!-- フッター -->
     <br/><br/>
     <div id="footer">
@@ -42,12 +80,19 @@
       <p><a href="https://game.bilibili.co.jp/finalgear/">©ファイナルギア</a>　　<a href="https://game.bilibili.co.jp/">©bilibili</a></p>
     </div>
     <script>
-      var fullpilotpath = "../../JSON/パーツ/武器/@FullJsonData.json";
-      var pilotpanelTemplate = document.getElementById("pilotpanel_template");
+      var fatapath = "../../JSON/パーツ/武器/@FullJsonData.json";
+      var template = document.getElementById("wepon_template");
       window.onload = function(event){
-        window.finalloader = new MyDB(null,pilotpanelTemplate);
-        window.finalloader.objectConstructor = MyObject;
-        window.finalloader.loadJson(fullpilotpath,mainDataLoaded);
+        window.finalloader = new FinalJsonDBInsert(template);
+        window.finalloader.objectConstructor = WeponListObject;
+        window.finalloader.dummyTag = document.createElement("tbody");
+        window.finalloader.loadJson(fatapath,mainDataLoaded);
+      }
+      function mainDataLoaded(){
+        var sortTables = document.querySelectorAll('table.sorttable');
+        for(let table of sortTables){
+          table.mysorter = new FinalSortTable(table);
+        }
       }
     </script>
     </div></div>

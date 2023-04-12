@@ -32,40 +32,63 @@
   background-position: center center;
 }
 .wepon .describe,.wepon .rank_describe{
-  border: solid 1px #80808038;
+  border: solid 1px #dda9a938;
   border-top: 0px;
   min-height: 100px;
   background-color: #a1a1b6a1;
 }
+div.tabselect{
+  display: flex;
+}
+div.tabselect > label{
+  display: block;
+  flex: auto;
+  text-align: center;
+  border: solid 1px #80808038;
+  border-radius: 12px;
+  margin: 2px 5px;
+}
+div.rareselect > label{
+  background-color:#6494ed79;
+}
+div.dmgselect > label{
+  background-color:#cd5c5c9a;
+}
+div.wepselect > label{
+  background-color:#90ee90d8;
+}
+#conteiner input{
+  display: none;
+}
 
-#rare_R:not(:checked) ~ #wepon_dataarea .wepon[レア="R"]{
-  display: none;
+#rare_ALL:checked ~ div.rareselect > label:not([for="rare_ALL"])
+,#rare_R:checked ~ div.rareselect > label:not([for="rare_R"])
+,#rare_SR:checked ~ div.rareselect > label:not([for="rare_SR"])
+,#rare_SSR:checked ~ div.rareselect > label:not([for="rare_SSR"])
+,#dmg_all:checked ~ div.dmgselect > label:not([for="dmg_all"])
+,#dmg_solid:checked ~ div.dmgselect > label:not([for="dmg_solid"])
+,#dmg_penetrate:checked ~ div.dmgselect > label:not([for="dmg_penetrate"])
+,#dmg_beam:checked ~ div.dmgselect > label:not([for="dmg_beam"])
+,#dmg_energy:checked ~ div.dmgselect > label:not([for="dmg_energy"])
+,#dmg_unknown:checked ~ div.dmgselect > label:not([for="dmg_unknown"])
+,#pos_allwep:checked ~ div.wepselect > label:not([for="pos_allwep"])
+,#pos_mainwep:checked ~ div.wepselect > label:not([for="pos_mainwep"])
+,#pos_subwep:checked ~ div.wepselect > label:not([for="pos_subwep"])
+{
+  opacity: 0.5;
 }
-#rare_SR:not(:checked) ~ #wepon_dataarea .wepon[レア="SR"]{
-  display: none;
-}
-#rare_SSR:not(:checked) ~ #wepon_dataarea .wepon[レア="SSR"]{
-  display: none;
-}
-#dmg_solid:not(:checked) ~ #wepon_dataarea .wepon[タイプ="実弾"]{
-  display: none;
-}
-#dmg_penetrate:not(:checked) ~ #wepon_dataarea .wepon[タイプ="貫通"]{
-  display: none;
-}
-#dmg_beam:not(:checked) ~ #wepon_dataarea .wepon[タイプ="ビーム"]{
-  display: none;
-}
-#dmg_energy:not(:checked) ~ #wepon_dataarea .wepon[タイプ="エネルギー"]{
-  display: none;
-}
-#dmg_unknown:not(:checked) ~ #wepon_dataarea .wepon[タイプ="なし"]{
-  display: none;
-}
-#pos_mainwep:not(:checked) ~ #wepon_dataarea .wepon[場所="主砲"]{
-  display: none;
-}
-#pos_subwep:not(:checked) ~ #wepon_dataarea .wepon[場所="副砲"]{
+
+#rare_R:checked ~ #wepon_dataarea .wepon[レア="R"]
+,#rare_SR:checked ~ #wepon_dataarea .wepon:not([レア="SR"])
+,#rare_SSR:checked ~ #wepon_dataarea .wepon:not([レア="SSR"])
+,#dmg_solid:checked ~ #wepon_dataarea .wepon:not([タイプ="実弾"])
+,#dmg_penetrate:checked ~ #wepon_dataarea .wepon:not([タイプ="貫通"])
+,#dmg_beam:checked ~ #wepon_dataarea .wepon:not([タイプ="ビーム"])
+,#dmg_energy:checked ~ #wepon_dataarea .wepon:not([タイプ="エネルギー"])
+,#dmg_unknown:checked ~ #wepon_dataarea .wepon:not([タイプ="なし"])
+,#pos_mainwep:checked ~ #wepon_dataarea .wepon:not([場所="主砲"])
+,#pos_subwep:checked ~ #wepon_dataarea .wepon:not([場所="副砲"])
+{
   display: none;
 }
 

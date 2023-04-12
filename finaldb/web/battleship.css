@@ -78,7 +78,7 @@ div.wepselect > label{
   opacity: 0.5;
 }
 
-#rare_R:checked ~ #wepon_dataarea .wepon[レア="R"]
+#rare_R:checked ~ #wepon_dataarea .wepon:not([レア="R"])
 ,#rare_SR:checked ~ #wepon_dataarea .wepon:not([レア="SR"])
 ,#rare_SSR:checked ~ #wepon_dataarea .wepon:not([レア="SSR"])
 ,#dmg_solid:checked ~ #wepon_dataarea .wepon:not([タイプ="実弾"])

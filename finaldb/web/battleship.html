@@ -38,19 +38,15 @@
       </tr>
       <tr>
         <td>攻撃：<img class="rare" src="アイコン/{ダメージタイプ}.webp"/>{ダメージタイプ}</td>
-        <td>射程：{射程/最小}～{射程/最大}</td>
-      </tr>
-      <tr>
-        <td>発動：{発動タイプ}</td>
         <td>場所：{種別}</td>
       </tr>
     </table>
     <div class="rank_describe" data-view="{ランク/6}">
-      <div class="rank">ランク：★★★★★★</div>
+      <div class="rank">ランク：★★★★★★<span class="rightmsg" data-view="{ランク/6/射程}">射程：{ランク/6/射程/最小}～{ランク/6/射程/最大}</span></div>
       {ランク/6/説明}
     </div>
     <div class="rank_describe" data-view="{ランク/-1}">
-      <div class="rank">ランク：★強化はできない武器</div>
+      <div class="rank">ランク：★強化はできない武器<span class="rightmsg" data-view="{ランク/-1/射程}">射程：{ランク/-1/射程/最小}～{ランク/-1/射程/最大}</span></div>
       {ランク/-1/説明}
     </div>
     <div class="describe expview">
@@ -58,23 +54,23 @@
       {説明}
     </div>
     <div class="rank_describe expview" data-view="{ランク/5}">
-      <div class="rank">ランク：★★★★★</div>
+      <div class="rank">ランク：★★★★★<span class="rightmsg" data-view="{ランク/5/射程}">射程：{ランク/5/射程/最小}～{ランク/5/射程/最大}</span></div>
       {ランク/5/説明}
     </div>
     <div class="rank_describe expview" data-view="{ランク/4}">
-      <div class="rank">ランク：★★★★</div>
+      <div class="rank">ランク：★★★★<span class="rightmsg" data-view="{ランク/4/射程}">射程：{ランク/4/射程/最小}～{ランク/4/射程/最大}</span></div>
       {ランク/4/説明}
     </div>
     <div class="rank_describe expview" data-view="{ランク/3}">
-      <div class="rank">ランク：★★★</div>
+      <div class="rank">ランク：★★★<span class="rightmsg" data-view="{ランク/3/射程}">射程：{ランク/3/射程/最小}～{ランク/3/射程/最大}</span></div>
       {ランク/3/説明}
     </div>
     <div class="rank_describe expview" data-view="{ランク/2}">
-      <div class="rank">ランク：★★</div>
+      <div class="rank">ランク：★★<span class="rightmsg" data-view="{ランク/2/射程}">射程：{ランク/2/射程/最小}～{ランク/2/射程/最大}</span></div>
       {ランク/2/説明}
     </div>
     <div class="rank_describe expview" data-view="{ランク/1}">
-      <div class="rank">ランク：★</div>
+      <div class="rank">ランク：★<span class="rightmsg" data-view="{ランク/1/射程}">射程：{ランク/1/射程/最小}～{ランク/1/射程/最大}</span></div>
       {ランク/1/説明}
     </div>
     <br/>

@@ -47,6 +47,9 @@ body {
 .nodisp{
   display: none;
 }
+.rightmsg{
+  float: right;
+}
 
 .logoarea{
   padding-top: 15px;
